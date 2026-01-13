@@ -282,3 +282,520 @@ html, body {
         height: 210px;
     }
 }
+
+
+ /* ================= GLOBAL ================= */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #1a1a1a;
+      color: #ffffff;
+    }
+
+    section {
+      padding: 100px 80px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    h2 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    p {
+      color: #bcbcbc;
+      line-height: 1.7;
+      max-width: 900px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 30px;
+      background: #e0e0e0;
+      color: #1a1a1a;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 30px;
+    }
+
+
+    /* ================= STATS ================= */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .stat-box {
+      background: #222;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .stat-box h3 {
+      font-size: 40px;
+      margin: 0;
+    }
+
+    /* ================= FEATURES ================= */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .feature {
+      background: #242424;
+      padding: 40px;
+      border-radius: 24px;
+    }
+
+    /* ================= ROADMAP ================= */
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .step {
+      background: #1f1f1f;
+      padding: 30px;
+      border-radius: 20px;
+    }
+
+    /* ================= TESTIMONIAL ================= */
+    .testimonial {
+      background: #222;
+      padding: 40px;
+      border-radius: 24px;
+      margin-top: 40px;
+    }
+
+    /* ================= CONTACT ================= */
+    .contact-box {
+      background: #202020;
+      padding: 50px;
+      border-radius: 30px;
+      max-width: 700px;
+    }
+
+    input, textarea {
+      width: 100%;
+      margin-top: 15px;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    footer {
+      padding: 60px;
+      background: #121212;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media(max-width:768px){
+      section { padding: 60px 30px; }
+      h2 { font-size: 32px; }
+    }
+
+    /* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #0f1115;
+  color: #ffffff;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 100px;
+  gap: 80px;
+  background: radial-gradient(circle at top left, #1b1f2a, #0f1115);
+}
+
+/* ================= LEFT ================= */
+.hero-content {
+  flex: 1;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 18px;
+  background: rgba(255, 153, 51, 0.15);
+  color: #ff9933;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.hero-content h1 span {
+  color: #ff9933;
+}
+
+.hero-content p {
+  max-width: 520px;
+  color: #b6b6b6;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+/* ================= BUTTONS ================= */
+.cta {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.btn {
+  padding: 14px 32px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #ff9933;
+  color: #0f1115;
+}
+
+.btn.primary:hover {
+  background: #ffad5c;
+}
+
+.btn.secondary {
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.btn.secondary:hover {
+  background: #1c1f28;
+}
+
+/* ================= STATS ================= */
+.stats {
+  display: flex;
+  gap: 60px;
+}
+
+.stats h3 {
+  font-size: 40px;
+  color: #ff9933;
+}
+
+.stats span {
+  font-size: 14px;
+  color: #9a9a9a;
+}
+
+/* ================= RIGHT IMAGE ================= */
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 28px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1100px) {
+  .hero {
+    flex-direction: column;
+    padding: 60px 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #070b18;
+  color: #ffffff;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  padding: 120px 20px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(255,140,64,0.15), transparent 40%),
+    linear-gradient(180deg, #0b1020 0%, #050814 100%);
+}
+
+/* ================= TEXT ================= */
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #ff9f55;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 56px;
+  line-height: 1.15;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.hero h1 span {
+  color: #ff9f55;
+}
+
+.subtitle {
+  max-width: 720px;
+  color: #b8c0d0;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* ================= BUTTONS ================= */
+.cta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 70px;
+}
+
+.btn {
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #ffffff;
+  color: #050814;
+}
+
+.btn.primary:hover {
+  background: #e6e6e6;
+}
+
+.btn.ghost {
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+}
+
+.btn.ghost:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* ================= FEATURES ================= */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin-bottom: 60px;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 26px;
+  border-radius: 16px;
+  text-align: left;
+  backdrop-filter: blur(6px);
+}
+
+.feature-card .icon {
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.feature-card h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.feature-card p {
+  font-size: 13px;
+  color: #aab1c4;
+  line-height: 1.6;
+}
+
+/* ================= STATS ================= */
+.stats {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stats h4 {
+  font-size: 26px;
+  color: #ff9f55;
+}
+
+.stats span {
+  font-size: 12px;
+  color: #9ba3b8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .cta {
+    flex-direction: column;
+  }
+
+  .stats {
+    gap: 30px;
+  }
+}
+
+
+section {
+  padding: 100px 20px;
+  background: #fff7ef;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.wrrcm-tag {
+  display: inline-block;
+  background: #ffe5d1;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.wrrcm-sub {
+  max-width: 700px;
+  margin: 20px auto 50px;
+  color: #666;
+}
+
+.wrrcm-highlight {
+  background: #fff;
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.wrrcm-feature-grid,
+.wrrcm-curr-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: 60px auto 0;
+}
+
+.wrrcm-feature,
+.wrrcm-curr-card,
+.wrrcm-test,
+.wrrcm-mentor-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+
+.wrrcm-steps {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.wrrcm-step span {
+  display: block;
+  background: #1a2a44;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  line-height: 40px;
+  margin: auto auto 10px;
+}
+
+.wrrcm-mentor-grid,
+.wrrcm-test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.wrrcm-form {
+  max-width: 600px;
+  margin: auto;
+  display: grid;
+  gap: 14px;
+}
+
+.wrrcm-form input,
+.wrrcm-form textarea {
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.wrrcm-form button {
+  padding: 14px;
+  border-radius: 30px;
+  background: #f4a261;
+  border: none;
+  font-weight: bold;
+}

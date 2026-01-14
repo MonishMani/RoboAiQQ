@@ -6,7 +6,7 @@ function GallerySection() {
   const galleryItems = [
     {
       image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      text: 'Competition Arena Action'
+      text: 'Robot Battle'
     },
     {
       image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',

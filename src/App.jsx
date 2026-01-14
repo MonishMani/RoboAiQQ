@@ -1,9 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
-import FeaturesSection from './components/FeaturesSection';
-import RoadmapSection from './components/RoadmapSection';
-import TestimonialSection from './components/TestimonialSection';
 import ContactSection from './components/ContactSection';
 import WeRrcmUnique from './components/WeRrcmUnique';
 import WeRrcmJourney from './components/WeRrcmJourney';
@@ -14,6 +11,9 @@ import WeRrcmCurriculum from './components/WeRrcmCurriculum';
 import WeRrcmContactForm from './components/WeRrcmContactForm';
 import Footer from './components/Footer';
 import './App.css';
+import RoboKitSection from './components/RoboKitSection';
+
+
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
       <WeRrcmTestimonials />
       <GallerySection />
       <WeRrcmCurriculum />
+      <RoboKitSection />
       <WeRrcmContactForm />
       <Footer />
     </div>

@@ -1,77 +1,306 @@
-.wrrcm-contact {
-  padding: 100px 20px;
-  background: linear-gradient(180deg, rgba(10, 10, 20, 1) 0%, rgba(8, 8, 16, 0.98) 100%);
-  text-align: center;
-  font-family: "Segoe UI", sans-serif;
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
 
-.wrrcm-contact h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
+.robo-form-section {
+  min-height: 100vh;
+  padding: 120px 24px;
+  background: #000000;
   color: #ffffff;
 }
 
-.contact-stats {
+.robo-form-container {
+  max-width: 1200px;
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 60px auto;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.stat {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* LEFT CONTENT */
+.robo-form-info h1 {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
 }
 
-.stat h3 {
-  font-size: 32px;
-  color: #ffffff;
-  margin: 0 0 8px 0;
+.robo-form-info p {
+  margin-top: 20px;
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
 }
 
-.stat p {
-  color: #b0b8cc;
-  font-size: 14px;
-  margin: 0;
-}
-
-.wrrcm-form {
-  max-width: 600px;
-  margin: 60px auto 0;
-  display: grid;
+.info-points {
+  margin-top: 36px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
   gap: 14px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-.wrrcm-form input,
-.wrrcm-form textarea {
-  padding: 14px;
+/* FORM CARD */
+.robo-form-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 20px;
+  padding: 44px;
+  backdrop-filter: blur(12px);
+}
+
+/* FORM */
+.robo-form-card h2 {
+  font-size: 26px;
+  margin-bottom: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+input,
+textarea {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
+  padding: 12px 14px;
   color: #ffffff;
-  font-family: inherit;
   font-size: 14px;
+  outline: none;
 }
 
-.wrrcm-form input::placeholder,
-.wrrcm-form textarea::placeholder {
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+input:focus,
+textarea:focus {
+  border-color: #ffffff;
+}
+
+/* BUTTON */
+button {
+  margin-top: 10px;
+  height: 50px;
+  border-radius: 14px;
+  border: none;
+  background: #ffffff;
+  color: #000000;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .robo-form-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+.robo-contact-section {
+  background: linear-gradient(180deg, rgba(8,8,16,0.98), #000);
+  padding: 120px 80px;
+  font-family: "Segoe UI", sans-serif;
+  color: #b0b8cc;
+}
+
+/* HEADER */
+.robo-contact-header {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+}
+
+.robo-contact-header h1 {
+  font-size: 42px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.robo-contact-header h1 span {
+  letter-spacing: 2px;
+}
+
+.robo-contact-header p {
+  color: #707880;
+  max-width: 700px;
+  font-size: 15px;
+}
+
+/* GRID */
+.robo-contact-grid {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+}
+
+/* LEFT */
+.robo-left {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* CONTACT CARD */
+.contact-card {
+  display: flex;
+  gap: 18px;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.02);
+}
+
+.icon-box {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box svg {
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
+}
+
+.contact-card span {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: #707880;
 }
 
-.wrrcm-form button {
-  margin-top: 10px;
+.contact-card p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #ffffff;
 }
 
-@media(max-width:768px){
-  .wrrcm-contact { 
-    padding: 60px 30px; 
+/* HIGHLIGHTS */
+.robo-highlights {
+  margin-top: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.robo-highlights li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.robo-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+/* FORM */
+.robo-form-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 50px;
+}
+
+.robo-form-card h2 {
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #707880;
+  margin-bottom: 30px;
+}
+
+.robo-form-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.robo-form-card input,
+.robo-form-card textarea {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 14px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.robo-form-card input::placeholder,
+.robo-form-card textarea::placeholder {
+  color: #707880;
+}
+
+.robo-form-card input:focus,
+.robo-form-card textarea:focus {
+  outline: none;
+  border-color: rgba(255,255,255,0.4);
+}
+
+.robo-form-card button {
+  margin-top: 10px;
+  padding: 14px;
+  background: #ffffff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.robo-form-card button:hover {
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .robo-contact-grid {
+    grid-template-columns: 1fr;
   }
-  .wrrcm-contact h2 { 
-    font-size: 32px; 
+
+  .robo-contact-section {
+    padding: 80px 30px;
   }
 }

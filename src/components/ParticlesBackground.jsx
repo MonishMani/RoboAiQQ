@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './ParticlesBackground.css';
 
-export default function ParticlesBackground({ count = 50, color = '#ff9933' }) {
+export default function ParticlesBackground({ count = 50, color = 'rgba(255, 255, 255, 0.6)' }) {
   const containerRef = useRef(null);
 
   useEffect(() => {

@@ -12,14 +12,14 @@
 }
 
 .glow-button-primary {
-  background: #ff9933;
+  background: rgba(255, 255, 255, 0.9);
   color: #1a1a1a;
 }
 
 .glow-button-secondary {
   background: transparent;
-  color: #ff9933;
-  border: 2px solid #ff9933;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .glow-button-text {

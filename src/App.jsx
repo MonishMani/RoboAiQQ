@@ -6,7 +6,6 @@ import RoadmapSection from './components/RoadmapSection';
 import TestimonialSection from './components/TestimonialSection';
 import ContactSection from './components/ContactSection';
 import WeRrcmUnique from './components/WeRrcmUnique';
-import WeRrcmJourney from './components/WeRrcmJourney';
 import WeRrcmMentors from './components/WeRrcmMentors';
 import WeRrcmTestimonials from './components/WeRrcmTestimonials';
 import GallerySection from './components/GallerySection';
@@ -19,12 +18,7 @@ function App() {
     <div className="app">
       <Navbar />
       <HeroSection />
-      <FeaturesSection />
-      <RoadmapSection />
-      <TestimonialSection />
-      <ContactSection />
       <WeRrcmUnique />
-      <WeRrcmJourney />
       <WeRrcmMentors />
       <WeRrcmTestimonials />
       <GallerySection />

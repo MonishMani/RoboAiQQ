@@ -378,7 +378,9 @@
   height: 100%;
   position: relative;
   overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 70%);
 }
+
 
 .robot-viewer spline-viewer {
   width: 100%;
@@ -675,4 +677,171 @@
   letter-spacing: 0.6px;
   color: rgba(255, 255, 255, 0.75);
   text-transform: uppercase;
+}
+
+
+/* === ADVANCED ROBOT INTERNAL REVEAL EFFECT === */
+
+.robot-reveal-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  cursor: crosshair;
+  overflow: visible;
+  --mouse-x: 0px;
+  --mouse-y: 0px;
+  --reveal-radius: 80px;
+  --reveal-blur: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Base layer - white robot (always visible) */
+.robot-base {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+}
+
+/* Reveal overlay container */
+.robot-reveal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  overflow: hidden;
+  
+  /* Mask that follows the cursor */
+  -webkit-mask-image: radial-gradient(
+    circle var(--reveal-radius),
+    black 0%,
+    black calc(var(--reveal-radius) - var(--reveal-blur)),
+    transparent 100%
+  );
+  -webkit-mask-position: var(--mouse-x) var(--mouse-y);
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  
+  mask-image: radial-gradient(
+    circle var(--reveal-radius),
+    black 0%,
+    black calc(var(--reveal-radius) - var(--reveal-blur)),
+    transparent 100%
+  );
+  mask-position: var(--mouse-x) var(--mouse-y);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+/* Show reveal on hover */
+.robot-reveal-container[data-hovering="true"] .robot-reveal-overlay {
+  opacity: 1;
+}
+
+/* Internal mechanics image */
+.robot-internal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 0 40px rgba(100, 200, 255, 0.3));
+}
+
+/* Glow effect around reveal area */
+.reveal-glow {
+  position: absolute;
+  width: calc(var(--reveal-radius) * 2);
+  height: calc(var(--reveal-radius) * 2);
+  top: calc(var(--mouse-y) - var(--reveal-radius));
+  left: calc(var(--mouse-x) - var(--reveal-radius));
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(100, 200, 255, 0.4) 0%,
+    rgba(100, 200, 255, 0.2) 40%,
+    rgba(100, 200, 255, 0) 100%
+  );
+  box-shadow: 
+    inset 0 0 30px rgba(100, 200, 255, 0.3),
+    0 0 50px rgba(100, 200, 255, 0.2);
+  pointer-events: none;
+  z-index: 4;
+  filter: blur(2px);
+  animation: glowPulse 2s ease-in-out infinite;
+  transform: translate(0, 0);
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    box-shadow: 
+      inset 0 0 30px rgba(100, 200, 255, 0.3),
+      0 0 50px rgba(100, 200, 255, 0.2);
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 
+      inset 0 0 40px rgba(100, 200, 255, 0.5),
+      0 0 70px rgba(100, 200, 255, 0.4);
+  }
+}
+
+/* Animation that disturbs base layer subtly */
+@keyframes robotDisturbance {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scale(1);
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+  }
+  25% {
+    transform: translateX(2px) translateY(-1px) scale(1.01);
+    filter: drop-shadow(0 0 40px rgba(255, 255, 255, 0.3));
+  }
+  50% {
+    transform: translateX(-2px) translateY(2px) scale(0.99);
+    filter: drop-shadow(0 0 25px rgba(255, 255, 255, 0.15));
+  }
+  75% {
+    transform: translateX(1px) translateY(-2px) scale(1.01);
+    filter: drop-shadow(0 0 35px rgba(255, 255, 255, 0.25));
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .robot-reveal-container {
+    --reveal-radius: 70px;
+    --reveal-blur: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .robot-reveal-container {
+    --reveal-radius: 60px;
+    --reveal-blur: 16px;
+    cursor: pointer;
+  }
 }

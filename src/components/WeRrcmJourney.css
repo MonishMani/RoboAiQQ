@@ -1,20 +1,28 @@
 .wrrcm-journey {
-  padding: 100px 20px;
-  background: #fff7ef;
+  padding: 120px 20px;
+  background: linear-gradient(180deg, rgba(8, 8, 16, 0.98) 0%, rgba(10, 10, 20, 1) 100%);
   text-align: center;
   font-family: "Segoe UI", sans-serif;
+  position: relative;
+}
+
+.journey-header {
+  max-width: 800px;
+  margin: 0 auto 80px;
 }
 
 .wrrcm-journey h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #1a1a1a;
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
-.wrrcm-journey .wrrcm-sub {
-  max-width: 700px;
-  margin: 20px auto 50px;
-  color: #666;
+.journey-header p {
+  font-size: 15px;
+  color: #a8b0c0;
+  line-height: 1.6;
 }
 
 .wrrcm-steps {
@@ -45,11 +53,24 @@
   margin: auto auto 10px;
 }
 
-@media(max-width:768px){
-  .wrrcm-journey { 
-    padding: 60px 30px; 
+@media (max-width: 768px) {
+  .wrrcm-journey {
+    padding: 80px 20px;
   }
-  .wrrcm-journey h2 { 
-    font-size: 32px; 
+
+  .wrrcm-journey h2 {
+    font-size: 36px;
+  }
+
+  .journey-header {
+    margin-bottom: 60px;
+  }
+
+  .outer-container {
+    max-width: 100%;
+  }
+
+  .step-circle-container {
+    max-width: 100%;
   }
 }

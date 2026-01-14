@@ -2,7 +2,7 @@
 .hero {
   margin-top: 80px;
   min-height: calc(100vh - 80px);
-  background: transparent;
+  background: linear-gradient(180deg, rgba(10, 10, 20, 1) 0%, rgba(8, 8, 16, 0.98) 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -16,7 +16,7 @@
   padding: 120px 20px 80px;
   flex-direction: column;
   text-align: center;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(8, 8, 16, 0.98) 0%, rgba(10, 10, 20, 1) 100%);
   margin-top: 0;
   position: relative;
   overflow: hidden;

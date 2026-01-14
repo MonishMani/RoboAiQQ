@@ -1,7 +1,7 @@
 .testimonial-section {
   padding: 100px 80px;
-  border-top: 1px solid rgba(255, 153, 51, 0.1);
-  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(8, 8, 16, 0.98) 0%, rgba(10, 10, 20, 1) 100%);
 }
 
 .testimonial-section h2 {

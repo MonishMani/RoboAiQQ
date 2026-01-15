@@ -91,39 +91,20 @@ function HeroSection() {
           <a href="#" className="btn ghost">Watch Demo</a>
         </div>
 
-        <div className="hero-content">
 
-        {/* Heading */}
-        <h1 className="hero-title">
-          <span>Build Your First</span>
-          <br />
-          <span>Robot!</span>
-        </h1>
-
-        {/* Description */}
-        <p className="hero-description">
-          From basic electronics to advanced mechatronics – join
-          WeRrcm and master robotics through hands-on projects.
-          <br />
-          Perfect for students aged 10–18!
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="hero-actions">
-          <button className="btn-primary">
-            <span className="icon">⚡</span>
-            Book a Free Demo Class
-          </button>
-
-          <button className="btn-secondary">
-            Download Sample Project
-          </button>
-        </div>
-
-        {/* Stats */}
-      
-
-      </div>
+        <section className="promo-hero">
+          <div className="promo-hero-left">
+            <h2>Build Your First Robot!</h2>
+            <p>From basic electronics to advanced mechatronics – join WeRrcm and master robotics through hands-on projects. Perfect for students aged 10-18!</p>
+            <div className="promo-hero-buttons">
+              <a href="#" className="promo-hero-btn primary">Book a Free Demo Class</a>
+              <a href="#" className="promo-hero-btn secondary">Download Sample Project</a>
+            </div>
+          </div>
+          <div className="promo-hero-right">
+            <img src="/robo-white-removebg-preview.png" alt="Robot" />
+          </div>
+        </section>
 
        
       </section>

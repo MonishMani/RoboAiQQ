@@ -5,28 +5,40 @@ import './GallerySection.css';
 function GallerySection() {
   const galleryItems = [
     {
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      text: 'Robot Battle'
+      image: '/images/students_action_01.jpg',
+      text: 'Championship Winners'
     },
     {
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop',
-      text: 'Student Robot Showcase'
+      image: '/images/students_action_02.jpg',
+      text: 'Battle of Robots Arena'
     },
     {
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      text: 'Robot Battle Championship'
+      image: '/images/students_action_03.jpg',
+      text: 'Team Recognition'
     },
     {
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55271ce3f?w=800&h=600&fit=crop',
-      text: 'Advanced Robotics Lab'
+      image: '/images/students_action_04.jpg',
+      text: 'Award Ceremony'
     },
     {
-      image: 'https://images.unsplash.com/photo-1518611505868-48510c2e022f?w=800&h=600&fit=crop',
-      text: 'Hands-On Training'
+      image: '/images/students_action_05.jpg',
+      text: 'Young Achievers'
     },
     {
-      image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop',
-      text: 'Team Building Event'
+      image: '/images/students_action_06.jpg',
+      text: 'District Recognition'
+    },
+    {
+      image: '/images/students_action_07.jpg',
+      text: 'Project Collaboration'
+    },
+    {
+      image: '/images/students_action_08.jpg',
+      text: 'International Camp'
+    },
+    {
+      image: '/images/students_action_09.jpg',
+      text: 'Mentorship Moments'
     }
   ];
 

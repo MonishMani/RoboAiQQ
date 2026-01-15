@@ -1,4 +1,3 @@
-import React from "react";
 import "./WeRrcmCurriculum.css";
 
 const curriculum = [
@@ -13,42 +12,29 @@ const curriculum = [
 function WeRrcmCurriculum() {
   return (
     <section className="wrrcm-curriculum">
+      {/* STARFIELD */}
+      <div className="curriculum-stars" />
+      <div className="curriculum-stars stars2" />
+      <div className="curriculum-glow" />
+
       <div className="curriculum-container">
-
-        {/* LEFT – INFO */}
-        <div className="curriculum-left">
-          <span className="curriculum-badge">Structured Learning Path</span>
-          <h2>Robotics Curriculum Journey</h2>
-          <p>
-            A carefully engineered roadmap that transforms beginners into
-            confident robotics engineers through hands-on learning,
-            real-world systems, and competition exposure.
-          </p>
-
-          <ul className="curriculum-points">
-            <li>Industry-aligned skill progression</li>
-            <li>Hands-on hardware mastery</li>
-            <li>Competition & project-based learning</li>
-          </ul>
+        <div className="curriculum-header">
+          <h2>Robotics Curriculum</h2>
+          <p>A structured learning path from fundamentals to competition</p>
         </div>
 
-        {/* RIGHT – TIMELINE */}
-        <div className="curriculum-right">
-          <div className="timeline-line"></div>
-
+        <div className="curriculum-grid">
           {curriculum.map((item, index) => (
-            <div className="timeline-card" key={index}>
-              <div className="timeline-step">{item.step}</div>
-
-              <div className="timeline-content">
-                <div className="timeline-icon">{item.icon}</div>
-                <h4>{item.title}</h4>
-                <p>{item.desc}</p>
+            <div className="curriculum-card" key={index}>
+              <div className="card-header">
+                <span className="card-step">{item.step}</span>
+                <div className="card-icon">{item.icon}</div>
               </div>
+              <h3>{item.title}</h3>
+              <p>{item.desc}</p>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

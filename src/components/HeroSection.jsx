@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import LightRays from './LightRays';
-import Orb from './Orb';
+import Galaxy from './Galaxy';
 import './HeroSection.css';
 
 function HeroSection() {
@@ -90,63 +90,15 @@ function HeroSection() {
         </div>
       </div>
 *
-      <div className="light-rays-section">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#ffffff"
-          raysSpeed={1.5}
-          lightSpread={0.8}
-          rayLength={1.2}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
-          distortion={0.05}
-          className="custom-rays"
-        />
-        <div className="light-rays-content">
-          <div className='lignt-rays-texts'>
-            <h2>Build Your First Robot!</h2>
-            <p>From basic electronics to advanced mechatronics – join WeRrcm and master robotics through hands-on projects.<br></br> Perfect for students aged 10-18!</p>
-            <div className="light-rays-buttons">
-              <a href="#" className="btn primary">Book a Free Demo Class</a>
-              <a href="#" className="btn secondary">Download Sample Project</a>
-            </div>
-          </div>
-        </div>
-        <div 
-          className="light-rays-model image-hover-container robot-reveal-container"
-          ref={revealContainerRef}
-          onMouseMove={handleMouseMove}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          data-hovering={isHovering}
-        >
-          {/* White robot - base layer */}
-          <img
-            src="/robo-white-removebg-preview.png"
-            alt="AI Robot Clean"
-            className="robot-image img-front robot-base"
-          />
-
-          {/* Internal mechanics - reveal layer with mask */}
-          <div className="robot-reveal-overlay">
-            <img
-              src="/robo-black-removebg-preview.png"
-              alt="AI Robot Internal"
-              className="robot-image img-back robot-internal"
-            />
-          </div>
-        </div>
-
-      </div>
 
       <section className="hero hero-second">
         <div className="orb-background">
-          <Orb
-            hue={260}
-            hoverIntensity={0.2}
-            rotateOnHover={true}
-            backgroundColor="#0b1020"
+          <Galaxy
+            mouseInteraction={false}
+            hueShift={260}
+            glowIntensity={0.8}
+            rotationSpeed={0.05}
+            transparent={true}
           />
         </div>
 

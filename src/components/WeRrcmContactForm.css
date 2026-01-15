@@ -154,11 +154,12 @@ button:hover {
 
 /* GRID */
 .robo-contact-grid {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 80px;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
 /* LEFT */
@@ -294,7 +295,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .robo-contact-grid {
     grid-template-columns: 1fr;

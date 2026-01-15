@@ -1,10 +1,7 @@
-import React from 'react';
-import ScrollFloat from './ScrollFloat';
-import GlowButton from './GlowButton';
-import AnimatedCounter from './AnimatedCounter';
 import './WeRrcmContactForm.css';
 
 function WeRrcmContactForm() {
+
   return (
     <section className="robo-contact-section">
 
@@ -82,7 +79,7 @@ function WeRrcmContactForm() {
           </ul>
         </div>
 
-        {/* RIGHT SIDE FORM */}
+        {/* CENTER FORM */}
         <div className="robo-form-card">
           <h2>Register Your Interest</h2>
           <p className="subtitle">
@@ -98,6 +95,8 @@ function WeRrcmContactForm() {
             <button type="submit">Submit Enquiry</button>
           </form>
         </div>
+
+        {/* RIGHT SIDE 3D MODEL */}
 
       </div>
     </section>

@@ -169,8 +169,6 @@ export const ChromaGrid = ({
           </footer>
         </article>
       ))}
-      <div className="chroma-overlay" />
-      <div ref={fadeRef} className="chroma-fade" />
     </div>
   );
 };

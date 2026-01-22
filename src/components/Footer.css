@@ -74,8 +74,8 @@
 }
 
 .social-icons a {
-  width: 42px;
-  height: 42px;
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,8 +96,8 @@
 }
 
 .social-icons svg {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
 }
 
 .footer-navigation ul {

@@ -2,7 +2,7 @@ import "./WeRrcmUnique.css";
 
 export default function Unique() {
   return (
-    <section className="unique-section">
+    <section className="unique-section" id="about">
       <h2 className="unique-title">What Makes RoboAIQ Unique?</h2>
 
       <div className="unique-wrapper">

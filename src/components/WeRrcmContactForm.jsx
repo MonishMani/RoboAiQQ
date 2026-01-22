@@ -1,9 +1,10 @@
 import './WeRrcmContactForm.css';
 
+
 function WeRrcmContactForm() {
 
   return (
-    <section className="robo-contact-section">
+    <section className="robo-contact-section" id="contact">
 
       {/* HEADER */}
       <div className="robo-contact-header">

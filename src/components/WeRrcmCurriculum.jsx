@@ -35,7 +35,7 @@ const curriculum = [
 
 function WeRrcmCurriculum() {
   return (
-    <section className="wrrcm-curriculum">
+    <section className="wrrcm-curriculum" id="programs">
       {/* Background effects */}
       <div className="curriculum-glow" />
 

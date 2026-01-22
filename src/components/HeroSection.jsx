@@ -61,7 +61,7 @@ function HeroSection() {
 
   return (
     <>
-      <section className="hero hero-main">
+      <section className="hero hero-main" id="home">
         {/* Left Side - Text Content */}
         <div className="hero-left">
           <span className="eyebrow">NEXT GENERATION EDUCATION</span>

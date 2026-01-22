@@ -18,7 +18,7 @@ function SuccessStories() {
     if (!gridRef.current) return;
 
     const cards = gridRef.current.querySelectorAll('.success-image-card');
-    
+
     cards.forEach((card) => {
       const handleMouseEnter = () => {
         gsap.to(card, {
@@ -47,7 +47,7 @@ function SuccessStories() {
   }, []);
 
   return (
-    <section className="success-stories">
+    <section className="success-stories" id="success-stories">
       <div className="success-stories-header">
         <h2>Competition Success Stories</h2>
         <p>Our students compete and win at international robotics competitions</p>

@@ -43,7 +43,7 @@ function GallerySection() {
   ];
 
   return (
-    <section className="gallery-section">
+    <section className="gallery-section" id="student-photos">
       <div className="gallery-header">
         <h2>Student Robotics in Action</h2>
         <p>

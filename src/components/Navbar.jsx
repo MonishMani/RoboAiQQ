@@ -15,31 +15,35 @@ function Navbar() {
 
         {/* Navigation */}
         <div className="nav-links">
-          <Link to="/" className="nav-item">
+          <a href="/#home" className="nav-item">
             <span className="text">Home</span>
-          </Link>
+          </a>
 
-          <a href="#program" className="nav-item">
-            <span className="text">Program</span>
+          <a href="/#about" className="nav-item">
+            <span className="text">About</span>
+          </a>
+
+          <a href="/#programs" className="nav-item">
+            <span className="text">Programs</span>
           </a>
 
           <Link to="/robotics-kit" className="nav-item">
             <span className="text">Robotics Kit</span>
           </Link>
 
-          <a href="#success-stories" className="nav-item">
+          <a href="/#success-stories" className="nav-item">
             <span className="text">Success Stories</span>
           </a>
 
-          <a href="#student-photos" className="nav-item">
+          <a href="/#student-photos" className="nav-item">
             <span className="text">Student Photos</span>
           </a>
 
-          <a href="#register" className="nav-item nav-register">
+          <a href="/#contact" className="nav-item nav-register">
             <span className="text">Register</span>
           </a>
 
-          <a href="#contact" className="nav-item nav-cta">
+          <a href="/#contact" className="nav-item nav-cta">
             <span className="text">Contact</span>
           </a>
         </div>

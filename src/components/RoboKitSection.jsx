@@ -42,39 +42,7 @@ export default function RoboKitSection() {
 
       </div>
 
-      {/* SKILLS */}
-      <div className="skills-section">
-        <h2>What Skills Will You Master?</h2>
-        <p>Industry-ready capabilities developed through real-world robotics projects</p>
 
-        <div className="skills-grid">
-
-          <div className="skill-card">
-            <div className="icon">⌘</div>
-            <h4>Microcontroller Programming</h4>
-            <p>Arduino, C/C++ and embedded system fundamentals</p>
-          </div>
-
-          <div className="skill-card">
-            <div className="icon">⚙</div>
-            <h4>Circuit Design & Assembly</h4>
-            <p>Design, prototype and assemble electronic systems</p>
-          </div>
-
-          <div className="skill-card">
-            <div className="icon">◼</div>
-            <h4>Problem Solving</h4>
-            <p>Debugging, logical thinking and real-time optimization</p>
-          </div>
-
-          <div className="skill-card">
-            <div className="icon">▢</div>
-            <h4>Project Presentation</h4>
-            <p>Document and present robotics solutions professionally</p>
-          </div>
-
-        </div>
-      </div>
 
     </section>
   );

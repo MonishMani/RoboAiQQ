@@ -50,7 +50,7 @@ function WeRrcmContactForm() {
             </div>
             <div>
               <span>Email</span>
-              <p>sales@werrcm.com</p>
+              <p>sales@roboaiq.com</p>
             </div>
           </div>
 
@@ -65,7 +65,7 @@ function WeRrcmContactForm() {
             <div>
               <span>Location</span>
               <p>
-                World Education & Robotic Research Center for Mechatronics
+                RoboAiQ Headquarters
               </p>
             </div>
           </div>

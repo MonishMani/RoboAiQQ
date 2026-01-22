@@ -2,10 +2,17 @@ import React from 'react';
 import ChromaGrid from './ChromaGrid';
 import './WeRrcmMentors.css';
 
+import mentorNarsing from '../assets/mentors/mentor_narsing.png';
+import mentorTamizharasan from '../assets/mentors/mentor_tamizharasan.png';
+import mentorSarah from '../assets/mentors/mentor_sarah.png';
+import mentorMike from '../assets/mentors/mentor_mike.png';
+import mentorAlex from '../assets/mentors/mentor_alex.png';
+import mentorJordan from '../assets/mentors/mentor_jordan.png';
+
 function WeRrcmMentors() {
   const mentors = [
     {
-      image: 'https://i.pravatar.cc/300?img=1',
+      image: mentorNarsing,
       title: 'Narsing Chappe',
       subtitle: 'Robotics & Mathematics Specialist',
       handle: 'IIT Bombay',
@@ -14,7 +21,7 @@ function WeRrcmMentors() {
       url: 'https://github.com/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=2',
+      image: mentorTamizharasan,
       title: 'Tamizharasan K',
       subtitle: 'Robotics & Programming Specialist',
       handle: '@tamizharasan',
@@ -23,37 +30,37 @@ function WeRrcmMentors() {
       url: 'https://linkedin.com/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=3',
+      image: mentorSarah,
       title: 'Sarah Johnson',
-      subtitle: 'Frontend Developer',
-      handle: '@sarahjohnson',
+      subtitle: 'AI & Computer Vision Specialist',
+      handle: '@sarah_ai',
       borderColor: '#10B981',
       gradient: 'linear-gradient(145deg, #10B981, #000)',
       url: 'https://github.com/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=4',
+      image: mentorMike,
       title: 'Mike Chen',
-      subtitle: 'Backend Engineer',
-      handle: '@mikechen',
+      subtitle: 'Embedded Systems Architect',
+      handle: '@mike_embed',
       borderColor: '#8B5CF6',
       gradient: 'linear-gradient(180deg, #8B5CF6, #000)',
       url: 'https://linkedin.com/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=5',
+      image: mentorAlex,
       title: 'Alex Rivera',
-      subtitle: 'Full Stack Developer',
-      handle: '@alexrivera',
+      subtitle: 'Mechatronics Engineer',
+      handle: '@alex_mech',
       borderColor: '#F59E0B',
       gradient: 'linear-gradient(145deg, #F59E0B, #000)',
       url: 'https://github.com/'
     },
     {
-      image: 'https://i.pravatar.cc/300?img=6',
+      image: mentorJordan,
       title: 'Jordan Chen',
-      subtitle: 'DevOps Engineer',
-      handle: '@jordanchen',
+      subtitle: 'ROS2 Framework Expert',
+      handle: '@jordan_ros',
       borderColor: '#06B6D4',
       gradient: 'linear-gradient(210deg, #06B6D4, #000)',
       url: 'https://linkedin.com/'
@@ -65,8 +72,8 @@ function WeRrcmMentors() {
       <h2>Meet Our Expert Mentors</h2>
       <p className="mentors-subtitle">Learn from industry experts and experienced robotics professionals</p>
 
-      <div style={{ height: '600px', position: 'relative' }}>
-        <ChromaGrid 
+      <div style={{ height: '900px', position: 'relative' }}>
+        <ChromaGrid
           items={mentors}
           radius={300}
           damping={0.45}

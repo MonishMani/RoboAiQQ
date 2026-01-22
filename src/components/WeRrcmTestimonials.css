@@ -1,46 +1,57 @@
+/* Testimonials Section - Futuristic White & Blue */
 .wrrcm-testimonials {
-  padding: 100px 20px;
-  background: linear-gradient(180deg, rgba(10, 10, 20, 1) 0%, rgba(8, 8, 16, 0.98) 100%);
+  padding: var(--space-24) var(--space-8);
+  background: var(--color-bg-primary);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--font-primary);
   position: relative;
   z-index: 5;
-  margin-top: 250px;
+  margin-top: 0;
 }
 
 .wrrcm-testimonials h2 {
-  font-size: 42px;
-  margin-bottom: 60px;
-  color: #ffffff;
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-12);
+  color: var(--color-text-primary);
   position: relative;
   z-index: 10;
-  letter-spacing: -0.5px;
+  letter-spacing: var(--letter-spacing-tight);
+  font-weight: var(--font-weight-extrabold);
 }
 
 .wrrcm-test-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-8);
   max-width: 1000px;
-  margin: 60px auto 0;
+  margin: 0 auto;
 }
 
 .wrrcm-test {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  line-height: 1.6;
+  background: var(--glass-bg-medium);
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(var(--glass-blur-md));
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-base);
+  transition: all var(--transition-base);
 }
 
-@media(max-width:768px){
-  .wrrcm-testimonials { 
-    padding: 60px 30px; 
+.wrrcm-test:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-primary-300);
+  box-shadow: var(--shadow-blue-md);
+}
+
+@media (max-width: 768px) {
+  .wrrcm-testimonials {
+    padding: var(--space-16) var(--space-6);
   }
-  .wrrcm-testimonials h2 { 
-    font-size: 32px; 
+
+  .wrrcm-testimonials h2 {
+    font-size: var(--font-size-3xl);
   }
 }

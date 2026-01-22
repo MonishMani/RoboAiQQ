@@ -1,6 +1,101 @@
+/* Timeline Section - Futuristic White & Blue */
 .timeline {
   position: relative;
-  padding: 40px 0;
+  padding: var(--space-20) 0;
+  background: var(--color-bg-tertiary);
+  font-family: var(--font-primary);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--color-primary-200), var(--color-primary-100));
+}
+
+.timeline-item {
+  margin-bottom: var(--space-10);
+  opacity: 1;
+  /* Ensure visible */
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+  margin-left: 0;
+  text-align: right;
+  padding-right: 50%;
+  padding-left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  margin-left: 50%;
+  text-align: left;
+  padding-left: var(--space-12);
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  background: var(--color-primary-500);
+  border: 4px solid var(--color-bg-primary);
+  border-radius: 50%;
+  top: 0;
+  box-shadow: 0 0 0 4px var(--color-primary-200);
+  z-index: 2;
+}
+
+.timeline-content {
+  background: var(--glass-bg-strong);
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(var(--glass-blur-md));
+}
+
+.timeline-content:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-blue-md);
+  border-color: var(--color-primary-300);
+}
+
+.timeline-content h3 {
+  margin: 0 0 var(--space-2) 0;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.timeline-content p {
+  margin: 0;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    margin-left: 0;
+    padding-left: 60px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-marker {
+    left: 20px;
+  }
 }
 
 .timeline::before {

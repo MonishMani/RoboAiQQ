@@ -15,7 +15,7 @@ export default function Unique() {
 
         {/* Center */}
         <div className="unique-center">
-          <h3>RoboAIQ</h3>
+          <h3>RoboAiQ</h3>
           <p>Robotics Education Excellence</p>
         </div>
 

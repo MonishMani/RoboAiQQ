@@ -1,8 +1,8 @@
 /* SECTION */
 .neural-journey {
   padding: 120px 20px;
-  background: radial-gradient(circle at top, #0b0f1a, #02040a);
-  color: #fff;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
   position: relative;
   overflow: hidden;
 }
@@ -15,6 +15,7 @@
   letter-spacing: -0.6px;
   position: relative;
   z-index: 2;
+  color: var(--color-text-primary);
 }
 
 /* SYSTEM */
@@ -35,8 +36,8 @@
   height: 140px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
-  border: 1px solid rgba(255,255,255,0.3);
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.15), rgba(14, 165, 233, 0.05));
+  border: 2px solid var(--color-primary-400);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -44,6 +45,8 @@
   font-size: 14px;
   font-weight: 600;
   z-index: 3;
+  color: var(--color-text-primary);
+  box-shadow: var(--glow-blue-sm);
 }
 
 .core-ring {
@@ -51,13 +54,18 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 1px dashed rgba(255,255,255,0.25);
+  border: 2px dashed var(--color-primary-300);
   animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* NEURAL LINE */
@@ -65,14 +73,12 @@
   position: absolute;
   left: 50%;
   top: 5%;
-  width: 1px;
+  width: 2px;
   height: 90%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255,255,255,0.4),
-    transparent
-  );
+  background: linear-gradient(to bottom,
+      transparent,
+      var(--color-primary-400),
+      transparent);
   transform: translateX(-50%);
 }
 
@@ -101,31 +107,32 @@
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #ffffff;
-  color: #0b0f1a;
+  background: var(--gradient-primary);
+  color: var(--color-text-inverse);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  box-shadow: 0 0 0 6px rgba(255,255,255,0.05);
+  box-shadow: var(--glow-blue-md);
 }
 
 /* CONNECTOR */
 .node-connector {
   width: 60px;
-  height: 1px;
-  background: rgba(255,255,255,0.3);
+  height: 2px;
+  background: var(--color-primary-400);
 }
 
 /* CONTENT */
 .node-content h4 {
   font-size: 1.1rem;
   margin-bottom: 4px;
+  color: var(--color-text-primary);
 }
 
 .node-content p {
   font-size: 0.9rem;
-  color: #9ca3af;
+  color: var(--color-text-tertiary);
   line-height: 1.4;
 }
 

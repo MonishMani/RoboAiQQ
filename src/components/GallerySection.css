@@ -1,50 +1,53 @@
+/* Gallery Section - Futuristic White & Blue */
 .gallery-section {
-  padding: 100px 20px;
-  background: linear-gradient(180deg, rgba(10, 10, 20, 1) 0%, rgba(8, 8, 16, 0.98) 100%);
+  padding: var(--space-24) var(--space-8);
+  background: var(--color-bg-secondary);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--font-primary);
 }
 
 .gallery-header {
   max-width: 900px;
-  margin: 0 auto 60px;
+  margin: 0 auto var(--space-16);
 }
 
 .gallery-header h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
-  color: #ffffff;
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-4);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-extrabold);
 }
 
 .gallery-header p {
-  font-size: 16px;
-  color: #b8c0d0;
-  line-height: 1.7;
+  font-size: var(--font-size-lg);
+  color: var(--color-text-tertiary);
+  line-height: var(--line-height-relaxed);
   margin: 0;
 }
 
 .gallery-container {
   height: 600px;
   position: relative;
-  background: linear-gradient(180deg, rgba(8, 8, 16, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%);
-  border-radius: 24px;
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(var(--glass-blur-md));
+  border-radius: var(--radius-2xl);
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-blue-lg);
+  border: 1px solid var(--color-border-light);
 }
 
 @media (max-width: 768px) {
   .gallery-section {
-    padding: 60px 30px;
+    padding: var(--space-16) var(--space-6);
   }
 
   .gallery-header h2 {
-    font-size: 32px;
+    font-size: var(--font-size-3xl);
   }
 
   .gallery-header p {
-    font-size: 14px;
+    font-size: var(--font-size-sm);
   }
 
   .gallery-container {

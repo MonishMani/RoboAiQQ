@@ -1,59 +1,70 @@
+/* GlowButton - Enhanced with Blue Theme */
+
 .glow-button {
   position: relative;
-  padding: 12px 32px;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
-  font-size: 14px;
+  padding: var(--space-4) var(--space-10);
+  border-radius: var(--radius-full);
+  background: var(--gradient-primary);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  border: 2px solid transparent;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s ease;
-  z-index: 1;
+  transition: all var(--transition-base);
+  box-shadow: var(--glow-blue-md);
 }
 
-.glow-button-primary {
-  background: rgba(255, 255, 255, 0.9);
-  color: #1a1a1a;
-}
-
-.glow-button-secondary {
-  background: transparent;
-  color: rgba(255, 255, 255, 0.8);
-  border: 2px solid rgba(255, 255, 255, 0.8);
-}
-
-.glow-button-text {
-  position: relative;
-  z-index: 2;
-}
-
-.glow-button-glow {
+.glow-button::before {
+  content: '';
   position: absolute;
   top: 50%;
   left: 50%;
   width: 0;
   height: 0;
   border-radius: 50%;
-  background: rgba(255, 153, 51, 0.3);
+  background: rgba(255, 255, 255, 0.3);
   transform: translate(-50%, -50%);
-  transition: width 0.6s, height 0.6s;
-  z-index: 0;
+  transition: width var(--transition-slow), height var(--transition-slow);
 }
 
-.glow-button:hover .glow-button-glow {
+.glow-button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--glow-blue-lg);
+}
+
+.glow-button:hover::before {
   width: 300px;
   height: 300px;
 }
 
-.glow-button:hover {
-  transform: scale(1.05);
+.glow-button:active {
+  transform: translateY(-1px);
 }
 
-.glow-button-primary:hover {
-  box-shadow: 0 0 20px rgba(255, 153, 51, 0.5);
+/* Secondary Variant */
+.glow-button.secondary {
+  background: transparent;
+  border: 2px solid var(--color-primary-700);
+  color: var(--color-primary-700);
+  box-shadow: none;
 }
 
-.glow-button-secondary:hover {
-  background: rgba(255, 153, 51, 0.1);
-  box-shadow: 0 0 20px rgba(255, 153, 51, 0.3);
+.glow-button.secondary::before {
+  background: var(--gradient-primary);
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+
+.glow-button.secondary:hover {
+  color: var(--color-text-inverse);
+  box-shadow: var(--glow-blue-sm);
+}
+
+.glow-button.secondary:hover::before {
+  width: 100%;
+  height: 100%;
 }

@@ -1,306 +1,314 @@
-* {
-  box-sizing: border-box;
-  font-family: "Inter", "Segoe UI", sans-serif;
-}
+/* Contact Form - Futuristic White & Blue Theme */
 
-.robo-form-section {
+.robo-form-section,
+.robo-contact-section {
   min-height: 100vh;
-  padding: 120px 24px;
-  background: #000000;
-  color: #ffffff;
+  padding: var(--space-32) var(--space-8);
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
 }
 
-.robo-form-container {
-  max-width: 1200px;
+.robo-form-container,
+.robo-contact-grid {
+  max-width: var(--container-max-width);
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: var(--space-20);
   align-items: center;
 }
 
-/* LEFT CONTENT */
-.robo-form-info h1 {
-  font-size: 44px;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-}
-
-.robo-form-info p {
-  margin-top: 20px;
-  max-width: 480px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
-}
-
-.info-points {
-  margin-top: 36px;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  font-size: 15px;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-/* FORM CARD */
-.robo-form-card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 20px;
-  padding: 44px;
-  backdrop-filter: blur(12px);
-}
-
-/* FORM */
-.robo-form-card h2 {
-  font-size: 26px;
-  margin-bottom: 28px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.input-block {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-label {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.65);
-}
-
-input,
-textarea {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 10px;
-  padding: 12px 14px;
-  color: #ffffff;
-  font-size: 14px;
-  outline: none;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.35);
-}
-
-input:focus,
-textarea:focus {
-  border-color: #ffffff;
-}
-
-/* BUTTON */
-button {
-  margin-top: 10px;
-  height: 50px;
-  border-radius: 14px;
-  border: none;
-  background: #ffffff;
-  color: #000000;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-button:hover {
-  transform: translateY(-1px);
-  opacity: 0.9;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .robo-form-container {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-}
-.robo-contact-section {
-  background: linear-gradient(180deg, rgba(8,8,16,0.98), #000);
-  padding: 120px 80px;
-  font-family: "Segoe UI", sans-serif;
-  color: #b0b8cc;
-}
-
-/* HEADER */
+/* Header */
 .robo-contact-header {
-  max-width: 1400px;
-  margin: 0 auto 80px;
+  max-width: var(--container-max-width);
+  margin: 0 auto var(--space-20);
+  text-align: center;
 }
 
-.robo-contact-header h1 {
-  font-size: 42px;
-  color: #ffffff;
-  margin-bottom: 10px;
+.robo-contact-header h1,
+.robo-form-info h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tighter);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-4);
 }
 
 .robo-contact-header h1 span {
-  letter-spacing: 2px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.robo-contact-header p {
-  color: #707880;
+.robo-contact-header p,
+.robo-form-info p {
+  margin-top: var(--space-5);
   max-width: 700px;
-  font-size: 15px;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* GRID */
-.robo-contact-grid {
-  max-width: 1600px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
+/* Info Points */
+.info-points,
+.robo-highlights {
+  margin-top: var(--space-8);
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
 }
 
-/* LEFT */
+.robo-highlights li {
+  position: relative;
+  padding-left: var(--space-6);
+  color: var(--color-text-secondary);
+}
+
+.robo-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+}
+
+/* Contact Cards */
 .robo-left {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: var(--space-5);
 }
 
-/* CONTACT CARD */
 .contact-card {
   display: flex;
-  gap: 18px;
-  padding: 20px;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  background: rgba(255,255,255,0.02);
+  gap: var(--space-4);
+  padding: var(--space-6);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-primary);
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-card:hover {
+  border-color: var(--color-primary-300);
+  box-shadow: var(--shadow-blue-sm);
+  transform: translateY(-2px);
 }
 
 .icon-box {
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,0.2);
-  border-radius: 10px;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border: 2px solid var(--color-primary-200);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--color-primary-50);
+  transition: all var(--transition-base);
+}
+
+.contact-card:hover .icon-box {
+  background: var(--gradient-primary);
+  border-color: var(--color-primary-700);
 }
 
 .icon-box svg {
   width: 20px;
   height: 20px;
-  fill: #ffffff;
+  fill: var(--color-primary-700);
+  transition: fill var(--transition-base);
+}
+
+.contact-card:hover .icon-box svg {
+  fill: var(--color-text-inverse);
 }
 
 .contact-card span {
-  font-size: 12px;
+  font-size: var(--font-size-xs);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #707880;
+  letter-spacing: var(--letter-spacing-wider);
+  color: var(--color-text-quaternary);
+  font-weight: var(--font-weight-semibold);
 }
 
 .contact-card p {
-  margin-top: 4px;
-  font-size: 14px;
-  color: #ffffff;
+  margin-top: var(--space-2);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
 }
 
-/* HIGHLIGHTS */
-.robo-highlights {
-  margin-top: 30px;
-  padding-left: 0;
-  list-style: none;
-}
-
-.robo-highlights li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 14px;
-  font-size: 14px;
-  color: #ffffff;
-}
-
-.robo-highlights li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ffffff;
-}
-
-/* FORM */
+/* Form Card */
 .robo-form-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 18px;
-  padding: 50px;
+  background: var(--glass-bg-medium);
+  backdrop-filter: blur(var(--glass-blur-lg));
+  -webkit-backdrop-filter: blur(var(--glass-blur-lg));
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-12);
+  box-shadow: var(--shadow-blue-md);
 }
 
 .robo-form-card h2 {
-  color: #ffffff;
-  font-size: 28px;
-  margin-bottom: 6px;
+  color: var(--color-text-primary);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-2);
 }
 
-.subtitle {
-  font-size: 14px;
-  color: #707880;
-  margin-bottom: 30px;
+.robo-form-card .subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-tertiary);
+  margin-bottom: var(--space-8);
 }
 
-.robo-form-card form {
+/* Form Elements */
+form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--space-5);
 }
 
-.robo-form-card input,
-.robo-form-card textarea {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
-  padding: 14px;
-  border-radius: 8px;
-  color: #ffffff;
+.input-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
 
-.robo-form-card input::placeholder,
-.robo-form-card textarea::placeholder {
-  color: #707880;
+label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: var(--font-weight-medium);
 }
 
-.robo-form-card input:focus,
-.robo-form-card textarea:focus {
+input,
+textarea {
+  background: var(--color-bg-primary);
+  border: var(--input-border);
+  border-radius: var(--input-radius);
+  padding: var(--input-padding);
+  color: var(--color-text-primary);
+  font-size: var(--font-size-base);
+  font-family: var(--font-primary);
   outline: none;
-  border-color: rgba(255,255,255,0.4);
+  transition: all var(--transition-base);
+  height: var(--input-height);
 }
 
+textarea {
+  height: 120px;
+  resize: vertical;
+  min-height: 120px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+input:focus,
+textarea:focus {
+  border: var(--input-border-focus);
+  box-shadow: var(--glow-blue-sm);
+}
+
+/* Submit Button */
+button[type="submit"],
 .robo-form-card button {
-  margin-top: 10px;
-  padding: 14px;
-  background: #ffffff;
-  color: #000;
-  font-weight: 600;
+  margin-top: var(--space-4);
+  height: 56px;
+  border-radius: var(--radius-full);
   border: none;
-  border-radius: 10px;
+  background: var(--gradient-primary);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
   cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: var(--glow-blue-md);
+  position: relative;
+  overflow: hidden;
 }
 
+button[type="submit"]::before,
+.robo-form-card button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width var(--transition-slow), height var(--transition-slow);
+}
+
+button[type="submit"]:hover,
 .robo-form-card button:hover {
-  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: var(--glow-blue-lg);
 }
 
+button[type="submit"]:hover::before,
+.robo-form-card button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+button[type="submit"]:active,
+.robo-form-card button:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive */
 @media (max-width: 900px) {
+
+  .robo-form-container,
   .robo-contact-grid {
     grid-template-columns: 1fr;
+    gap: var(--space-12);
   }
 
+  .robo-form-section,
   .robo-contact-section {
-    padding: 80px 30px;
+    padding: var(--space-24) var(--space-6);
+  }
+
+  .robo-form-card {
+    padding: var(--space-8);
+  }
+
+  .robo-contact-header h1,
+  .robo-form-info h1 {
+    font-size: var(--font-size-4xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .robo-form-card {
+    padding: var(--space-6);
+  }
+
+  .robo-contact-header h1,
+  .robo-form-info h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .robo-form-card h2 {
+    font-size: var(--font-size-2xl);
   }
 }

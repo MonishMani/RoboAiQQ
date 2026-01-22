@@ -25,14 +25,14 @@ export default function WeRrcmJourney() {
           disableRotation={false}
         />
       </div>
-      
+
       <h2 className="journey-title">Your Robotics Journey</h2>
 
       <div className="neural-system">
         {/* CENTRAL CORE */}
         <div className="neural-core">
           <div className="core-ring" />
-          <span>RoboAiq</span>
+          <span>RoboAiQ</span>
         </div>
 
         {/* NEURAL PATH */}

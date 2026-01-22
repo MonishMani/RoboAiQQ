@@ -1,58 +1,73 @@
+/* Mentors Section - Futuristic White & Blue */
 .wrrcm-mentors {
-  padding: 100px 20px;
-  background: linear-gradient(180deg, rgba(8, 8, 16, 0.98) 0%, rgba(10, 10, 20, 1) 100%);
+  padding: var(--space-24) var(--space-8);
+  background: var(--color-bg-secondary);
   text-align: center;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--font-primary);
+  position: relative;
 }
 
 .wrrcm-mentors h2 {
-  font-size: 36px;
-  margin-bottom: 10px;
-  color: #ffffff;
+  font-size: var(--font-size-5xl);
+  margin-bottom: var(--space-4);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .mentors-subtitle {
-  color: #b8c0d0;
-  font-size: 16px;
-  margin-bottom: 40px;
+  color: var(--color-text-tertiary);
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-12);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  line-height: var(--line-height-relaxed);
 }
 
 .wrrcm-mentor-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-8);
   max-width: 1000px;
-  margin: 60px auto 0;
+  margin: 0 auto;
 }
 
 .wrrcm-mentor-card {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--glass-bg-medium);
+  padding: var(--space-8);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(var(--glass-blur-md));
+  border: 1px solid var(--color-border-light);
+  transition: all var(--transition-base);
+}
+
+.wrrcm-mentor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-blue-lg);
+  border-color: var(--color-primary-300);
 }
 
 .wrrcm-mentor-card h3 {
-  color: #ffffff;
-  margin-bottom: 8px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
 }
 
 .wrrcm-mentor-card p {
-  color: #b0b8cc;
-  font-size: 14px;
-  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
 }
 
-@media(max-width:768px){
-  .wrrcm-mentors { 
-    padding: 60px 30px; 
+@media (max-width: 768px) {
+  .wrrcm-mentors {
+    padding: var(--space-16) var(--space-6);
   }
-  .wrrcm-mentors h2 { 
-    font-size: 32px; 
+
+  .wrrcm-mentors h2 {
+    font-size: var(--font-size-3xl);
   }
 }

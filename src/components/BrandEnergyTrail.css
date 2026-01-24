@@ -1,0 +1,76 @@
+/**
+ * Brand Energy Trail - Styles
+ */
+
+.brand-energy-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9990;
+    /* Below overlays (10000) but above content */
+    overflow: hidden;
+}
+
+/* ===== ORB ===== */
+
+.energy-orb {
+    position: absolute;
+    width: 0;
+    /* Positioned by transform center */
+    height: 0;
+    will-change: transform;
+    z-index: 2;
+}
+
+.orb-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+}
+
+.orb-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+    mix-blend-mode: screen;
+}
+
+/* Orb Trail effect (CSS motion blur hint) */
+.energy-orb::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 2px;
+    background: rgba(14, 165, 233, 0.5);
+    transform: translate(-50%, -50%) translateX(-15px);
+    filter: blur(2px);
+    z-index: -1;
+}
+
+/* ===== PARTICLES ===== */
+
+.gold-star-particle {
+    position: absolute;
+    color: #FFD700;
+    /* Gold */
+    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.6));
+    will-change: transform, opacity;
+    z-index: 1;
+}

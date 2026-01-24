@@ -1,9 +1,12 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import './SuccessStories.css';
 
 function SuccessStories() {
   const gridRef = useRef(null);
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
 
   const successImages = [
     { src: '/assets/1.jpeg', alt: 'Success Story 1' },
@@ -47,26 +50,29 @@ function SuccessStories() {
   }, []);
 
   return (
-    <section className="success-stories" id="success-stories">
-      <div className="success-stories-header">
+    <section ref={sectionRef} className="success-stories section-parallax" id="success-stories">
+      <div
+        ref={headerRef}
+        className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
+      >
         <h2>Competition Success Stories</h2>
         <p>Our students compete and win at international robotics competitions</p>
       </div>
 
       <div className="success-stories-content">
-        <div className="success-stories-intro">
+        <div className={`success-stories-intro card-premium glass-premium scroll-reveal stagger-1 ${sectionVisible ? 'visible' : ''}`}>
           <div className="prestige-badge">PRESTIGIOUS RECOGNITION</div>
           <h3>Student Honored by Deputy Chief Minister of Tamil Nadu</h3>
           <p>Mr. Yogesh Poornachandran receives prestigious award from the Deputy Chief Minister of Tamil Nadu, recognizing excellence in robotics and academic achievement</p>
         </div>
 
-        <div className="success-stories-intro">
+        <div className={`success-stories-intro card-premium glass-premium scroll-reveal stagger-2 ${sectionVisible ? 'visible' : ''}`}>
           <div className="prestige-badge">PRESTIGIOUS RECOGNITION</div>
           <h3>Student Honored by Chief Minister of Puducherry</h3>
           <p>Mr. Yogesh Poornachandran receives prestigious award from the Chief Minister of Puducherry, recognizing excellence in robotics and academic achievement</p>
         </div>
 
-        <div className="success-stories-intro">
+        <div className={`success-stories-intro card-premium glass-premium scroll-reveal stagger-3 ${sectionVisible ? 'visible' : ''}`}>
           <div className="prestige-badge">PRESTIGIOUS RECOGNITION</div>
           <h3>Student Honored by Dindigul District Collector</h3>
           <p>Mr. Yogesh Poornachandran receives prestigious award from the District Collector of Dindigul, Tamil Nadu, recognizing excellence in robotics and academic achievement</p>
@@ -74,7 +80,10 @@ function SuccessStories() {
 
         <div className="success-image-grid" ref={gridRef}>
           {successImages.map((image, index) => (
-            <div key={index} className="success-image-card">
+            <div
+              key={index}
+              className={`success-image-card card-premium scroll-scale stagger-${index + 1} ${sectionVisible ? 'visible' : ''}`}
+            >
               <div className="success-image-wrapper">
                 <img src={image.src} alt={image.alt} className="success-image" />
               </div>
@@ -87,3 +96,4 @@ function SuccessStories() {
 }
 
 export default SuccessStories;
+

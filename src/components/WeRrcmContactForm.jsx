@@ -1,13 +1,20 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useMagneticButton } from '../hooks/useMagneticButton';
 import './WeRrcmContactForm.css';
 
-
 function WeRrcmContactForm() {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
+  const submitBtnRef = useMagneticButton({ strength: 10, radius: 60 });
 
   return (
-    <section className="robo-contact-section" id="contact">
+    <section ref={sectionRef} className="robo-contact-section section-parallax" id="contact">
 
       {/* HEADER */}
-      <div className="robo-contact-header">
+      <div
+        ref={headerRef}
+        className={`robo-contact-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
+      >
         <h1>
           Join <span>ROBOAIQ</span>
         </h1>
@@ -19,10 +26,10 @@ function WeRrcmContactForm() {
       <div className="robo-contact-grid">
 
         {/* LEFT SIDE */}
-        <div className="robo-left">
+        <div className={`robo-left scroll-slide-left ${sectionVisible ? 'visible' : ''}`}>
 
           {/* CONTACT INFO */}
-          <div className="contact-card">
+          <div className="contact-card card-premium glass-premium">
             <div className="icon-box">
               <svg viewBox="0 0 24 24">
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2
@@ -42,7 +49,7 @@ function WeRrcmContactForm() {
             </div>
           </div>
 
-          <div className="contact-card">
+          <div className="contact-card card-premium glass-premium">
             <div className="icon-box">
               <svg viewBox="0 0 24 24">
                 <path d="M4 4h16v16H4z" fill="none" />
@@ -55,7 +62,7 @@ function WeRrcmContactForm() {
             </div>
           </div>
 
-          <div className="contact-card">
+          <div className="contact-card card-premium glass-premium">
             <div className="icon-box">
               <svg viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9
@@ -81,7 +88,7 @@ function WeRrcmContactForm() {
         </div>
 
         {/* CENTER FORM */}
-        <div className="robo-form-card">
+        <div className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
           <h2>Register Your Interest</h2>
           <p className="subtitle">
             Start building intelligent systems with real-world impact
@@ -93,7 +100,13 @@ function WeRrcmContactForm() {
             <input type="email" placeholder="Email Address" required />
             <input type="tel" placeholder="Phone Number" required />
             <textarea rows="4" placeholder="Tell us about your interest" />
-            <button type="submit">Submit Enquiry</button>
+            <button
+              ref={submitBtnRef}
+              type="submit"
+              className="btn-premium btn-magnetic"
+            >
+              Submit Enquiry
+            </button>
           </form>
         </div>
 
@@ -105,3 +118,4 @@ function WeRrcmContactForm() {
 }
 
 export default WeRrcmContactForm;
+

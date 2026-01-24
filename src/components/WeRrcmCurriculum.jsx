@@ -1,3 +1,4 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import "./WeRrcmCurriculum.css";
 
 const curriculum = [
@@ -34,13 +35,19 @@ const curriculum = [
 ];
 
 function WeRrcmCurriculum() {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
+
   return (
-    <section className="wrrcm-curriculum" id="programs">
+    <section ref={sectionRef} className="wrrcm-curriculum section-parallax" id="programs">
       {/* Background effects */}
       <div className="curriculum-glow" />
 
       <div className="curriculum-container">
-        <div className="curriculum-header">
+        <div
+          ref={headerRef}
+          className={`curriculum-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
+        >
           <h2>Robotics Programme Curriculum</h2>
           <p>
             A structured progression from foundational engineering concepts
@@ -51,7 +58,10 @@ function WeRrcmCurriculum() {
         <div className="curriculum-network">
           <div className="curriculum-grid">
             {curriculum.map((item, index) => (
-              <div className="curriculum-card" key={index}>
+              <div
+                className={`curriculum-card card-premium glass-premium scroll-reveal stagger-${index + 1} ${sectionVisible ? 'visible' : ''}`}
+                key={index}
+              >
                 <div className="card-index">{item.step}</div>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -65,3 +75,4 @@ function WeRrcmCurriculum() {
 }
 
 export default WeRrcmCurriculum;
+

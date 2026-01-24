@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
@@ -8,7 +8,7 @@ function Navbar() {
       <div className="navbar-container">
 
         {/* Logo */}
-        <div className="logo">
+        <div className="logo" id="brand-logo-target">
           <div className="logo-text">Robo<span>Ai</span>Q</div>
           <div className="logo-subtext">Intelligent Robotics</div>
         </div>

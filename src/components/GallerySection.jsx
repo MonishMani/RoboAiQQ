@@ -1,8 +1,12 @@
 import React from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import CircularGallery from './CircularGallery';
 import './GallerySection.css';
 
 function GallerySection() {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
+
   const galleryItems = [
     {
       image: '/images/students_action_01.jpg',
@@ -43,8 +47,11 @@ function GallerySection() {
   ];
 
   return (
-    <section className="gallery-section" id="student-photos">
-      <div className="gallery-header">
+    <section ref={sectionRef} className="gallery-section section-parallax" id="student-photos">
+      <div
+        ref={headerRef}
+        className={`gallery-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
+      >
         <h2>Student Robotics in Action</h2>
         <p>
           See our students build, program, and compete with their robots. Experience the
@@ -52,7 +59,7 @@ function GallerySection() {
         </p>
       </div>
 
-      <div className="gallery-container">
+      <div className={`gallery-container scroll-scale ${sectionVisible ? 'visible' : ''}`}>
         <CircularGallery
           items={galleryItems}
           bend={2}
@@ -70,3 +77,4 @@ function GallerySection() {
 }
 
 export default GallerySection;
+

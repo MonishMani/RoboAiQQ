@@ -1,7 +1,11 @@
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import Particles from './Particles';
 import "./WeRrcmJourney.css";
 
 export default function WeRrcmJourney() {
+  const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
+  const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
+
   const checkpoints = [
     { id: 1, title: "Electronics Basics", desc: "Circuits, components & fundamentals", side: "left" },
     { id: 2, title: "Sensors & Coding", desc: "Arduino & sensor intelligence", side: "right" },
@@ -12,7 +16,7 @@ export default function WeRrcmJourney() {
   ];
 
   return (
-    <section className="neural-journey">
+    <section ref={sectionRef} className="neural-journey section-parallax">
       <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, zIndex: 1 }}>
         <Particles
           particleColors={['#ffffff', '#ffffff']}
@@ -26,11 +30,16 @@ export default function WeRrcmJourney() {
         />
       </div>
 
-      <h2 className="journey-title">Your Robotics Journey</h2>
+      <h2
+        ref={titleRef}
+        className={`journey-title scroll-reveal ${titleVisible ? 'visible' : ''}`}
+      >
+        Your Robotics Journey
+      </h2>
 
       <div className="neural-system">
         {/* CENTRAL CORE */}
-        <div className="neural-core">
+        <div className={`neural-core glass-premium ${sectionVisible ? 'visible' : ''}`}>
           <div className="core-ring" />
           <span>RoboAiQ</span>
         </div>
@@ -40,10 +49,14 @@ export default function WeRrcmJourney() {
 
         {/* CHECKPOINTS */}
         {checkpoints.map((cp, index) => (
-          <div key={cp.id} className={`neural-node ${cp.side}`} style={{ top: `${15 + index * 12}%` }}>
+          <div
+            key={cp.id}
+            className={`neural-node ${cp.side} scroll-reveal stagger-${index + 1} ${sectionVisible ? 'visible' : ''}`}
+            style={{ top: `${15 + index * 12}%` }}
+          >
             <div className="node-dot">{cp.id}</div>
             <div className="node-connector" />
-            <div className="node-content">
+            <div className="node-content card-premium glass-premium">
               <h4>{cp.title}</h4>
               <p>{cp.desc}</p>
             </div>
@@ -53,3 +66,4 @@ export default function WeRrcmJourney() {
     </section>
   );
 }
+

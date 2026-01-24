@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 9999;
-    background: #000;
+    background: #fff;
     opacity: 1;
     transition: opacity 0.8s ease-in-out;
 }
@@ -21,6 +21,21 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Watermark Mask - Hides Video Watermark */
+.intro-video-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 80px;
+    background: radial-gradient(circle at bottom right, #fff 30%, transparent 100%);
+    z-index: 100;
+    pointer-events: none;
+    filter: blur(10px);
+    border-radius: 30px 0 0 0;
 }
 
 /* Optional Blend Overlay */

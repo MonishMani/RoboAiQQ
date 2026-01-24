@@ -23,9 +23,9 @@ function Navbar() {
             <span className="text">About</span>
           </a>
 
-          <a href="/#programs" className="nav-item">
+          <Link to="/programs" className="nav-item">
             <span className="text">Programs</span>
-          </a>
+          </Link>
 
           <Link to="/robotics-kit" className="nav-item">
             <span className="text">Robotics Kit</span>

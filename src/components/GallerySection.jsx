@@ -63,9 +63,9 @@ function GallerySection() {
         <CircularGallery
           items={galleryItems}
           bend={2}
-          textColor="#ffffff"
+          textColor="#2553EB"
           borderRadius={0.08}
-          font="bold 18px Figtree"
+          font="bold 20px 'Orbitron', sans-serif"
           scrollSpeed={1.3}
           scrollEase={0.05}
           autoScroll={true}

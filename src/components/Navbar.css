@@ -49,8 +49,10 @@
 
 /* Logo */
 .logo {
-  font-size: var(--font-size-xl);
-  font-weight: var(--font-weight-bold);
+  font-size: 2rem;
+  /* Significantly enlarged */
+  font-weight: 800;
+  /* Extra Bold */
   color: var(--color-text-primary);
   margin-right: auto;
   display: flex;

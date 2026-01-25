@@ -55,7 +55,7 @@ function Footer() {
                             <p><strong>For Sales Enquires:</strong> <a href="mailto:sales@roboaiq.in" className="link-animated">sales@roboaiq.in</a></p>
                             <p><strong>For Partnerships:</strong> <a href="mailto:partnership@roboaiq.in" className="link-animated">partnership@roboaiq.in</a></p>
                             <p><strong>For Job Enquiries:</strong> <a href="mailto:jobs@roboaiq.in" className="link-animated">jobs@roboaiq.in</a></p>
-                            <p className="footer-phone">+91 98765 43210</p>
+                            <p className="footer-phone">+91 99624 99556</p>
                         </div>
                     </div>
                 </div>

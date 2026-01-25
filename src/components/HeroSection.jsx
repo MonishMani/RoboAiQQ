@@ -48,13 +48,12 @@ function HeroSection() {
             <span className="eyebrow">NEXT GENERATION EDUCATION</span>
 
             <h1>
-              Transform <span>Your</span> Future<br />
+              Children, Transform <span>Your</span> Future<br />
               With Robotics
             </h1>
 
             <p className="subtitle">
-              Empowering students with world-class robotics education, cutting-edge
-              technology, and hands-on experience that prepares them for tomorrow's challenges.
+              Parents, Empower your children with world class Robotics and AI Education. Hands on experience, State of the Art Robotics Lab, to learn and play with Robots for Future Career
             </p>
 
             <div className="cta">

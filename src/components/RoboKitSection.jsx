@@ -19,8 +19,7 @@ export default function RoboKitSection() {
 
         {/* IMAGE */}
         <div className="kit-image">
-          <img src="/robokit.png" alt="RoboAIQ Robotics Kit" />
-          <div className="kit-image-badge">₹15,000+ VALUE</div>
+          <img src="https://images.unsplash.com/photo-1555431127-d2abaf5273be?w=800&auto=format&fit=crop&q=60" alt="Arduino Uno Board" />
         </div>
 
         {/* CONTENT */}
@@ -52,11 +51,6 @@ export default function RoboKitSection() {
               <strong>Yours to Keep</strong>
               <span>Learn, build & experiment anytime</span>
             </div>
-          </div>
-
-          {/* FINAL BADGE */}
-          <div className="kit-badge">
-            Included at No Extra Cost · Worth ₹15,000+
           </div>
         </div>
 

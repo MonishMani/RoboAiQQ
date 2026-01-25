@@ -111,25 +111,23 @@
 
 /* Hero Headings */
 .hero h1 {
-  font-size: var(--font-size-6xl);
-  line-height: var(--line-height-tight);
-  font-weight: var(--font-weight-extrabold);
+  font-size: 3.2rem;
+  line-height: 1.1;
+  font-weight: 700;
   color: var(--color-text-primary);
   margin-bottom: var(--space-6);
   position: relative;
   z-index: 10;
-  letter-spacing: var(--letter-spacing-tighter);
-}
-
-position: relative;
+  letter-spacing: -0.02em;
 }
 
 .subtitle {
   max-width: 100%;
   color: var(--color-text-tertiary);
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-6);
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin-bottom: var(--space-8);
+  /* Increased spacing */
   position: relative;
   z-index: 10;
 }

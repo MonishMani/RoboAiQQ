@@ -39,8 +39,10 @@
 /* Container */
 .navbar-container {
   width: 100%;
+  max-width: var(--container-max-width);
   height: 100%;
-  padding: 0 var(--space-8);
+  padding: 0 var(--container-padding-desktop);
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -123,12 +125,13 @@
 }
 
 .nav-item:hover {
-  color: var(--color-primary-700);
-  background: var(--color-primary-50);
+  color: var(--color-accent-orange);
+  background: rgba(255, 184, 77, 0.05);
 }
 
 .nav-item:hover::after {
   transform: translateX(-50%) scaleX(1);
+  background: var(--color-accent-orange);
 }
 
 /* Icon */
@@ -139,23 +142,27 @@
 }
 
 .nav-item:hover .icon {
-  color: var(--color-primary-700);
-  transform: scale(1.1);
+  color: var(--color-accent-orange);
+  transform: scale(1.1) rotate(5deg);
+  animation: micro-float 2s ease-in-out infinite;
 }
 
 /* Register Button */
 .nav-register {
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-full);
-  background: var(--gradient-primary);
+  background: var(--color-cta-red);
   color: var(--color-text-inverse);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-extrabold);
   border: none;
-  box-shadow: var(--glow-blue-sm);
+  box-shadow: 0 4px 15px rgba(255, 30, 30, 0.3);
   transition: all var(--transition-base);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  animation: glow-pulse-red 3s infinite;
 }
 
 .nav-register::before {
@@ -172,8 +179,9 @@
 }
 
 .nav-register:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--glow-blue-md);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 30, 30, 0.5);
+  letter-spacing: var(--letter-spacing-wider);
 }
 
 .nav-register:hover::before {

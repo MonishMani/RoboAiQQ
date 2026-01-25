@@ -3,7 +3,6 @@
    =============================== */
 
 .success-stories {
-  padding: 6rem 2rem;
   background: #f8fbff;
   text-align: center;
 }
@@ -21,7 +20,7 @@
 .success-stories-header p {
   max-width: 600px;
   margin: 0 auto;
-  color: #64748b;
+  color: var(--color-text-tertiary);
   font-size: 1.05rem;
 }
 
@@ -42,6 +41,8 @@
   background: #ffffff;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
   cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-base);
 }
 
 /* Wrapper */
@@ -66,6 +67,11 @@
   transform: scale(1.08);
 }
 
+.success-image-card:hover {
+  border-color: var(--color-accent-orange);
+  box-shadow: 0 20px 50px rgba(255, 184, 77, 0.2);
+}
+
 /* ===============================
    OVERLAY
    =============================== */
@@ -73,12 +79,10 @@
 .success-image-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(2, 6, 23, 0.75),
-    rgba(2, 6, 23, 0.25),
-    rgba(2, 6, 23, 0.05)
-  );
+  background: linear-gradient(to top,
+      rgba(2, 6, 23, 0.75),
+      rgba(2, 6, 23, 0.25),
+      rgba(2, 6, 23, 0.05));
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -94,9 +98,10 @@
 /* Overlay Text */
 .success-image-overlay h4 {
   font-size: 1.1rem;
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 800;
+  color: var(--color-accent-orange);
   margin-bottom: 0.35rem;
+  text-transform: uppercase;
 }
 
 .success-image-overlay p {
@@ -127,11 +132,10 @@
   }
 
   .success-image-overlay {
-    opacity: 1; /* Always visible on mobile */
-    background: linear-gradient(
-      to top,
-      rgba(2, 6, 23, 0.7),
-      rgba(2, 6, 23, 0.2)
-    );
+    opacity: 1;
+    /* Always visible on mobile */
+    background: linear-gradient(to top,
+        rgba(2, 6, 23, 0.7),
+        rgba(2, 6, 23, 0.2));
   }
 }

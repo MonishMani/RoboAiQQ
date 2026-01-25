@@ -105,7 +105,7 @@ function WeRrcmMentors() {
               <h3>{mentor.title}</h3>
               <p className="mentor-subtitle">{mentor.subtitle}</p>
               <p className="mentor-handle">📍 {mentor.handle}</p>
-              
+
               <div className="mentor-expertise">
                 {mentor.expertise.map((exp, idx) => (
                   <div key={idx} className="expertise-item">
@@ -126,55 +126,56 @@ function WeRrcmMentors() {
 
   return (
     <section className="wrrcm-mentors">
-      {/* Badge */}
-      <span className="mentors-badge">EXPERT MENTORS</span>
+      <div className="container">
+        {/* Badge */}
+        <span className="mentors-badge">EXPERT MENTORS</span>
 
-      {/* Heading */}
-      <h2>Learn from Industry-Leading Robotics Mentors</h2>
+        {/* Heading */}
+        <h2>Learn from Industry-Leading Robotics Mentors</h2>
 
-      {/* Subtitle */}
-      <p className="mentors-subtitle">
-        Our mentors are engineers, researchers, and educators who bring real-world
-        robotics experience into every learning session.
-      </p>
+        {/* Subtitle */}
+        <p className="mentors-subtitle">
+          Our mentors are engineers, researchers, and educators who bring real-world
+          robotics experience into every learning session.
+        </p>
 
-      {/* Trust Metrics */}
-      <div className="mentors-stats">
-        <div>
-          <strong>10+</strong>
-          <span>Expert Mentors</span>
+        {/* Trust Metrics */}
+        <div className="mentors-stats">
+          <div>
+            <strong>10+</strong>
+            <span>Expert Mentors</span>
+          </div>
+          <div>
+            <strong>8+ Years</strong>
+            <span>Avg. Experience</span>
+          </div>
+          <div>
+            <strong>Global</strong>
+            <span>Industry Exposure</span>
+          </div>
+          <div>
+            <strong>1000+</strong>
+            <span>Students Mentored</span>
+          </div>
         </div>
-        <div>
-          <strong>8+ Years</strong>
-          <span>Avg. Experience</span>
-        </div>
-        <div>
-          <strong>Global</strong>
-          <span>Industry Exposure</span>
-        </div>
-        <div>
-          <strong>1000+</strong>
-          <span>Students Mentored</span>
-        </div>
-      </div>
 
-      <h3>Meet Our Expert Mentors</h3>
-      <p className="mentors-subtitle">Learn from industry professionals with real-world experience</p>
-      {/* Unique Mentor Grid */}
-      <div className="mentors-grid-container">
+        <h3>Meet Our Expert Mentors</h3>
+        <p className="mentors-subtitle">Learn from industry professionals with real-world experience</p>
 
-
-        {/* Top 2 Cards */}
-        <div className="mentors-grid-top">
-          {topMentors.map((mentor, index) => (
-            <MentorCard key={index} mentor={mentor} />
-          ))}
-        </div>
-        <h4>Meet Our Expert Instructors</h4>
-        <div className="mentors-grid-bottom">
-          {bottomMentors.map((mentor, index) => (
-            <MentorCard key={index} mentor={mentor} />
-          ))}
+        {/* Unique Mentor Grid */}
+        <div className="mentors-grid-container">
+          {/* Top 2 Cards */}
+          <div className="mentors-grid-top">
+            {topMentors.map((mentor, index) => (
+              <MentorCard key={index} mentor={mentor} />
+            ))}
+          </div>
+          <h4>Meet Our Expert Instructors</h4>
+          <div className="mentors-grid-bottom">
+            {bottomMentors.map((mentor, index) => (
+              <MentorCard key={index} mentor={mentor} />
+            ))}
+          </div>
         </div>
       </div>
     </section>

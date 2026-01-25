@@ -50,7 +50,7 @@ function WeRrcmCurriculum() {
       {/* Background effects */}
       <div className="curriculum-glow" />
 
-      <div className="curriculum-container">
+      <div className="container">
         <div
           ref={headerRef}
           className={`curriculum-header scroll-reveal ${headerVisible ? 'visible' : ''}`}

@@ -1,4 +1,5 @@
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { Timeline } from "./ui/timeline";
 import "./WeRrcmJourney.css";
 
 export default function WeRrcmJourney() {
@@ -40,6 +41,89 @@ export default function WeRrcmJourney() {
       desc: "Advanced challenges, teamwork, and performance tuning",
       left: "92%",
       position: "bottom"
+    }
+  ];
+
+  const timelineData = [
+    {
+      title: "Foundations",
+      content: (
+        <div>
+          <p className="timeline-text">
+            Master the fundamentals of robotics with hands-on electronics basics, component understanding, and develop a problem-solving mindset.
+          </p>
+          <ul className="timeline-list">
+            <li>✓ Electronics fundamentals</li>
+            <li>✓ Component identification</li>
+            <li>✓ Circuit basics</li>
+            <li>✓ Problem-solving techniques</li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      title: "Sensors & Programming",
+      content: (
+        <div>
+          <p className="timeline-text">
+            Learn Arduino programming and sensor integration to build intelligent systems that can perceive and respond to their environment.
+          </p>
+          <ul className="timeline-list">
+            <li>✓ Arduino programming</li>
+            <li>✓ Sensor integration</li>
+            <li>✓ Logic building</li>
+            <li>✓ Data processing</li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      title: "Motors & Motion",
+      content: (
+        <div>
+          <p className="timeline-text">
+            Control motion with motors and actuators, understanding mechanics and real-world movement systems for dynamic robotics.
+          </p>
+          <ul className="timeline-list">
+            <li>✓ Motor control</li>
+            <li>✓ Mechanical systems</li>
+            <li>✓ Movement optimization</li>
+            <li>✓ Power management</li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      title: "Robot Assembly",
+      content: (
+        <div>
+          <p className="timeline-text">
+            Bring it all together with end-to-end robot assembly, comprehensive testing, and performance optimization for real-world applications.
+          </p>
+          <ul className="timeline-list">
+            <li>✓ Full assembly</li>
+            <li>✓ System integration</li>
+            <li>✓ Testing protocols</li>
+            <li>✓ Performance tuning</li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      title: "Competition Ready",
+      content: (
+        <div>
+          <p className="timeline-text">
+            Advance to competition-level challenges, develop teamwork skills, and fine-tune your robot for peak performance in real competitions.
+          </p>
+          <ul className="timeline-list">
+            <li>✓ Advanced challenges</li>
+            <li>✓ Team collaboration</li>
+            <li>✓ Competition strategies</li>
+            <li>✓ Performance excellence</li>
+          </ul>
+        </div>
+      )
     }
   ];
 
@@ -128,6 +212,12 @@ export default function WeRrcmJourney() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* TIMELINE SECTION */}
+      <div className="timeline-section">
+        <h3 className="timeline-section-title">Detailed Learning Path</h3>
+        <Timeline data={timelineData} />
       </div>
     </section>
   );

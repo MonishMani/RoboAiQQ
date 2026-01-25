@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import MagicBento from './MagicBento';
+import { ImageAutoSlider } from './ui/image-auto-slider';
 import './SuccessStories.css';
 
 function SuccessStories() {
@@ -48,38 +48,6 @@ function SuccessStories() {
     }
   ];
 
-  useEffect(() => {
-    if (!gridRef.current) return;
-
-    const cards = gridRef.current.querySelectorAll('.success-image-card');
-
-    cards.forEach((card) => {
-      const handleMouseEnter = () => {
-        gsap.to(card, {
-          y: -10,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      };
-
-      const handleMouseLeave = () => {
-        gsap.to(card, {
-          y: 0,
-          duration: 0.3,
-          ease: 'power2.out'
-        });
-      };
-
-      card.addEventListener('mouseenter', handleMouseEnter);
-      card.addEventListener('mouseleave', handleMouseLeave);
-
-      return () => {
-        card.removeEventListener('mouseenter', handleMouseEnter);
-        card.removeEventListener('mouseleave', handleMouseLeave);
-      };
-    });
-  }, []);
-
   return (
     <section
       ref={sectionRef}
@@ -100,23 +68,8 @@ function SuccessStories() {
         </div>
 
         <div className="success-stories-content">
-          {/* Magic Bento */}
-          <div className="magic-bento-wrapper">
-            <MagicBento
-              textAutoHide={true}
-              enableStars={false}
-              enableSpotlight={false}
-              enableBorderGlow={true}
-              enableTilt={false}
-              enableMagnetism={false}
-              clickEffect={false}
-              spotlightRadius={50}
-              particleCount={12}
-              glowColor="132, 0, 255"
-              disableAnimations={false}
-              cardData={successImages}
-            />
-          </div>
+          {/* Image Auto Slider */}
+          <ImageAutoSlider images={successImages} />
         </div>
       </div>
     </section>

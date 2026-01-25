@@ -5,6 +5,7 @@
 .success-stories {
   background: #f8fbff;
   text-align: center;
+  padding: 4rem 0;
 }
 
 .success-stories-header {
@@ -25,97 +26,14 @@
 }
 
 /* ===============================
-   IMAGE GRID
+   SLIDER CONTENT
    =============================== */
 
-.success-image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.75rem;
-  margin-bottom: 4rem;
-}
-
-.success-image-card {
-  border-radius: 1.25rem;
-  overflow: hidden;
-  background: #ffffff;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all var(--transition-base);
-}
-
-/* Wrapper */
-.success-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  border-radius: 1.25rem;
-}
-
-/* Image */
-.success-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-/* Hover Zoom */
-.success-image-card:hover .success-image {
-  transform: scale(1.08);
-}
-
-.success-image-card:hover {
-  border-color: var(--color-accent-orange);
-  box-shadow: 0 20px 50px rgba(255, 184, 77, 0.2);
-}
-
-/* ===============================
-   OVERLAY
-   =============================== */
-
-.success-image-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top,
-      rgba(2, 6, 23, 0.75),
-      rgba(2, 6, 23, 0.25),
-      rgba(2, 6, 23, 0.05));
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 1.5rem;
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
-.success-image-card:hover .success-image-overlay {
-  opacity: 1;
-}
-
-/* Overlay Text */
-.success-image-overlay h4 {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--color-accent-orange);
-  margin-bottom: 0.35rem;
-  text-transform: uppercase;
-}
-
-.success-image-overlay p {
-  font-size: 0.9rem;
-  color: #e5e7eb;
-  line-height: 1.4;
-}
-
-/* ===============================
-   MAGIC BENTO WRAPPER
-   =============================== */
-
-.magic-bento-wrapper {
+.success-stories-content {
   margin-top: 3rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 /* ===============================
@@ -123,19 +41,15 @@
    =============================== */
 
 @media (max-width: 768px) {
+  .success-stories {
+    padding: 3rem 0;
+  }
+
   .success-stories-header h2 {
     font-size: 2.1rem;
   }
 
-  .success-image-wrapper {
-    height: 240px;
-  }
-
-  .success-image-overlay {
-    opacity: 1;
-    /* Always visible on mobile */
-    background: linear-gradient(to top,
-        rgba(2, 6, 23, 0.7),
-        rgba(2, 6, 23, 0.2));
+  .success-stories-header {
+    margin-bottom: 2.5rem;
   }
 }

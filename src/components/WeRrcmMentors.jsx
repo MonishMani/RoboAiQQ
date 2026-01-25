@@ -22,7 +22,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Robotics Mentor', desc: 'Competition preparation' },
         { icon: '●', title: 'Mathematics Expert', desc: 'Applied mathematics' },
-        { icon: '●', title: 'Competition Coach', desc: 'National & international' }
+       
       ]
     },
     {
@@ -36,7 +36,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Robotics Training', desc: 'Hands-on robotics projects' },
         { icon: '●', title: 'Programming Expert', desc: 'Arduino & embedded systems' },
-        { icon: '●', title: 'Project Mentor', desc: 'Innovation & design thinking' }
+   
       ]
     },
     {
@@ -50,7 +50,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Lead Robotics Instructor', desc: '15+ years in robotics education' },
         { icon: '●', title: 'Research Mentor', desc: 'Computer vision & AI systems' },
-        { icon: '●', title: 'Global Educator', desc: 'International robotics exposure' }
+       
       ]
     },
     {
@@ -64,7 +64,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Arduino Programming Expert', desc: '10+ years teaching experience' },
         { icon: '●', title: 'Competition Mentor', desc: 'International competition mentor' },
-        { icon: '●', title: 'Systems Integration', desc: 'MTech in Robotics' }
+      
       ]
     },
     {
@@ -78,7 +78,7 @@ function WeRrcmMentors() {
       expertise: [
         { icon: '●', title: 'Competition Coach', desc: 'Coached 50+ winning teams' },
         { icon: '●', title: 'Electronics Specialist', desc: '8 years competition experience' },
-        { icon: '●', title: 'Industry Expert', desc: 'B.E. in Electronics' }
+
       ]
     }
   ];

@@ -14,6 +14,7 @@ html {
   width: 100%;
   height: 100%;
   scroll-behavior: smooth;
+  scroll-padding-top: 100px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -95,10 +96,47 @@ h6 {
 }
 
 p {
-  color: var(--color-text-tertiary);
+  color: #555555;
+  /* Medium gray for regular text */
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--space-4);
   max-width: 900px;
+}
+
+/* Color Classes for Keywords and Subtexts */
+.text-red {
+  color: #FF1E1E !important;
+  /* Bright red for important keywords */
+  font-weight: 600;
+}
+
+.text-blue {
+  color: #2E7BAE !important;
+  /* Professional blue for subtexts */
+  font-weight: 500;
+}
+
+.text-black {
+  color: #000000 !important;
+  /* Black for main content */
+}
+
+/* Span styling for highlights in paragraphs */
+p span {
+  font-weight: 600;
+}
+
+p .keyword {
+  color: #FF1E1E;
+  /* Red keywords */
+  font-weight: 700;
+}
+
+p .subtext,
+p .description {
+  color: #2E7BAE;
+  /* Blue subtexts */
+  font-weight: 500;
 }
 
 a {

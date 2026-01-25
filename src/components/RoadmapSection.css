@@ -40,10 +40,22 @@
   font-weight: 600;
 }
 
+.step h3 span {
+  color: #FF6B35;
+  /* Orange-red keywords */
+  font-weight: 700;
+}
+
 .step p {
   color: #bcbcbc;
   line-height: 1.7;
   font-size: 14px;
+}
+
+.step p .subtext {
+  color: #87CEEB;
+  /* Light blue for subtexts */
+  font-weight: 500;
 }
 
 @media(max-width:768px){

@@ -16,7 +16,7 @@ function WeRrcmContactForm() {
           className={`robo-contact-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
         >
           <h1>
-            Join <span>ROBOAIQ</span>
+            Join <span className='contact-head'>ROBOAIQ</span>
           </h1>
           <p>
             Where autonomous systems, artificial intelligence, and human ambition converge.
@@ -42,7 +42,7 @@ function WeRrcmContactForm() {
                 </svg>
               </div>
               <div>
-                <span>Phone</span>
+                <span style={{ color: '#FF1E1E' }}>Phone</span>
                 <p>8971252285</p>
               </div>
             </div>
@@ -55,7 +55,7 @@ function WeRrcmContactForm() {
                 </svg>
               </div>
               <div>
-                <span>Email</span>
+                <span style={{ color: '#FF1E1E' }}>Email</span>
                 <p>sales@roboaiq.com</p>
               </div>
             </div>
@@ -69,7 +69,7 @@ function WeRrcmContactForm() {
                 </svg>
               </div>
               <div>
-                <span>Location</span>
+                <span style={{ color: '#FF1E1E' }}>Location</span>
                 <p>
                   RoboAiQ Headquarters
                 </p>
@@ -87,7 +87,7 @@ function WeRrcmContactForm() {
 
           {/* CENTER FORM */}
           <div className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
-            <h2>Register Your <span>Interest</span></h2>
+            <h2><span>Register Your Interest</span></h2>
             <p className="subtitle">
               Start building intelligent systems with real-world impact
             </p>

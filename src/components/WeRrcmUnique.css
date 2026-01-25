@@ -6,7 +6,10 @@
   text-align: center;
   min-height: 800px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  /* Changed from hidden to visible */
+  padding: var(--space-20) var(--space-8);
+  /* Added proper padding */
 }
 
 /* Subtle background grid */
@@ -38,13 +41,16 @@
 .unique-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-8);
+  /* Increased gap */
   align-items: center;
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
   position: relative;
   z-index: 10;
+  padding-top: var(--space-8);
+  /* Added top padding */
 }
 
 /* Video Section - Hero Style */
@@ -59,7 +65,10 @@
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
   border: 1px solid var(--color-border-medium);
-  margin: 0 auto;
+  margin: 0 auto var(--space-8);
+  /* Added margin-bottom */
+  z-index: 10;
+  /* Added z-index */
 }
 
 .unique-video {

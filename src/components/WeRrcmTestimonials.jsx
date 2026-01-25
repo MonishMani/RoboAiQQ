@@ -47,8 +47,8 @@ function WeRrcmTestimonials() {
   return (
     <div ref={sectionRef} className={`wrrcm-testimonials-wrapper ${sectionVisible ? 'visible' : ''}`}>
       <TestimonialsSection
-        title="What Our Students Say"
-        description="Hear directly from students and parents who have experienced RoboAIQ’s hands-on robotics education."
+        title={<>What Our <span>Students</span> Say</>}
+        description={<>Hear directly from <span className="subtext">students and parents</span> who have experienced RoboAIQ's hands-on robotics education.</>}
         testimonials={testimonials}
       />
     </div>

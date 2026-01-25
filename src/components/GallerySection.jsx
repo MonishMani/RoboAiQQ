@@ -52,7 +52,7 @@ function GallerySection() {
         ref={headerRef}
         className={`gallery-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
       >
-        <h2>Student Robotics in Action</h2>
+        <h2>Student <span>Robotics</span> in Action</h2>
         <p>
           See our students build, program, and compete with their robots. Experience the
           excitement, teamwork, and innovation that happens in every class!

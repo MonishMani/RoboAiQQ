@@ -254,7 +254,7 @@ const RiaChatbot = () => {
                     {/* Header */}
                     <div className="ria-header">
                         <div className="ria-title">
-                            <h3>Ria — Your Robotics Guide</h3>
+                            <h3>Ria — Your <span>Robotics</span> Guide</h3>
                             <div className="ria-context">
                                 Viewing: <strong>{currentSection.name}</strong>
                             </div>

@@ -9,7 +9,7 @@ function Footer() {
         <footer ref={footerRef} className="footer section-parallax">
             <div className={`footer-content scroll-reveal ${footerVisible ? 'visible' : ''}`}>
                 <div className="footer-section footer-brand">
-                    <h3>ROBOAIQ</h3>
+                    <h3><span>ROBOAIQ</span></h3>
                     <p>Pioneering the next era of autonomous intelligence. Our hardware doesn't just work; it thinks, adapts, and evolves alongside your ambition.</p>
                     <div className="social-icons">
                         <a href="https://www.instagram.com/roboaiq?igsh=MWZkdHRvcHJtbHRzdw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="btn-premium">
@@ -50,7 +50,7 @@ function Footer() {
                 <div className="footer-section footer-headquarters">
                     <h4>Contact Info</h4>
                     <div className="footer-info">
-                        <p>ROBOAIQ </p>
+                        <p><span>ROBOAIQ</span> </p>
                         <div className="footer-contact-group glass-premium">
                             <p><strong>For Sales Enquires:</strong> <a href="mailto:sales@roboaiq.in" className="link-animated">sales@roboaiq.in</a></p>
                             <p><strong>For Partnerships:</strong> <a href="mailto:partnership@roboaiq.in" className="link-animated">partnership@roboaiq.in</a></p>

@@ -39,10 +39,15 @@
 
 .testimonials-header p {
   font-size: 1.1rem;
-  color: var(--color-text-tertiary);
+  color: #020617;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.testimonials-header p .subtext {
+  color: #2E7BAE;
+  font-weight: 500;
 }
 
 .testimonials-marquee {

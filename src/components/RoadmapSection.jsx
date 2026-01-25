@@ -8,20 +8,20 @@ function RoadmapSection() {
 
       <div className="roadmap">
         <div className="step">
-          <h3>01 Electronics Basics</h3>
-          <p>Circuits, breadboards, components</p>
+          <h3>01 <span>Electronics</span> Basics</h3>
+          <p><span className="subtext">Circuits, breadboards, components</span></p>
         </div>
         <div className="step">
-          <h3>02 Sensors & Coding</h3>
-          <p>Arduino programming & sensors</p>
+          <h3>02 <span>Sensors</span> & <span>Coding</span></h3>
+          <p><span className="subtext">Arduino programming & sensors</span></p>
         </div>
         <div className="step">
-          <h3>03 Motors</h3>
-          <p>DC, Servo & mechanical systems</p>
+          <h3>03 <span>Motors</span></h3>
+          <p><span className="subtext">DC, Servo & mechanical systems</span></p>
         </div>
         <div className="step">
-          <h3>04 Robot Build</h3>
-          <p>Fully functional robot</p>
+          <h3>04 <span>Robot</span> Build</h3>
+          <p><span className="subtext">Fully functional robot</span></p>
         </div>
       </div>
     </section>

@@ -12,7 +12,7 @@ export default function Unique() {
           ref={titleRef}
           className={`unique-title scroll-reveal ${titleVisible ? 'visible' : ''}`}
         >
-          What Makes RoboAIQ Unique?
+          What Makes <span>RoboAIQ</span> Unique?
         </h2>
 
         <div className={`unique-layout ${sectionVisible ? 'visible' : ''}`}>

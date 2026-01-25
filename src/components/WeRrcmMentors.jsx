@@ -131,7 +131,7 @@ function WeRrcmMentors() {
         <span className="mentors-badge">EXPERT MENTORS</span>
 
         {/* Heading */}
-        <h2>Learn from Industry-Leading Robotics Mentors</h2>
+        <h2>Learn from Industry-Leading <span>Robotics Mentors</span></h2>
 
         {/* Subtitle */}
         <p className="mentors-subtitle">
@@ -159,7 +159,7 @@ function WeRrcmMentors() {
           </div>
         </div>
 
-        <h3>Meet Our Expert Mentors</h3>
+        <h3>Meet Our <span>Expert Mentors</span></h3>
         <p className="mentors-subtitle">Learn from industry professionals with real-world experience</p>
 
         {/* Unique Mentor Grid */}

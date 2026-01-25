@@ -54,7 +54,7 @@ export default function WeRrcmJourney() {
             titleVisible ? "visible" : ""
           }`}
         >
-          Your Robotics Learning Journey
+          Your <span>Robotics</span> Learning Journey
         </h2>
         <p>
           A carefully designed, milestone-driven path that transforms curiosity

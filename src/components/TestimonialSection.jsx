@@ -4,7 +4,7 @@ import './TestimonialSection.css';
 function TestimonialSection() {
   return (
     <section className="testimonial-section">
-      <h2>What Our Students Say</h2>
+      <h2>What Our <span>Students</span> Say</h2>
 
       <div className="testimonial">
         <p>

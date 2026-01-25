@@ -7,7 +7,7 @@ export default function RoboKitSection() {
       {/* HEADER */}
       <div className="kit-header">
         <span className="kit-eyebrow">HARDWARE INCLUDED</span>
-        <h2>Industry-Grade Robotics Kit  Included with Your Program</h2>
+        <h2>Industry-Grade <span>Robotics Kit</span> Included with Your Program</h2>
         <p>
           Every RoboAIQ student receives a complete, reusable robotics kit designed
           for hands-on learning, experimentation, and long-term use.
@@ -24,7 +24,7 @@ export default function RoboKitSection() {
 
         {/* CONTENT */}
         <div className="kit-content">
-          <h3>What’s Inside the RoboAIQ Robotics Kit</h3>
+          <h3>What's Inside the <span>RoboAIQ</span> Robotics Kit</h3>
 
           <ul className="kit-list">
             <li>Arduino Uno & ESP32 Microcontrollers</li>

@@ -87,7 +87,7 @@ function WeRrcmContactForm() {
 
           {/* CENTER FORM */}
           <div className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
-            <h2>Register Your Interest</h2>
+            <h2>Register Your <span>Interest</span></h2>
             <p className="subtitle">
               Start building intelligent systems with real-world impact
             </p>

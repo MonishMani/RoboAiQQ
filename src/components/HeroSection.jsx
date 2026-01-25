@@ -48,8 +48,8 @@ function HeroSection() {
             <span className="eyebrow">NEXT GENERATION EDUCATION</span>
 
             <h1>
-              Children, Transform <span>Your</span> Future<br />
-              With Robotics & AI
+              Children, Transform Your Future<br />
+              With <span>Robotics</span> & <span>AI</span>
             </h1>
 
             <p className="subtitle">

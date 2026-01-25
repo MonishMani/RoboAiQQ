@@ -99,7 +99,8 @@
 .eyebrow {
   font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-widest);
-  color: var(--color-text-primary);
+  color: #FF6B35;
+  /* Vibrant Orange-Red */
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-2);
   position: relative;
@@ -107,11 +108,13 @@
   text-transform: uppercase;
   display: inline-block;
   padding: var(--space-2) var(--space-4);
-  background: var(--color-highlight-yellow);
+  background: #FFF4D6;
+  /* Light warm yellow background */
   border-radius: var(--radius-full);
-  border: 1px solid var(--color-soft-orange);
+  border: 1px solid #FFB84D;
+  /* Gold border */
   align-self: flex-start;
-  box-shadow: 0 2px 10px rgba(255, 244, 214, 0.5);
+  box-shadow: 0 2px 10px rgba(255, 184, 77, 0.4);
 }
 
 /* Hero Headings */
@@ -121,7 +124,8 @@
   line-height: 1.2;
   font-weight: 700;
   /* Slightly thicker */
-  color: var(--color-text-primary);
+  color: #000000;
+  /* Black text */
   margin-bottom: var(--space-6);
   /* Kept space between */
   position: relative;
@@ -129,10 +133,17 @@
   letter-spacing: -0.01em;
 }
 
+.hero h1 span {
+  color: #FF1E1E;
+  /* Bright Red for important keywords */
+  font-weight: 800;
+  /* Extra bold for emphasis */
+}
+
 .subtitle {
   max-width: 100%;
-  color: #2F6FAF;
-  /* Deep Education Blue */
+  color: #000000;
+  /* Black text */
   font-size: 1.5rem;
   line-height: 1.6;
   font-weight: 500;
@@ -143,10 +154,10 @@
 }
 
 .subtitle span {
-  color: #FFB84D;
-  /* Soft Accent Gold */
-  font-weight: 500;
-  /* Consistent weight */
+  color: #2E7BAE;
+  /* Blue for subheading/accents */
+  font-weight: 600;
+  /* Slightly bolder for emphasis */
 }
 
 /* CTA Buttons Container */

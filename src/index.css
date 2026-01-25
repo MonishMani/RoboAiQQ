@@ -51,8 +51,22 @@ h6 {
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-primary);
+  color: #000000;
+  /* Black text for all headings */
   margin-bottom: var(--space-4);
+}
+
+/* Red highlight for important keywords in headings */
+h1 span,
+h2 span,
+h3 span,
+h4 span,
+h5 span,
+h6 span {
+  color: #FF1E1E;
+  /* Bright red for keywords */
+  font-weight: 800;
+  /* Extra bold */
 }
 
 h1 {

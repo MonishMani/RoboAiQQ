@@ -92,7 +92,7 @@ function SuccessStories() {
           className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''
             }`}
         >
-          <h2>Competition Success Stories</h2>
+          <h2>Competition <span>Success</span> <span>Stories</span></h2>
           <p>
             Celebrating student excellence through national and international
             recognition

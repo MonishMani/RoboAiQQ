@@ -4,7 +4,7 @@ import './RoadmapSection.css';
 function RoadmapSection() {
   return (
     <section className="roadmap-section">
-      <h2>Your Robotics Journey</h2>
+      <h2>Your <span>Robotics</span> Journey</h2>
 
       <div className="roadmap">
         <div className="step">

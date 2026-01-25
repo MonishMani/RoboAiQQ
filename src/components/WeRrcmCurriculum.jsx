@@ -55,7 +55,7 @@ function WeRrcmCurriculum() {
           ref={headerRef}
           className={`curriculum-header scroll-reveal ${headerVisible ? 'visible' : ''}`}
         >
-          <h2>Robotics Programme Curriculum</h2>
+          <h2><span>Robotics</span> Programme Curriculum</h2>
           <p>
             A structured progression from foundational engineering concepts
             to advanced competitive robotics systems

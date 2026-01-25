@@ -4,9 +4,10 @@
   color: var(--color-text-primary);
   font-family: var(--font-primary);
   text-align: center;
-  min-height: 800px;
   position: relative;
   overflow: hidden;
+  padding: var(--space-8) 0;
+  /* Reduced padding from space-12 to space-8 for tighter look */
 }
 
 /* Subtle background grid */
@@ -38,7 +39,7 @@
 .unique-layout {
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-4);
   align-items: center;
   width: 100%;
   max-width: var(--container-max-width);

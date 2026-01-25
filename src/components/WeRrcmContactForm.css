@@ -3,7 +3,6 @@
 .robo-form-section,
 .robo-contact-section {
   min-height: 100vh;
-  padding: var(--space-32) var(--space-8);
   background: var(--color-bg-secondary);
   color: var(--color-text-primary);
 }
@@ -80,7 +79,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--gradient-primary);
+  background: var(--color-accent-orange);
+  box-shadow: 0 0 10px var(--color-accent-orange);
 }
 
 /* Contact Cards */
@@ -128,12 +128,14 @@
 .icon-box svg {
   width: 20px;
   height: 20px;
-  fill: var(--color-primary-700);
-  transition: fill var(--transition-base);
+  fill: var(--color-accent-orange);
+  transition: all var(--transition-base);
 }
 
 .contact-card:hover .icon-box svg {
   fill: var(--color-text-inverse);
+  transform: rotate(10deg);
+  animation: micro-float 1.5s ease-in-out infinite;
 }
 
 .contact-card span {
@@ -196,8 +198,8 @@ label {
 
 input,
 textarea {
-  background: var(--color-bg-primary);
-  border: var(--input-border);
+  background: var(--color-highlight-yellow);
+  border: 1px solid var(--color-soft-orange);
   border-radius: var(--input-radius);
   padding: var(--input-padding);
   color: var(--color-text-primary);
@@ -206,6 +208,7 @@ textarea {
   outline: none;
   transition: all var(--transition-base);
   height: var(--input-height);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 textarea {
@@ -221,8 +224,9 @@ textarea::placeholder {
 
 input:focus,
 textarea:focus {
-  border: var(--input-border-focus);
-  box-shadow: var(--glow-blue-sm);
+  border-color: var(--color-accent-orange);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(255, 244, 214, 1), 0 0 10px rgba(255, 184, 77, 0.2);
 }
 
 /* Submit Button */
@@ -232,15 +236,18 @@ button[type="submit"],
   height: 56px;
   border-radius: var(--radius-full);
   border: none;
-  background: var(--gradient-primary);
+  background: var(--color-cta-red);
   color: var(--color-text-inverse);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-extrabold);
   cursor: pointer;
   transition: all var(--transition-base);
-  box-shadow: var(--glow-blue-md);
+  box-shadow: 0 4px 15px rgba(255, 30, 30, 0.3);
   position: relative;
   overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  animation: glow-pulse-red 3s infinite;
 }
 
 button[type="submit"]::before,
@@ -259,8 +266,8 @@ button[type="submit"]::before,
 
 button[type="submit"]:hover,
 .robo-form-card button:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--glow-blue-lg);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(255, 30, 30, 0.4), 0 0 15px var(--color-accent-orange);
 }
 
 button[type="submit"]:hover::before,

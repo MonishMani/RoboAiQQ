@@ -228,15 +228,15 @@ const RiaChatbot = () => {
 
                 {/* Chatbot Icon Button - Visible when closed */}
                 {!isOpen && (
-                    <button 
+                    <button
                         className="ria-icon-button"
                         onClick={toggleChat}
                         title="Ask help with Ria"
                     >
-                        💬
+                        <img src="/assets/chatbot/ria_face.png" alt="Ria" />
                     </button>
                 )}
-                
+
                 {isOpen && (
                     <div className="ria-avatar-container">
                         {/* Avatar Image */}

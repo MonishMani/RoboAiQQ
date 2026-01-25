@@ -32,7 +32,7 @@
 
 .kit-header p {
   font-size: 1.05rem;
-  color: #475569;
+  color: var(--color-text-tertiary);
   line-height: 1.6;
 }
 
@@ -124,7 +124,7 @@
 
 .kit-highlights span {
   font-size: 0.85rem;
-  color: #64748b;
+  color: var(--color-text-tertiary);
 }
 
 /* Final Badge */

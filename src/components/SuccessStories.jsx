@@ -86,38 +86,37 @@ function SuccessStories() {
       className="success-stories section-parallax"
       id="success-stories"
     >
-      <div
-        ref={headerRef}
-        className={`success-stories-header scroll-reveal ${
-          headerVisible ? 'visible' : ''
-        }`}
-      >
-        <h2>Competition Success Stories</h2>
-        <p>
-          Celebrating student excellence through national and international
-          recognition
-        </p>
-      </div>
+      <div className="container">
+        <div
+          ref={headerRef}
+          className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''
+            }`}
+        >
+          <h2>Competition Success Stories</h2>
+          <p>
+            Celebrating student excellence through national and international
+            recognition
+          </p>
+        </div>
 
-      <div className="success-stories-content">
-
-
-        {/* Magic Bento */}
-        <div className="magic-bento-wrapper">
-          <MagicBento
-            textAutoHide={true}
-            enableStars={false}
-            enableSpotlight={false}
-            enableBorderGlow={true}
-            enableTilt={false}
-            enableMagnetism={false}
-            clickEffect={false}
-            spotlightRadius={50}
-            particleCount={12}
-            glowColor="132, 0, 255"
-            disableAnimations={false}
-            cardData={successImages}
-          />
+        <div className="success-stories-content">
+          {/* Magic Bento */}
+          <div className="magic-bento-wrapper">
+            <MagicBento
+              textAutoHide={true}
+              enableStars={false}
+              enableSpotlight={false}
+              enableBorderGlow={true}
+              enableTilt={false}
+              enableMagnetism={false}
+              clickEffect={false}
+              spotlightRadius={50}
+              particleCount={12}
+              glowColor="132, 0, 255"
+              disableAnimations={false}
+              cardData={successImages}
+            />
+          </div>
         </div>
       </div>
     </section>

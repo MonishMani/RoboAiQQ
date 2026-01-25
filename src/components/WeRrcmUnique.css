@@ -1,7 +1,6 @@
 /* Unique Section - Futuristic Tech Hub (White & Blue) */
 .unique-section {
   background: var(--color-bg-secondary);
-  padding: var(--space-20) 0 var(--space-24);
   color: var(--color-text-primary);
   font-family: var(--font-primary);
   text-align: center;
@@ -50,9 +49,9 @@
   margin: auto;
   border-radius: 50%;
   background:
-    radial-gradient(circle at 30% 30%, rgba(0, 102, 255, 0.1), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(51, 133, 255, 0.08), transparent 45%),
-    radial-gradient(circle at center, rgba(0, 61, 153, 0.05), transparent 55%);
+    radial-gradient(circle at 30% 30%, rgba(255, 184, 77, 0.15), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(255, 30, 30, 0.08), transparent 45%),
+    radial-gradient(circle at center, rgba(255, 184, 77, 0.05), transparent 55%);
   filter: blur(20px);
   z-index: 0;
 }
@@ -63,7 +62,7 @@
   inset: 0;
   margin: auto;
   border-radius: 50%;
-  border: 1px dashed var(--color-primary-200);
+  border: 1px dashed var(--color-accent-orange);
   animation: electricGlow 3s ease-in-out infinite;
 }
 
@@ -87,14 +86,14 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 1px solid var(--color-primary-300);
+  border: 1px solid var(--color-accent-orange);
   background: var(--glass-bg-strong);
   backdrop-filter: blur(var(--glass-blur-md));
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-blue-lg);
+  box-shadow: 0 0 30px rgba(255, 184, 77, 0.3);
   z-index: 2;
   animation: centerPulse 2.5s ease-in-out infinite;
 }
@@ -102,7 +101,7 @@
 .unique-center h3 {
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  color: var(--color-primary-700);
+  color: var(--color-cta-red);
   margin-bottom: var(--space-1);
 }
 
@@ -135,8 +134,8 @@
 }
 
 .orbit-text:hover {
-  border-color: var(--color-primary-300);
-  box-shadow: var(--shadow-blue-sm);
+  border-color: var(--color-accent-orange);
+  box-shadow: 0 5px 20px rgba(255, 184, 77, 0.2);
   transform: scale(1.02);
 }
 
@@ -144,7 +143,7 @@
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-1);
-  color: var(--color-primary-800);
+  color: var(--color-text-primary);
 }
 
 .orbit-text p {
@@ -159,19 +158,19 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--color-primary-500);
-  box-shadow: 0 0 10px rgba(51, 133, 255, 0.5);
+  background: var(--color-accent-orange);
+  box-shadow: 0 0 10px rgba(255, 184, 77, 0.5);
   animation: pulse 3s ease-in-out infinite;
   flex-shrink: 0;
-  border: 2px solid var(--color-bg-primary);
+  border: 2px solid var(--color-highlight-yellow);
 }
 
 /* Line */
 .line {
   height: 1px;
   background: linear-gradient(to right,
-      var(--color-primary-300),
-      rgba(51, 133, 255, 0.1));
+      var(--color-accent-orange),
+      rgba(255, 184, 77, 0.1));
   animation: electricLine 2s ease-in-out infinite;
 }
 
@@ -187,8 +186,8 @@
   width: 1px;
   height: 100px;
   background: linear-gradient(to bottom,
-      var(--color-primary-300),
-      rgba(51, 133, 255, 0.1));
+      var(--color-accent-orange),
+      rgba(255, 184, 77, 0.1));
 }
 
 .orbit-1 .orbit-text {
@@ -227,8 +226,8 @@
   width: 1px;
   height: 100px;
   background: linear-gradient(to top,
-      var(--color-primary-300),
-      rgba(51, 133, 255, 0.1));
+      var(--color-accent-orange),
+      rgba(255, 184, 77, 0.1));
 }
 
 .orbit-4 .orbit-text {
@@ -283,13 +282,13 @@
 
   0%,
   100% {
-    border-color: var(--color-primary-200);
-    box-shadow: 0 0 10px rgba(51, 133, 255, 0.1);
+    border-color: var(--color-soft-orange);
+    box-shadow: 0 0 10px rgba(255, 184, 77, 0.1);
   }
 
   50% {
-    border-color: var(--color-primary-400);
-    box-shadow: 0 0 20px rgba(51, 133, 255, 0.2);
+    border-color: var(--color-accent-orange);
+    box-shadow: 0 0 20px rgba(255, 184, 77, 0.2);
   }
 }
 
@@ -297,11 +296,11 @@
 
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(51, 133, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 184, 77, 0.2);
   }
 
   50% {
-    box-shadow: 0 0 50px rgba(51, 133, 255, 0.4);
+    box-shadow: 0 0 50px rgba(255, 184, 77, 0.4);
   }
 }
 

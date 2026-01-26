@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./FeatureSteps.css";
 
@@ -6,23 +6,34 @@ export function FeatureSteps({
   features,
   className = "",
   title = "How to get Started",
-  autoPlayInterval = 3000,
+  autoPlayInterval = 5000,
 }) {
   const [currentFeature, setCurrentFeature] = useState(0);
-  const [progress, setProgress] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const pauseTimeoutRef = useRef(null);
 
+  // Auto-play Logic
   useEffect(() => {
+    if (isPaused) return;
+
     const timer = setInterval(() => {
-      if (progress < 100) {
-        setProgress((prev) => prev + 100 / (autoPlayInterval / 100));
-      } else {
-        setCurrentFeature((prev) => (prev + 1) % features.length);
-        setProgress(0);
-      }
-    }, 100);
+      setCurrentFeature((prev) => (prev + 1) % features.length);
+    }, autoPlayInterval);
 
     return () => clearInterval(timer);
-  }, [progress, features.length, autoPlayInterval]);
+  }, [isPaused, features.length, autoPlayInterval]);
+
+  // Manual Click Handler
+  const handleStepClick = (index) => {
+    setCurrentFeature(index);
+    setIsPaused(true);
+
+    // Resume auto-play after 15 seconds of inactivity
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 15000);
+  };
 
   return (
     <div className={`feature-steps-container ${className}`}>
@@ -30,59 +41,99 @@ export function FeatureSteps({
         <h2 className="feature-steps-title">{title}</h2>
 
         <div className="feature-steps-grid">
+          {/* Steps List */}
           <div className="feature-steps-list">
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="feature-step-item"
-                initial={{ opacity: 0.3 }}
-                animate={{ opacity: index === currentFeature ? 1 : 0.3 }}
-                transition={{ duration: 0.5 }}
+                className={`feature-step-item ${index === currentFeature ? "active" : ""}`}
+                onClick={() => handleStepClick(index)}
+                initial={{ opacity: 0.5 }}
+                animate={{
+                  opacity: index === currentFeature ? 1 : 0.5,
+                  scale: index === currentFeature ? 1.02 : 1
+                }}
+                transition={{ duration: 0.3 }}
+                role="button"
+                tabIndex={0}
+                aria-label={`Select step ${index + 1}: ${feature.title}`}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') handleStepClick(index);
+                }}
               >
-                <motion.div
-                  className={`feature-step-indicator ${
-                    index === currentFeature ? "active" : ""
-                  }`}
-                >
-                  {index <= currentFeature ? (
-                    <span className="checkmark">✓</span>
-                  ) : (
-                    <span className="step-number">{index + 1}</span>
+                <div className="step-progress-wrapper">
+                  <motion.div
+                    className={`feature-step-indicator ${index === currentFeature ? "active" : ""
+                      }`}
+                  >
+                    {index < currentFeature ? (
+                      <span className="checkmark">✓</span>
+                    ) : (
+                      <span className="step-number">{index + 1}</span>
+                    )}
+                  </motion.div>
+                  {/* Vertical Line Connector */}
+                  {index !== features.length - 1 && (
+                    <div className="step-connector">
+                      <motion.div
+                        className="step-connector-fill"
+                        initial={{ height: "0%" }}
+                        animate={{ height: index < currentFeature ? "100%" : "0%" }}
+                        transition={{ duration: 0.5 }}
+                      />
+                    </div>
                   )}
-                </motion.div>
+                </div>
 
                 <div className="feature-step-content">
                   <h3 className="feature-step-title">
                     {feature.title || feature.step}
                   </h3>
                   <p className="feature-step-description">{feature.content}</p>
+
+                  {/* Mobile-only active indicator */}
+                  {index === currentFeature && (
+                    <motion.div
+                      className="active-bar-mobile"
+                      layoutId="activeBar"
+                    />
+                  )}
                 </div>
               </motion.div>
             ))}
           </div>
 
+          {/* Image Display */}
           <div className="feature-steps-image-container">
             <AnimatePresence mode="wait">
-              {features.map(
-                (feature, index) =>
-                  index === currentFeature && (
+              <motion.div
+                key={currentFeature}
+                className="feature-step-image-wrapper"
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <img
+                  src={features[currentFeature].image}
+                  alt={features[currentFeature].step}
+                  className="feature-step-image"
+                />
+
+                {/* Progress Bar Overlay */}
+                {!isPaused && (
+                  <div className="image-progress-bar">
                     <motion.div
-                      key={index}
-                      className="feature-step-image-wrapper"
-                      initial={{ y: 100, opacity: 0, rotateX: -20 }}
-                      animate={{ y: 0, opacity: 1, rotateX: 0 }}
-                      exit={{ y: -100, opacity: 0, rotateX: 20 }}
-                      transition={{ duration: 0.5, ease: "easeInOut" }}
-                    >
-                      <img
-                        src={feature.image}
-                        alt={feature.step}
-                        className="feature-step-image"
-                      />
-                      <div className="feature-step-image-gradient" />
-                    </motion.div>
-                  )
-              )}
+                      className="image-progress-fill"
+                      initial={{ width: "0%" }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: autoPlayInterval / 1000, ease: "linear" }}
+                    />
+                  </div>
+                )}
+
+                <div className="feature-step-image-gradient" />
+              </motion.div>
             </AnimatePresence>
           </div>
         </div>

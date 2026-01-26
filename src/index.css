@@ -277,3 +277,39 @@ button:focus-visible {
     font-size: var(--font-size-2xl);
   }
 }
+
+/* Hero Canvas Container */
+.hero-canvas {
+  width: 100%;
+  height: 780px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+}
+
+/* Responsive Canvas Heights */
+@media (max-width: 1440px) {
+  .hero-canvas {
+    height: 700px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-canvas {
+    height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-canvas {
+    height: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-canvas {
+    height: 400px;
+  }
+}

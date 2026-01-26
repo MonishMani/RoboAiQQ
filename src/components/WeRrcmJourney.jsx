@@ -37,7 +37,7 @@ export default function WeRrcmJourney() {
       step: "Step 5",
       title: "Competition Ready",
       content: "Advanced challenges, teamwork, and performance tuning",
-      image: "/assets/journey5.png"
+      image: "/assets/journey5_competition_3d.png"
     }
   ];
 
@@ -155,7 +155,7 @@ export default function WeRrcmJourney() {
       </div>
 
       {/* FEATURE STEPS COMPONENT */}
-      <FeatureSteps 
+      <FeatureSteps
         features={features}
         title=""
         autoPlayInterval={4000}

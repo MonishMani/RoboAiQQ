@@ -6,67 +6,69 @@ import { FAQ_DATA } from './faqData';
 const RIA_AVATAR_SRC = "/assets/chatbot/ria.png";
 
 const SECTIONS = [
-    { id: 'hero', name: 'Hero', tip: "Welcome to RoboAiQ! Ask me about our robotics programs." },
+    { id: 'home', name: 'Hero', tip: "Welcome to RoboAiQ! Ask me about our robotics programs." },
     { id: 'curriculum', name: 'Curriculum', tip: "Exploring our curriculum? I can explain our modules!" },
     { id: 'programs', name: 'Programs', tip: "Looking at programs? I can help you choose the right one." },
-    { id: 'demo-form', name: 'Demo', tip: "Ready to book? I can guide you through the form!" },
+    { id: 'unique', name: 'Features', tip: "Curious about what makes us unique? Let me explain!" },
+    { id: 'pricing', name: 'Pricing', tip: "Checking pricing? I can help you find the best option!" },
     { id: 'contact', name: 'Contact', tip: "Need to reach us? Ask about our contact options." }
 ];
 
 const RiaChatbot = () => {
     // State
     const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState([
-        { id: 'welcome', type: 'bot', text: "Hi! I'm Ria, your robotics guide. Ask me anything!" }
-    ]);
+    const [messages, setMessages] = useState([]);
     const [currentSection, setCurrentSection] = useState(SECTIONS[0]);
-    const [isIntroDone, setIsIntroDone] = useState(false);
-    const [voiceState, setVoiceState] = useState('idle'); // idle, listening, speaking
+    const [voiceState, setVoiceState] = useState('idle');
     const [inputText, setInputText] = useState('');
     const [isThinking, setIsThinking] = useState(false);
     const [isHidden, setIsHidden] = useState(false);
+
+    // Feedback System State - DELAYED APPEARANCE
+    const [showFeedbackCard, setShowFeedbackCard] = useState(false); // Start hidden
+
+    useEffect(() => {
+        // Show feedback card after 8 seconds delay
+        const timer = setTimeout(() => {
+            setShowFeedbackCard(true);
+        }, 8000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    const [feedbackGiven, setFeedbackGiven] = useState(false);
+    const [chatMode, setChatMode] = useState('initial'); // initial, feedback_yes, feedback_no, capture_info, free_chat
+    const [showFAQ, setShowFAQ] = useState(true);
+    const [userMessage, setUserMessage] = useState('');
+    const [contactInfo, setContactInfo] = useState({ name: '', email: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     // Refs
     const recognitionRef = useRef(null);
     const messagesEndRef = useRef(null);
     const synthesisRef = useRef(window.speechSynthesis);
 
-    // --- 1. Hero Intro & Video Logic ---
+    // --- 1. Video Logic ---
     useEffect(() => {
         const videoElement = document.getElementById('hero-video');
 
         if (videoElement) {
-            // Force hidden initially if video exists
             setIsHidden(true);
 
             const handlePlay = () => setIsHidden(true);
 
             const handleEnd = () => {
-                // Wait 12 seconds after video ends before showing
                 setTimeout(() => {
                     setIsHidden(false);
-                    // Only start intro animation AFTER this delay if not seen
                     const hasSeenIntro = sessionStorage.getItem('ria_intro_seen');
                     if (!hasSeenIntro) {
-                        setIsIntroDone(false); // Trigger visual entry
-                        setTimeout(() => {
-                            setIsIntroDone(true);
-                            sessionStorage.setItem('ria_intro_seen', 'true');
-                        }, 3500);
-                    } else {
-                        setIsIntroDone(true);
+                        sessionStorage.setItem('ria_intro_seen', 'true');
                     }
                 }, 12000);
-            };
-
-            const handlePause = () => {
-                // Keep hidden logic for pause
             };
 
             videoElement.addEventListener('play', handlePlay);
             videoElement.addEventListener('ended', handleEnd);
 
-            // Initial check: if video already ended before React mounted
             if (videoElement.ended) {
                 handleEnd();
             }
@@ -76,20 +78,12 @@ const RiaChatbot = () => {
                 videoElement.removeEventListener('ended', handleEnd);
             };
         } else {
-            // No video? Wait 12 seconds after mount before showing
             setIsHidden(true);
             setTimeout(() => {
                 setIsHidden(false);
-                // Start intro if needed
                 const hasSeenIntro = sessionStorage.getItem('ria_intro_seen');
                 if (!hasSeenIntro) {
-                    setIsIntroDone(false);
-                    setTimeout(() => {
-                        setIsIntroDone(true);
-                        sessionStorage.setItem('ria_intro_seen', 'true');
-                    }, 3500);
-                } else {
-                    setIsIntroDone(true);
+                    sessionStorage.setItem('ria_intro_seen', 'true');
                 }
             }, 12000);
         }
@@ -165,47 +159,142 @@ const RiaChatbot = () => {
         synthesisRef.current.speak(utterance);
     };
 
-    // --- 5. Message Handling ---
+    // --- 5. Feedback Handlers ---
+    const handleFeedbackYes = () => {
+        setShowFeedbackCard(false);
+        setFeedbackGiven(true);
+        setShowFAQ(false);
+        setIsOpen(true);
+        setChatMode('feedback_yes');
+        setMessages([
+            { id: Date.now(), type: 'bot', text: "Thank you for your feedback! If you need anything else, I'm here to help." }
+        ]);
+    };
+
+    const handleFeedbackNo = () => {
+        setShowFeedbackCard(false);
+        setFeedbackGiven(true);
+        setShowFAQ(false);
+        setIsOpen(true);
+        setChatMode('feedback_no');
+        setMessages([
+            { id: Date.now(), type: 'bot', text: "How could I help you today?" }
+        ]);
+    };
+
+    // --- 6. Message Handling ---
     const handleUserMessage = async (text) => {
         if (!text.trim()) return;
 
         const userMsg = { id: Date.now(), type: 'user', text };
         setMessages(prev => [...prev, userMsg]);
         setInputText('');
-        setIsThinking(true);
 
-        await new Promise(r => setTimeout(r, 800));
+        // Store user message for data capture
+        if (chatMode === 'feedback_no') {
+            setUserMessage(text);
+            setIsThinking(true);
+            await new Promise(r => setTimeout(r, 800));
+            setIsThinking(false);
 
-        const faqMatch = FAQ_DATA.find(q =>
-            text.toLowerCase().includes(q.question.toLowerCase()) ||
-            text.toLowerCase().includes(q.question.split(' ')[0].toLowerCase()) && text.toLowerCase().includes("program")
-        );
-
-        let botResponse = "I'm not sure about that. Try checking the FAQ options below!";
-        if (faqMatch) botResponse = faqMatch.answer;
-
-        if (!faqMatch) {
-            const keywords = {
-                "enroll": 2, "join": 2, "cost": 10, "price": 10, "kit": 6, "robot": 4
+            const botMsg = {
+                id: Date.now() + 1,
+                type: 'bot',
+                text: "May I have your name and email so our team can contact you soon?"
             };
-            for (const [key, id] of Object.entries(keywords)) {
-                if (text.toLowerCase().includes(key)) {
-                    botResponse = FAQ_DATA.find(q => q.id === id)?.answer || botResponse;
-                    break;
-                }
-            }
+            setMessages(prev => [...prev, botMsg]);
+            setChatMode('capture_info');
+            return;
         }
 
-        setIsThinking(false);
+        // Normal FAQ handling for free chat
+        if (chatMode === 'feedback_yes' || chatMode === 'free_chat') {
+            setIsThinking(true);
+            await new Promise(r => setTimeout(r, 800));
 
-        const botMsg = { id: Date.now() + 1, type: 'bot', text: botResponse };
-        setMessages(prev => [...prev, botMsg]);
+            const faqMatch = FAQ_DATA.find(q =>
+                text.toLowerCase().includes(q.question.toLowerCase()) ||
+                text.toLowerCase().includes(q.question.split(' ')[0].toLowerCase()) && text.toLowerCase().includes("program")
+            );
 
-        speakText(botResponse);
+            let botResponse = "I'm not sure about that. Try checking the FAQ options below!";
+            if (faqMatch) botResponse = faqMatch.answer;
+
+            if (!faqMatch) {
+                const keywords = {
+                    "enroll": 2, "join": 2, "cost": 10, "price": 10, "kit": 6, "robot": 4
+                };
+                for (const [key, id] of Object.entries(keywords)) {
+                    if (text.toLowerCase().includes(key)) {
+                        botResponse = FAQ_DATA.find(q => q.id === id)?.answer || botResponse;
+                        break;
+                    }
+                }
+            }
+
+            setIsThinking(false);
+            const botMsg = { id: Date.now() + 1, type: 'bot', text: botResponse };
+            setMessages(prev => [...prev, botMsg]);
+            speakText(botResponse);
+
+            // Enable FAQ after first free chat message
+            if (chatMode === 'feedback_yes') {
+                setShowFAQ(true);
+                setChatMode('free_chat');
+            }
+        }
     };
 
     const handleFAQClick = (question) => {
         handleUserMessage(question);
+    };
+
+    // --- 7. Contact Info Submission ---
+    const handleContactSubmit = async (e) => {
+        e.preventDefault();
+
+        // Validate email
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!contactInfo.name.trim() || !emailRegex.test(contactInfo.email)) {
+            const errorMsg = {
+                id: Date.now(),
+                type: 'bot',
+                text: "Please provide a valid name and email address."
+            };
+            setMessages(prev => [...prev, errorMsg]);
+            return;
+        }
+
+        setIsSubmitting(true);
+
+        // Prepare data
+        const submissionData = {
+            name: contactInfo.name,
+            email: contactInfo.email,
+            message: userMessage,
+            section: currentSection.name,
+            timestamp: new Date().toISOString(),
+            source: "RoboAiQ Chatbot Feedback Flow"
+        };
+
+        console.log("Submission Data:", submissionData);
+
+        // Simulate API call
+        await new Promise(r => setTimeout(r, 1000));
+
+        setIsSubmitting(false);
+
+        const confirmMsg = {
+            id: Date.now(),
+            type: 'bot',
+            text: "Thanks! Our team will contact you shortly."
+        };
+        setMessages(prev => [...prev, confirmMsg]);
+
+        // Reset form and enable free chat
+        setContactInfo({ name: '', email: '' });
+        setChatMode('free_chat');
+        setShowFAQ(true);
     };
 
     const toggleChat = () => {
@@ -217,6 +306,15 @@ const RiaChatbot = () => {
                 synthesisRef.current.cancel();
                 setVoiceState('idle');
             }
+        } else {
+            // If opening chat manually (not via feedback), set to free chat mode
+            if (!feedbackGiven) {
+                setMessages([
+                    { id: Date.now(), type: 'bot', text: "Hi! I'm Ria, your robotics guide. Ask me anything!" }
+                ]);
+                setChatMode('free_chat');
+                setShowFeedbackCard(false);
+            }
         }
     };
 
@@ -226,7 +324,30 @@ const RiaChatbot = () => {
 
             <div className={`ria-container ${isOpen ? 'open' : ''} ${isHidden ? 'hidden' : ''}`}>
 
-                {/* Chatbot Icon Button - Visible when closed */}
+                {/* Floating Feedback Card */}
+                {!isOpen && showFeedbackCard && !feedbackGiven && (
+                    <div className="feedback-card">
+                        <p>Did you find what you were looking for?</p>
+                        <div className="feedback-buttons">
+                            <button
+                                className="feedback-btn yes"
+                                onClick={handleFeedbackYes}
+                                aria-label="Yes, I found what I was looking for"
+                            >
+                                Yes
+                            </button>
+                            <button
+                                className="feedback-btn no"
+                                onClick={handleFeedbackNo}
+                                aria-label="No, I need help"
+                            >
+                                No
+                            </button>
+                        </div>
+                    </div>
+                )}
+
+                {/* Chatbot Icon Button */}
                 {!isOpen && (
                     <button
                         className="ria-icon-button"
@@ -239,7 +360,6 @@ const RiaChatbot = () => {
 
                 {isOpen && (
                     <div className="ria-avatar-container">
-                        {/* Avatar Image */}
                         <img
                             src={RIA_AVATAR_SRC}
                             alt="Ria AI Assistant"
@@ -280,9 +400,39 @@ const RiaChatbot = () => {
                             </div>
                         )}
 
+                        {/* Contact Info Form */}
+                        {chatMode === 'capture_info' && (
+                            <form className="contact-form" onSubmit={handleContactSubmit}>
+                                <input
+                                    type="text"
+                                    placeholder="Your Name"
+                                    value={contactInfo.name}
+                                    onChange={(e) => setContactInfo(prev => ({ ...prev, name: e.target.value }))}
+                                    required
+                                    disabled={isSubmitting}
+                                />
+                                <input
+                                    type="email"
+                                    placeholder="Your Email"
+                                    value={contactInfo.email}
+                                    onChange={(e) => setContactInfo(prev => ({ ...prev, email: e.target.value }))}
+                                    required
+                                    disabled={isSubmitting}
+                                />
+                                <button
+                                    type="submit"
+                                    className="submit-btn"
+                                    disabled={isSubmitting}
+                                >
+                                    {isSubmitting ? 'Submitting...' : 'Submit'}
+                                </button>
+                            </form>
+                        )}
+
                         <div ref={messagesEndRef} />
 
-                        {!isThinking && (
+                        {/* FAQ Grid - Show only when appropriate */}
+                        {!isThinking && showFAQ && chatMode !== 'capture_info' && (
                             <div className="faq-grid">
                                 {FAQ_DATA.slice(0, 4).map(faq => (
                                     <button key={faq.id} className="faq-btn" onClick={() => handleFAQClick(faq.question)}>
@@ -299,17 +449,18 @@ const RiaChatbot = () => {
                             className={`ria-mic-btn ${voiceState}`}
                             onClick={startListening}
                             title="Speak to Ria"
+                            disabled={chatMode === 'capture_info'}
                         >
                             {voiceState === 'listening' ? '●' : voiceState === 'speaking' ? '🔊' : '🎤'}
                         </button>
 
                         <input
                             className="ria-input"
-                            placeholder="Ask a question..."
+                            placeholder={chatMode === 'capture_info' ? 'Please fill the form above' : 'Ask a question...'}
                             value={inputText}
                             onChange={(e) => setInputText(e.target.value)}
                             onKeyDown={(e) => e.key === 'Enter' && handleUserMessage(inputText)}
-                            disabled={voiceState === 'listening'}
+                            disabled={voiceState === 'listening' || chatMode === 'capture_info'}
                         />
                     </div>
                 </div>

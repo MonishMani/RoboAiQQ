@@ -7,7 +7,7 @@
   right: 0;
   width: 100%;
   max-width: 100%;
-  height: 80px;
+  height: 100px;
   background: var(--glass-bg-strong);
   backdrop-filter: blur(var(--glass-blur-lg));
   -webkit-backdrop-filter: blur(var(--glass-blur-lg));
@@ -59,17 +59,22 @@
   /* Push links to right */
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-4);
+  /* Tighter grouping between buttons */
+  flex-wrap: nowrap;
 }
 
 /* Logo */
 .logo {
   display: flex;
   align-items: center;
+  height: 100%;
+  /* Fill container height */
   margin-right: auto;
+  padding: 10px 0;
+  /* Vertical padding inside container */
   transition: transform var(--transition-fast);
   text-decoration: none;
-  /* In case it becomes a link */
 }
 
 .logo:hover {
@@ -77,8 +82,9 @@
 }
 
 .logo-image {
-  height: 220px;
-  /* Reduced slightly */
+  height: 100%;
+  max-height: 80px;
+  /* Ensure strictly contained within 100px navbar with padding */
   width: auto;
   object-fit: contain;
   display: block;
@@ -88,7 +94,9 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: var(--space-2);
+  gap: var(--space-4);
+  /* Tighter grouping between buttons */
+  flex-wrap: nowrap;
 }
 
 /* Individual Nav Item */
@@ -99,8 +107,10 @@
   text-decoration: none;
   color: #333333;
   /* Dark gray text */
-  font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-medium);
+  font-size: 16px;
+  font-weight: 700;
+  /* Bold text */
+  white-space: nowrap;
   letter-spacing: var(--letter-spacing-normal);
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-lg);
@@ -184,13 +194,14 @@
   border-radius: 50px;
   background: transparent;
   color: #FF1E1E;
-  font-weight: 600;
+  font-weight: 700;
+  /* Bold text */
   border: 2px solid #FF1E1E;
   box-shadow: none;
   transition: all 0.3s ease;
   position: relative;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.5px;
 }
 
@@ -220,13 +231,14 @@
   border-radius: 50px;
   border: 2px solid #2E7BAE;
   color: #2E7BAE;
-  font-weight: 600;
+  font-weight: 700;
+  /* Bold text */
   background: transparent;
   transition: color 0.3s ease, transform 0.3s ease;
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.5px;
 }
 
@@ -243,7 +255,7 @@
 }
 
 .nav-cta:hover {
-  color:#FFFFFF;
+  color: #FFFFFF;
   background: #2E7BAE;
   border-color: #2E7BAE;
   transform: translateY(-2px);

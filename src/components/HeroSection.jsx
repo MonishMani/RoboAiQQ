@@ -3,6 +3,10 @@ import './HeroSection.css';
 import BookingModal from './BookingModal';
 import Hero3DModel from './Hero3DModel';
 
+/**
+ * HeroSection Component
+ * Premium hero with enlarged badge and professional CTA button
+ */
 function HeroSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -17,37 +21,45 @@ function HeroSection() {
         <div className="container hero-container">
           {/* Left Side - Text Content */}
           <div className="hero-left hero-animate-text">
-            <span className="eyebrow">NEXT GENERATION EDUCATION</span>
+            {/* Premium Enlarged Badge - Centered Above Content */}
+            <span className="hero-badge">
+              <span className="badge-glow"></span>
+              <span className="badge-text">NEXT GENERATION EDUCATION</span>
+            </span>
 
+            {/* Main Headline */}
             <h1>
-              Children, Transform Your Future With <span>Robotics</span> & <span>AI</span>
+              Children, Transform Your Future With{' '}
+              <span className="highlight">Robotics</span> &{' '}
+              <span className="highlight">AI</span>
             </h1>
 
+            {/* Subtitle */}
             <p className="subtitle">
-              Parents, empower your children with world-class Robotics and AI education, hands-on experience, and state-of-the-art future readiness for tomorrow's opportunities.
+              Parents, empower your children with world-class Robotics and AI
+              education, hands-on experience, and state-of-the-art future
+              readiness for tomorrow's opportunities.
             </p>
+
+            {/* Premium CTA Button - Directly under text content */}
+            <div className="hero-cta-wrapper">
+              <button
+                className="hero-cta-btn"
+                onClick={handleOpenBooking}
+                aria-label="Book your free demo"
+              >
+                <span className="cta-primary">Book Your Free Demo</span>
+                <span className="cta-secondary">Start Building Today</span>
+              </button>
+            </div>
           </div>
 
-          {/* Right Side - Visual with CTA */}
+          {/* Right Side - 3D Visual */}
           <div className="hero-right">
             <div className="hero-visual">
               <div className="robot-container">
                 <Hero3DModel />
               </div>
-            </div>
-
-            {/* CTA Button - Positioned next to video */}
-            <div className="hero-cta-container">
-              <button
-                className="hero-cta-btn"
-                onClick={handleOpenBooking}
-              >
-                <span className="cta-icon">🤖</span>
-                <span className="cta-text">
-                  <strong>Book Your Free Demo</strong>
-                  <small>Start Building Today</small>
-                </span>
-              </button>
             </div>
           </div>
         </div>

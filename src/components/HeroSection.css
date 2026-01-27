@@ -131,6 +131,12 @@
   justify-content: center;
 }
 
+.hero-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 .robot-container {
   position: relative;
   width: 100%;

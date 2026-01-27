@@ -4,21 +4,23 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import * as THREE from "three";
 
-// Model rotation to face front
+// Base rotation for roboaiq-model
 const BASE_ROTATION = [0, 0, 0];
 
 function Robot({ scene }) {
   const group = useRef();
 
-  // Cursor-follow + return to front
+  // Enhanced "completely turnable" cursor-follow logic
   useFrame((state) => {
     if (!group.current) return;
 
-    const targetX = (state.mouse.y * Math.PI) / 12;
-    const targetY = (state.mouse.x * Math.PI) / 12;
+    // Mapping mouse position [-1, 1] to rotation [-Math.PI, Math.PI] for full 360 turn
+    const targetY = state.mouse.x * Math.PI;
+    const targetX = (state.mouse.y * Math.PI) / 8; // Slight vertical tilt for depth
 
-    group.current.rotation.x += (targetX - group.current.rotation.x) * 0.08;
-    group.current.rotation.y += (targetY - group.current.rotation.y) * 0.08;
+    // Smooth interpolation (lerping) for a premium feel
+    group.current.rotation.y += (targetY - group.current.rotation.y) * 0.1;
+    group.current.rotation.x += (targetX - group.current.rotation.x) * 0.1;
   });
 
   return (

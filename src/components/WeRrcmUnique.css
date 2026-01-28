@@ -1,35 +1,22 @@
-/* Unique Section - Futuristic Tech Hub (White & Blue) */
+/* Unique Section - Clean Layout */
 .unique-section {
-  background: var(--color-bg-secondary);
+  background: #ffffff;
   color: var(--color-text-primary);
   font-family: var(--font-primary);
   text-align: center;
   position: relative;
   overflow: hidden;
-  padding: 3rem 0;
-  /* Standardized spacing (py-12) */
-
+  padding: 2.5rem 0;
 }
 
-/* Subtle background grid */
 .unique-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image:
-    linear-gradient(rgba(0, 61, 153, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 61, 153, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
+  content: none;
 }
 
 .unique-title {
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-extrabold);
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-10);
   color: var(--color-text-primary);
   letter-spacing: var(--letter-spacing-tight);
   position: relative;
@@ -69,18 +56,15 @@
 .unique-video-wrapper {
   position: relative;
   width: 100%;
-  /* Extended size */
-  max-width: 1200px;
-  height: auto;
-  aspect-ratio: 16/9;
-  border-radius: 24px;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--color-border-medium);
-  margin: 0 auto var(--space-8);
-  /* Added margin-bottom */
+  box-shadow: none;
+  border: none;
+  margin: 0 auto var(--space-6);
   z-index: 10;
-  /* Added z-index */
+
 }
 
 .unique-video {

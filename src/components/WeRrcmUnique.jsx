@@ -32,33 +32,7 @@ export default function Unique() {
           </div>
 
           {/* Features Grid */}
-          <div className="unique-features-grid">
-            <div className="feature-card glass-premium scroll-reveal stagger-1">
-              <h4>World-Class Team</h4>
-              <p>Highly skilled professionals</p>
-            </div>
-            <div className="feature-card glass-premium scroll-reveal stagger-2">
-              <h4>Global Expertise</h4>
-              <p>International billing standards</p>
-            </div>
-            <div className="feature-card glass-premium scroll-reveal stagger-3">
-              <h4>Compliance Driven</h4>
-              <p>HIPAA & regulatory focus</p>
-            </div>
-            <div className="feature-card glass-premium scroll-reveal stagger-4">
-              <h4>Hands-On Support</h4>
-              <p>Dedicated account managers</p>
-            </div>
-            <div className="feature-card glass-premium scroll-reveal stagger-5">
-              <h4>Small Batch Scale</h4>
-              <p>Personalized attention</p>
-            </div>
-            <div className="feature-card glass-premium scroll-reveal stagger-6">
-              <h4>Industry Leaders</h4>
-              <p>Years of proven results</p>
-            </div>
-          </div>
-
+         
         </div>
       </div>
     </section>

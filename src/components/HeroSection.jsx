@@ -23,48 +23,46 @@ function HeroSection() {
           <div className="container hero-container">
             {/* Left Side - Text Content - Centered */}
             <div className="hero-left hero-animate-text">
-            {/* Premium Enlarged Badge - Centered Above Content */}
-            <span className="hero-badge">
-              <span className="badge-glow"></span>
-              <span className="badge-text">NEXT GENERATION EDUCATION</span>
-            </span>
+              {/* Premium Enlarged Badge - Centered Above Content */}
+              <span className="hero-badge">
+                <span className="badge-glow"></span>
+                <span className="badge-text">NEXT GENERATION EDUCATION</span>
+              </span>
 
-            {/* Main Headline */}
-            <h1>
-              Children, Transform Your Future With{' '}
-              <span className="highlight">Robotics</span> &{' '}
-              <span className="highlight">AI</span>
-            </h1>
+              {/* Main Headline */}
+              <h1>
+                Children, Transform Your Future With{' '}
+                <span className="highlight">Robotics</span> &{' '}
+                <span className="highlight">AI</span>
+              </h1>
 
-            {/* Subtitle */}
-            <p className="subtitle">
-              Parents, empower your children with world-class Robotics and AI
-              education, hands-on experience, and state-of-the-art future
-              readiness for tomorrow's opportunities.
-            </p>
+              {/* Subtitle */}
+              <p className="subtitle">
+                Parents, empower your children with world-class Robotics and AI education, hands-on automation, and personalized 1:1 guidance to prepare them for real-world innovation and future-ready careers.
+              </p>
 
-            {/* Premium CTA Button - Directly under text content */}
-            <div className="hero-cta-wrapper">
-              <button
-                className="hero-cta-btn"
-                onClick={handleOpenBooking}
-                aria-label="Book your free demo"
-              >
-                <span className="cta-primary">Book Your Free Demo</span>
-                <span className="cta-secondary">Start Building Today</span>
-              </button>
+              {/* Premium CTA Button - Directly under text content */}
+              <div className="hero-cta-wrapper">
+                <button
+                  className="hero-cta-btn"
+                  onClick={handleOpenBooking}
+                  aria-label="Book your free demo"
+                >
+                  <span className="cta-primary">Book Your Free Demo</span>
+                  <span className="cta-secondary">Start Building Today</span>
+                </button>
+              </div>
             </div>
-          </div>
 
-          {/* Right Side - 3D Visual */}
-          <div className="hero-right">
-            <div className="hero-visual">
-              <div className="robot-container">
-                <Hero3DModel />
+            {/* Right Side - 3D Visual */}
+            <div className="hero-right">
+              <div className="hero-visual">
+                <div className="robot-container">
+                  <Hero3DModel />
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
 

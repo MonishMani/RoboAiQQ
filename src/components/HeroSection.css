@@ -178,9 +178,12 @@
 }
 
 .subtitle {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  font-weight: 400;
+  font-size: 1.5rem;
+  /* Scaled down from 2.25rem heading */
+  line-height: 1.5;
+  /* Premium spacing */
+  font-weight: 500;
+  /* Medium bold */
   font-family: 'Poppins', sans-serif;
   color: #333333;
   margin-bottom: 0;
@@ -586,7 +589,8 @@
   }
 
   .subtitle {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
+    /* Scaled down for mobile */
   }
 
   .hero-visual {

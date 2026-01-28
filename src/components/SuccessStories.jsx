@@ -62,17 +62,7 @@ function SuccessStories() {
           className={`success-stories-header scroll-reveal ${headerVisible ? 'visible' : ''
             }`}
         >
-          <SplitText
-            text="Competition Success Stories"
-            tag="h2"
-            delay={40}
-            duration={1.3}
-            ease="power3.out"
-            splitType="words"
-            from={{ opacity: 0, y: 30 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.2}
-          />
+          <h2>Global Recognition</h2>
           <TextType
             text="Celebrating student excellence through national and international recognition."
             className="success-description"

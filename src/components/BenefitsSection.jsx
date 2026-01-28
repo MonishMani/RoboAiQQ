@@ -25,7 +25,7 @@ export default function BenefitsSection() {
                     </div>
                 </div>
 
-                {/* Card 2: Live Classes */}
+                {/* Card 2: Online/Live Classes */}
                 <div className="benefit-card">
                     <div className="benefit-image">
                         <img
@@ -34,7 +34,7 @@ export default function BenefitsSection() {
                         />
                     </div>
                     <div className="benefit-content">
-                        <h3>Live Robotics Classes</h3>
+                        <h3>Online/Live Robotics Classes</h3>
                         <p>Real-time, instructor-led sessions that guide students step-by-step through projects</p>
                     </div>
                 </div>

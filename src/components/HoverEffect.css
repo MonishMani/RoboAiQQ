@@ -18,3 +18,28 @@
   transform: translate(-50%, -50%);
   filter: blur(20px);
 }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .hover-effect::before {
+    width: 80px;
+    height: 80px;
+    filter: blur(16px);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .hover-effect::before {
+    width: 60px;
+    height: 60px;
+    filter: blur(12px);
+  }
+}
+
+/* Small Mobile - Disable hover effect on touch devices */
+@media (max-width: 640px) {
+  .hover-effect::before {
+    display: none;
+  }
+}

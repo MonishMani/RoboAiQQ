@@ -8,3 +8,28 @@
   display: inline-block;
   opacity: 0;
 }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .text-reveal {
+    gap: 0.25em;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .text-reveal {
+    gap: 0.2em;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 640px) {
+  .text-reveal {
+    gap: 0.15em;
+  }
+
+  .text-reveal .word {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+}

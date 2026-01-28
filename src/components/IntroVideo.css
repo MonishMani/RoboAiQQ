@@ -65,3 +65,21 @@
 body.intro-playing {
     overflow: hidden;
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .intro-video-container::after {
+        width: 150px;
+        height: 60px;
+        filter: blur(8px);
+    }
+}
+
+@media (max-width: 640px) {
+    .intro-video-container::after {
+        width: 120px;
+        height: 50px;
+        filter: blur(6px);
+        border-radius: 20px 0 0 0;
+    }
+}

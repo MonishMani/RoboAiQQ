@@ -2,3 +2,25 @@
   transition: transform 0.1s ease-out;
   transform-style: preserve-3d;
 }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .tilted-card {
+    transition: transform 0.15s ease-out;
+  }
+}
+
+/* Mobile Responsiveness - Disable 3D tilt on touch devices */
+@media (max-width: 768px) {
+  .tilted-card {
+    transform-style: flat;
+    transition: transform 0.2s ease-out;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 640px) {
+  .tilted-card {
+    transform: none !important;
+  }
+}

@@ -57,3 +57,68 @@
     transform: translateX(calc(-50% - 10px));
   }
 }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .moving-card {
+    min-width: 280px;
+    height: 360px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .moving-card img {
+    height: 220px;
+  }
+
+  .moving-card p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .infinite-moving-cards-wrapper {
+    padding: 16px 0;
+  }
+
+  .moving-card {
+    min-width: 260px;
+    height: 340px;
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .moving-card img {
+    height: 200px;
+  }
+
+  .moving-card p {
+    font-size: 12px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 640px) {
+  .infinite-moving-cards-wrapper {
+    padding: 12px 0;
+  }
+
+  .moving-card {
+    min-width: 220px;
+    height: 300px;
+    padding: 12px;
+    gap: 8px;
+    border-radius: 8px;
+  }
+
+  .moving-card img {
+    height: 160px;
+    border-radius: 6px;
+  }
+
+  .moving-card p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}

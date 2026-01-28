@@ -24,11 +24,36 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .chroma-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chroma-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 240px));
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.4rem;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 480px) {
   .chroma-grid {
-    grid-template-columns: 320px;
-    gap: 0.75rem;
-    padding: 1rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 0.5rem;
   }
 }
 
@@ -46,6 +71,36 @@
   --mouse-x: 50%;
   --mouse-y: 50%;
   --spotlight-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .chroma-card {
+    width: 280px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chroma-card {
+    width: 240px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-card {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chroma-card {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+  }
 }
 
 .chroma-card:hover {
@@ -101,6 +156,20 @@
   filter: grayscale(0.6) brightness(0.85);
 }
 
+@media (max-width: 768px) {
+  .chroma-img-wrapper {
+    padding: 8px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-img-wrapper {
+    padding: 6px;
+    border-radius: 10px;
+  }
+}
+
 .chroma-card:hover .chroma-img-wrapper {
   filter: grayscale(0) brightness(1);
 }
@@ -126,11 +195,37 @@
   border-radius: 0 0 20px 20px;
 }
 
+@media (max-width: 768px) {
+  .chroma-info {
+    padding: 0.75rem;
+    border-radius: 0 0 14px 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-info {
+    padding: 0.6rem;
+    border-radius: 0 0 12px 12px;
+  }
+}
+
 .chroma-info .name {
   margin: 0;
   font-size: 15px;
   font-weight: 600;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .chroma-info .name {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-info .name {
+    font-size: 12px;
+  }
 }
 
 .chroma-info .handle {
@@ -139,16 +234,34 @@
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .chroma-info .handle {
+    font-size: 10px;
+  }
+}
+
 .chroma-info .role {
   color: #aaa;
   font-size: 13px;
   margin: 0;
 }
 
+@media (max-width: 640px) {
+  .chroma-info .role {
+    font-size: 11px;
+  }
+}
+
 .chroma-info .location {
   color: #aaa;
   font-size: 12px;
   margin: 0;
+}
+
+@media (max-width: 640px) {
+  .chroma-info .location {
+    font-size: 10px;
+  }
 }
 
 .chroma-overlay {

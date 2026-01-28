@@ -4,6 +4,8 @@
   background: var(--color-bg-secondary);
   text-align: center;
   font-family: var(--font-primary);
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .gallery-header {
@@ -15,6 +17,8 @@
   margin: 0 auto var(--space-16);
   text-align: center;
   padding: 0 var(--space-4);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .gallery-header h2 {
@@ -24,7 +28,8 @@
   color: var(--color-text-primary);
   font-weight: var(--font-weight-extrabold);
   text-align: center;
-  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .gallery-header p {
@@ -33,7 +38,9 @@
   line-height: var(--line-height-relaxed);
   margin: 0;
   text-align: center;
-  
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .gallery-container {
@@ -45,23 +52,82 @@
   overflow: hidden;
   box-shadow: var(--shadow-blue-lg);
   border: 1px solid var(--color-border-light);
-  
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .gallery-section {
     padding: var(--space-16) var(--space-6);
   }
 
+  .gallery-header {
+    padding: 0 var(--space-4);
+  }
+
+  .gallery-header h2 {
+    font-size: var(--font-size-4xl);
+  }
+
+  .gallery-header p {
+    font-size: var(--font-size-base);
+  }
+
+  .gallery-container {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: var(--space-12) var(--space-4);
+  }
+
+  .gallery-header {
+    margin-bottom: var(--space-10);
+    padding: 0 var(--space-3);
+  }
+
   .gallery-header h2 {
     font-size: var(--font-size-3xl);
+    margin-bottom: var(--space-3);
   }
 
   .gallery-header p {
     font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
   }
 
   .gallery-container {
     height: 400px;
+    border-radius: var(--radius-xl);
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-section {
+    padding: var(--space-10) var(--space-3);
+  }
+
+  .gallery-header {
+    margin-bottom: var(--space-8);
+    padding: 0 var(--space-2);
+  }
+
+  .gallery-header h2 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-2);
+    letter-spacing: var(--letter-spacing-normal);
+  }
+
+  .gallery-header p {
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-snug);
+  }
+
+  .gallery-container {
+    height: 280px;
+    border-radius: var(--radius-lg);
   }
 }

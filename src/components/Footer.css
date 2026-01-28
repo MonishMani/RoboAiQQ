@@ -4,6 +4,7 @@
   padding: 3rem 2rem;
   color: #ffffff;
   font-family: var(--font-primary);
+  margin-top: auto;
 }
 
 .footer-wrapper {
@@ -47,6 +48,7 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .footer-socials a {
@@ -107,6 +109,7 @@
 
 .footer-nav a:hover {
   color: #ffb84d;
+  padding-left: 4px;
 }
 
 /* Column 3: Contact Info */
@@ -121,6 +124,7 @@
   border-radius: 12px;
   padding: 1.5rem;
   backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 .footer-contact-company {
@@ -152,6 +156,7 @@
   color: #ffb84d;
   text-decoration: none;
   transition: all 0.3s ease;
+  word-break: break-all;
 }
 
 .footer-contact-items a:hover {
@@ -163,16 +168,16 @@
   margin-top: 0.5rem;
 }
 
-/* Responsive */
+/* Responsive - Tablet */
 @media (max-width: 1024px) {
   .footer-wrapper {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    padding: 0 1rem;
   }
 
   .footer-col-3 {
-    align-items: flex-start;
-    text-align: left;
+    grid-column: 1 / -1;
   }
 
   .footer-contact-card {
@@ -180,6 +185,7 @@
   }
 }
 
+/* Responsive - Mobile */
 @media (max-width: 768px) {
   .footer {
     padding: 2rem 1rem;
@@ -187,7 +193,8 @@
 
   .footer-wrapper {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding: 0;
   }
 
   .footer-col-1,
@@ -197,11 +204,128 @@
     text-align: left;
   }
 
-  .footer-contact-card {
-    text-align: left;
+  .footer-brand-title {
+    font-size: 1.25rem;
   }
 
   .footer-brand-desc {
+    font-size: 0.85rem;
     max-width: 100%;
+    line-height: 1.5;
+  }
+
+  .footer-socials {
+    gap: 0.75rem;
+  }
+
+  .footer-socials a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .footer-socials svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-col-title {
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-nav {
+    gap: 0.6rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.9rem;
+  }
+
+  .footer-contact-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .footer-contact-company {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer-contact-items {
+    gap: 0.6rem;
+  }
+
+  .footer-contact-items p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive - Small Mobile */
+@media (max-width: 640px) {
+  .footer {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .footer-wrapper {
+    gap: 1.25rem;
+  }
+
+  .footer-brand-title {
+    font-size: 1.1rem;
+  }
+
+  .footer-brand-desc {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .footer-socials {
+    gap: 0.6rem;
+  }
+
+  .footer-socials a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-socials svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-col-title {
+    font-size: 0.65rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-nav {
+    gap: 0.5rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.85rem;
+  }
+
+  .footer-contact-card {
+    padding: 1rem;
+  }
+
+  .footer-contact-company {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-contact-items {
+    gap: 0.5rem;
+  }
+
+  .footer-contact-items p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .footer-contact-items .label {
+    display: block;
+    margin-bottom: 0.2rem;
   }
 }

@@ -40,6 +40,7 @@
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .hero-container {
@@ -54,6 +55,7 @@
 
   /* Prevent overflow on mobile */
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 /* ============================================
@@ -66,6 +68,9 @@
   text-align: left;
   gap: var(--space-6);
   z-index: 10;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* Text Entrance Animation */
@@ -169,6 +174,8 @@
   letter-spacing: -0.03em;
   max-width: 560px;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero h1 .highlight {
@@ -189,6 +196,8 @@
   margin-bottom: 0;
   max-width: 520px;
   text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ============================================
@@ -529,8 +538,12 @@
     /* Small viewport for browsers with UI */
   }
 
-  .hero-container {
+  .hero-wrapper {
     padding: 0 var(--space-4);
+  }
+
+  .hero-container {
+    padding: 0 var(--space-3);
     gap: var(--space-6);
   }
 
@@ -542,10 +555,12 @@
 
   .hero h1 {
     font-size: 1.75rem;
+    max-width: 100%;
   }
 
   .subtitle {
     font-size: 1rem;
+    max-width: 100%;
   }
 
   .hero-visual {
@@ -572,10 +587,18 @@
 @media (max-width: 640px) {
   .hero {
     /* Extra padding for notch/safe areas */
-    /* Extra padding for notch/safe areas + sticky header */
-    padding-top: max(5rem, calc(5rem + env(safe-area-inset-top)));
-    /* pt-20 equivalent */
-    padding-bottom: max(var(--space-8), env(safe-area-inset-bottom));
+    padding-top: max(3rem, calc(3rem + env(safe-area-inset-top)));
+    /* pt-12 equivalent */
+    padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+  }
+
+  .hero-wrapper {
+    padding: 0 var(--space-3);
+  }
+
+  .hero-container {
+    padding: 0 var(--space-2);
+    gap: var(--space-4);
   }
 
   .hero-badge {
@@ -585,33 +608,39 @@
   }
 
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.15;
+    max-width: 100%;
+    letter-spacing: -0.02em;
   }
 
   .subtitle {
-    font-size: 1.15rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    max-width: 100%;
     /* Scaled down for mobile */
   }
 
   .hero-visual {
-    height: 320px;
+    height: 300px;
   }
 
   .robot-container {
-    height: 280px;
+    height: 260px;
   }
 
   .hero-cta-btn {
-    padding: 14px 24px;
+    padding: 12px 24px;
     width: 100%;
+    border-radius: 12px;
   }
 
   .cta-primary {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .cta-secondary {
-    font-size: 0.8125rem;
+    font-size: 0.75rem;
   }
 }
 

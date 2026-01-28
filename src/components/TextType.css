@@ -27,3 +27,33 @@
     opacity: 0;
   }
 }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .text-type {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .text-type {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+
+  .text-type__cursor {
+    margin-left: 0.2rem;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 640px) {
+  .text-type {
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+  }
+
+  .text-type__cursor {
+    margin-left: 0.15rem;
+    font-weight: 700;
+  }
+}

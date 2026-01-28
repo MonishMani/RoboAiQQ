@@ -126,6 +126,9 @@ p {
   line-height: var(--line-height-relaxed);
   margin-bottom: var(--space-4);
   max-width: 900px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 /* Color Classes for Keywords and Subtexts */
@@ -213,6 +216,13 @@ section {
   .container {
     width: 100%;
     padding: 0 var(--space-4);
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: 100%;
+    padding: 0 var(--space-3);
   }
 }
 

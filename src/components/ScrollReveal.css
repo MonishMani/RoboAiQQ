@@ -11,3 +11,39 @@
 .word {
   display: inline-block;
 }
+
+/* Tablet Responsiveness */
+@media (max-width: 1024px) {
+  .scroll-reveal {
+    margin: 16px 0;
+  }
+
+  .scroll-reveal-text {
+    font-size: clamp(1.4rem, 3.5vw, 2.5rem);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .scroll-reveal {
+    margin: 12px 0;
+  }
+
+  .scroll-reveal-text {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    line-height: 1.4;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 640px) {
+  .scroll-reveal {
+    margin: 8px 0;
+  }
+
+  .scroll-reveal-text {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    line-height: 1.3;
+    font-weight: 500;
+  }
+}

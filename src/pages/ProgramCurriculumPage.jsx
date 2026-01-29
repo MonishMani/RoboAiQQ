@@ -66,14 +66,16 @@ function ProgramCurriculumPage() {
         {/* HERO SECTION */}
         <section className="programs-hero">
           <div className="hero-content">
-            <div className="hero-badge">ELITE PROGRAMS</div>
+            <div className="hero-badge">RoboAIQ is not a hobby class.</div>
             <h1 className="hero-title">
-              Transform Your Child Into A <span className="highlight">Future Leader</span>
+              RoboAIQ — An <span className="highlight">Elite Future-Tech Leadership Program</span>
             </h1>
             <p className="hero-subtitle">
-              RoboAIQ programs blend advanced robotics, artificial intelligence, leadership, and entrepreneurial thinking to prepare the next generation of innovators.
+              It is a high-impact future leadership program for exceptional young minds.
             </p>
-            <button className="hero-cta">Explore Programs</button>
+            <p className="hero-subtitle hero-subtitle-secondary">
+              Designed for parents who demand more than ordinary education, RoboAIQ blends advanced robotics, artificial intelligence, leadership, and entrepreneurial thinking to prepare children for the highest levels of global success.
+            </p>
           </div>
           <div className="hero-decoration">
             <div className="gradient-orb orb-1"></div>
@@ -85,7 +87,7 @@ function ProgramCurriculumPage() {
         <section className="programs-showcase">
           <div className="showcase-container">
             <div className="showcase-header">
-              <h2>Our Signature Programs</h2>
+              <h2>RoboAIQ <span className="highlight">Programs</span></h2>
               <p>Choose the program that matches your child's passion and potential</p>
             </div>
 
@@ -115,24 +117,6 @@ function ProgramCurriculumPage() {
                 </div>
               ))}
             </div>
-
-            {/* ACTIVE PROGRAM DETAILS */}
-            <div className="program-details" style={{ '--accent-color': programs.find(p => p.id === activeProgram)?.color }}>
-              <div className="details-content">
-                <h3 style={{ color: programs.find(p => p.id === activeProgram)?.color }}>
-                  {programs.find(p => p.id === activeProgram)?.title}
-                </h3>
-                <p>{programs.find(p => p.id === activeProgram)?.details}</p>
-                <div className="details-highlights">
-                  {programs.find(p => p.id === activeProgram)?.highlights.map((highlight, idx) => (
-                    <div key={idx} className="detail-item">
-                      <FaCheckCircle style={{ color: programs.find(p => p.id === activeProgram)?.color }} />
-                      <span>{highlight}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
@@ -144,7 +128,7 @@ function ProgramCurriculumPage() {
               <p>Comprehensive program architecture delivering world-class education</p>
             </div>
 
-            <div className="features-grid">
+            <div className="features-grid" id='programe'>
               {features.map((feature, index) => (
                 <div key={index} className="feature-card">
                   <div className="feature-number">{String(index + 1).padStart(2, '0')}</div>
@@ -156,17 +140,8 @@ function ProgramCurriculumPage() {
           </div>
         </section>
 
-        {/* CTA SECTION */}
-        <section className="programs-cta">
-          <div className="cta-content">
-            <h2>Ready to Shape the Future?</h2>
-            <p>Join RoboAIQ and unlock your child's exceptional potential</p>
-            <div className="cta-buttons">
-              <button className="btn-primary">Book Your Free Demo</button>
-              <button className="btn-secondary">Download Brochure</button>
-            </div>
-          </div>
-        </section>
+       
+        
       </div>
       <Footer />
     </>

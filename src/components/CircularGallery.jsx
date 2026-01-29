@@ -231,9 +231,9 @@ void main() {
         this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R);
       }
     }
-    this.speed = scroll.current - scroll.last;
+    this.speed = lerp(this.speed || 0, scroll.current - scroll.last, 0.1);
     this.program.uniforms.uTime.value += 0.04;
-    this.program.uniforms.uSpeed.value = this.speed;
+    this.program.uniforms.uSpeed.value = this.speed * 0.5;
     const planeOffset = this.plane.scale.x / 2;
     const viewportOffset = this.viewport.width / 2;
     this.isBefore = this.plane.position.x + planeOffset < -viewportOffset;

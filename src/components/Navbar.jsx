@@ -34,14 +34,12 @@ function Navbar() {
           {/* Logo */}
           <div className="logo" id="brand-logo-target">
             <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
-            <span className="logo-tagline">Building young entrepreneurs with Technology</span>
           </div>
         </div>
 
         {/* Desktop Logo - Left Aligned */}
         <div className="logo logo-desktop" id="brand-logo-target">
           <img src="/assets/images/logo-robo-aiq.jpeg" alt="RoboAiQ Logo" className="logo-image" />
-          <span className="logo-tagline">Building young entrepreneurs with Technology</span>
         </div>
 
         {/* Navigation - Desktop */}

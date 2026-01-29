@@ -9,8 +9,7 @@
   padding-bottom: 2rem;
 
   /* Consistent background - prevent gaps */
-  /* background: var(--gradient-hero); */
-  background: transparent;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   background-attachment: fixed;
 
   position: relative;
@@ -31,6 +30,35 @@
   /* Safer than 100vw to avoid scrollbar overlap */
 }
 
+/* Gradient Orbs - Decorative Background */
+.hero::before,
+.hero::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  top: -100px;
+  right: -100px;
+  z-index: 0;
+}
+
+.hero::after {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #FFB84D 0%, #FF1E1E 100%);
+  bottom: -50px;
+  left: -50px;
+  z-index: 0;
+}
+
 /* Hero Wrapper - Max-width centered container */
 .hero-wrapper {
   width: 100%;
@@ -40,6 +68,8 @@
   display: flex;
   justify-content: center;
   box-sizing: border-box;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-container {

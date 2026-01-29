@@ -63,13 +63,13 @@ function GallerySection() {
         <CircularGallery
           items={galleryItems}
           bend={2}
-          textColor="#2553EB"
+          textColor="#1F40AF"
           borderRadius={0.08}
-          font="bold 20px 'Orbitron', sans-serif"
+          font="bold 24px 'Poppins', sans-serif"
           scrollSpeed={1.3}
-          scrollEase={0.05}
+          scrollEase={0.12}
           autoScroll={true}
-          autoScrollSpeed={0.15}
+          autoScrollSpeed={0.05}
         />
       </div>
     </section>

@@ -32,12 +32,12 @@
 /* --- Main Container --- */
 .ria-container {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    top: 80px;
+    right: 40px;
     z-index: var(--ria-z-index);
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    align-items: flex-start;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     transition: opacity 0.3s ease;
     pointer-events: none;
@@ -53,8 +53,8 @@
 /* --- Floating Feedback Card --- */
 .feedback-card {
     position: fixed;
-    bottom: 130px;
-    right: 24px;
+    top: 550px;
+    right: 40px;
     width: 220px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
@@ -241,8 +241,8 @@
 /* --- Avatar Container (Large Scale) --- */
 .ria-avatar-container {
     position: relative;
-    width: 480px;
-    height: 680px;
+    width: 320px;
+    height: 450px;
     pointer-events: auto;
     flex-shrink: 0;
 

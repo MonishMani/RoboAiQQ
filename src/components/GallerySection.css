@@ -24,23 +24,26 @@
 .gallery-header h2 {
   font-size: var(--font-size-5xl);
   margin-bottom: var(--space-4);
-  letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-primary);
-  font-weight: var(--font-weight-extrabold);
+  letter-spacing: -0.5px;
+  color: #0F253E;
+  font-weight: 800;
   text-align: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  font-family: 'Poppins', sans-serif;
 }
 
 .gallery-header p {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-tertiary);
-  line-height: var(--line-height-relaxed);
+  font-size: 0.95rem;
+  color: #6B7280;
+  line-height: 1.8;
   margin: 0;
   text-align: center;
   word-wrap: break-word;
   overflow-wrap: break-word;
   max-width: 100%;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .gallery-container {

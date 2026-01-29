@@ -95,8 +95,9 @@ function ProgramCurriculumPage() {
                   key={program.id}
                   className={`program-card ${activeProgram === program.id ? 'active' : ''}`}
                   onClick={() => setActiveProgram(program.id)}
+                  style={{ '--accent-color': program.color }}
                 >
-                  <div className="card-top" style={{ borderTopColor: program.color }}>
+                  <div className="card-top">
                     <div className="card-icon" style={{ color: program.color }}>
                       <program.icon />
                     </div>
@@ -116,7 +117,7 @@ function ProgramCurriculumPage() {
             </div>
 
             {/* ACTIVE PROGRAM DETAILS */}
-            <div className="program-details">
+            <div className="program-details" style={{ '--accent-color': programs.find(p => p.id === activeProgram)?.color }}>
               <div className="details-content">
                 <h3 style={{ color: programs.find(p => p.id === activeProgram)?.color }}>
                   {programs.find(p => p.id === activeProgram)?.title}

@@ -28,7 +28,7 @@ export default function RoboKitSection() {
 
         {/* IMAGE */}
         <div className="kit-image">
-          <img src="https://images.unsplash.com/photo-1555431127-d2abaf5273be?w=800&auto=format&fit=crop&q=60" alt="Arduino Uno Board" />
+          <img src="/assets/images/robokit.jpeg" alt="Arduino Uno Board" />
         </div>
 
         {/* CONTENT */}

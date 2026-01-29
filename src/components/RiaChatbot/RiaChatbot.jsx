@@ -3,7 +3,7 @@ import './RiaChatbot.css';
 import { FAQ_DATA } from './faqData';
 
 // Constants
-const RIA_AVATAR_SRC = "/assets/chatbot/ria.png";
+const RIA_AVATAR_SRC = "/assets/chatbot/red-ria.png";
 
 const SECTIONS = [
     { id: 'home', name: 'Hero', tip: "Welcome to RoboAiQ! Ask me about our robotics programs." },

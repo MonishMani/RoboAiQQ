@@ -1,8 +1,5 @@
 .testimonials-section {
-  background: linear-gradient(180deg,
-      #f8fbff 0%,
-      #ffffff 60%,
-      #f4f8ff 100%);
+  background: #FAF9F6;
   padding: 6rem 2rem;
   position: relative;
   min-height: 600px;
@@ -13,7 +10,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at center, rgba(37, 99, 235, 0.08), transparent 55%);
+  background: transparent;
   pointer-events: none;
   z-index: 0;
 }
@@ -94,18 +91,15 @@
   min-height: 280px;
   padding: 3rem 2.5rem 2rem;
   border-radius: 2rem;
-  background: white;
-  border: 1px solid rgba(37, 99, 235, 0.1);
-  box-shadow: 0 10px 40px rgba(37, 99, 235, 0.08);
-  /* Softer, premium shadow */
+  background: #FAF9F6;
+  border: 1px solid rgba(15, 37, 62, 0.1);
+  box-shadow: 0 4px 12px rgba(15, 37, 62, 0.06);
   transition: all 0.3s ease;
   position: relative;
   overflow: visible;
-  /* Allow avatar to hang out */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Push Footer down */
 }
 
 .testimonial-card:hover {
@@ -120,14 +114,13 @@
   left: 32px;
   width: 56px;
   height: 56px;
-  background: #3B82F6;
-  /* Primary Blue */
+  background: #0F253E;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 12px rgba(15, 37, 62, 0.2);
 }
 
 .quote-icon {

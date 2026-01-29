@@ -1,4 +1,3 @@
-
 :root {
   --primary-blue: #7DB3E8;
   --primary-dark: #3D7DB3;
@@ -762,4 +761,11 @@ html {
 .programs-page ::selection {
   background: var(--primary-blue);
   color: var(--text-light);
+}
+
+.highlight {
+  color: #FF1E1E;
+  font-weight: 900;
+  display: block;
+  font-size: 1.8rem;
 }

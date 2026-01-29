@@ -7,6 +7,7 @@ import SuccessStories from '../components/SuccessStories';
 // import WeRrcmMentors from '../components/WeRrcmMentors';
 import WeRrcmTestimonials from '../components/WeRrcmTestimonials';
 import GallerySection from '../components/GallerySection';
+import RoboKitSection from '../components/RoboKitSection';
 import WeRrcmContactForm from '../components/WeRrcmContactForm';
 import Footer from '../components/Footer';
 
@@ -23,7 +24,7 @@ function Home() {
                 {/* WeRrcmMentors moved to its own page */}
                 <WeRrcmTestimonials />
                 <GallerySection />
-                {/* RoboKitSection moved to its own page */}
+                <RoboKitSection />
                 <WeRrcmContactForm />
                 <Footer />
             </div>

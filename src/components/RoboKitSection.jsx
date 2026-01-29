@@ -45,22 +45,6 @@ export default function RoboKitSection() {
             <li>USB Cables, Resistors & Capacitors</li>
             <li>Expansion-ready components for future projects</li>
           </ul>
-
-          {/* VALUE STRIPS */}
-          <div className="kit-highlights">
-            <div>
-              <strong>No Hidden Costs</strong>
-              <span>Everything required is included</span>
-            </div>
-            <div>
-              <strong>Reusable & Durable</strong>
-              <span>Use across multiple courses</span>
-            </div>
-            <div>
-              <strong>Yours to Keep</strong>
-              <span>Learn, build & experiment anytime</span>
-            </div>
-          </div>
         </div>
 
       </div>

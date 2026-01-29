@@ -56,10 +56,6 @@ function Navbar() {
             <span className="text">Programs</span>
           </Link>
 
-          <Link to="/robotics-kit" className="nav-item" onClick={closeMenu}>
-            <span className="text">Robotics Kit</span>
-          </Link>
-
           <Link to="/mentors" className="nav-item" onClick={closeMenu}>
             <span className="text">Our Mentors</span>
           </Link>

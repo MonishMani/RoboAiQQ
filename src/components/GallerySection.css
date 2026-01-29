@@ -47,7 +47,8 @@
 }
 
 .gallery-container {
-  height: 600px;
+  height: 280px;
+  /* Mobile-first: minimal height */
   position: relative;
   background: #FAF9F6;
   backdrop-filter: blur(var(--glass-blur-md));
@@ -78,7 +79,21 @@
   }
 
   .gallery-container {
-    height: 450px;
+    height: 350px;
+  }
+}
+
+@media (min-width: 640px) {
+  .gallery-container {
+    height: 350px;
+    border-radius: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-container {
+    height: 600px;
+    border-radius: 24px;
   }
 }
 

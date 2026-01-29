@@ -7,7 +7,8 @@
   right: 0;
   width: 100%;
   max-width: 100%;
-  height: 100px;
+  height: 60px;
+  /* Mobile-first: compact */
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.98) 100%);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
@@ -49,13 +50,15 @@
   font-family: var(--font-primary);
 }
 
-/* Mobile Left Section - Hamburger and Logo */
+/* Mobile Left Section - Logo Only */
 .navbar-left-mobile {
   display: none;
   align-items: center;
-  gap: 12px;
+  gap: 0;
   height: 100%;
-  padding-right: 8px;
+  padding-right: 0;
+  flex: 1;
+  /* Allow flex growth */
 }
 
 /* Logo */
@@ -67,6 +70,8 @@
   transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   flex-shrink: 0;
+  margin-right: auto;
+  /* Push logo to left, hamburger stays left */
 }
 
 .logo.logo-desktop {
@@ -79,7 +84,8 @@
 
 .logo-image {
   height: 100%;
-  max-height: 80px;
+  max-height: 48px;
+  /* Mobile-first: smaller */
   width: auto;
   object-fit: contain;
   display: block;
@@ -351,6 +357,36 @@
 }
 
 /* Responsive */
+@media (min-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+
+  .logo-image {
+    max-height: 60px;
+  }
+
+  .nav-links {
+    max-width: 280px;
+    top: 70px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    height: 100px;
+  }
+
+  .logo-image {
+    max-height: 80px;
+  }
+
+  .nav-links {
+    max-width: none;
+    top: 100px;
+  }
+}
+
 @media (max-width: 1024px) {
   .navbar-container {
     padding: 0 var(--space-6);
@@ -381,21 +417,32 @@
 
   .navbar-container {
     padding: 0 var(--space-4);
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 0;
   }
 
   .navbar-left-mobile {
     display: flex;
+    order: -1;
+    /* Logo first */
   }
 
   .logo.logo-desktop {
     display: none;
   }
 
+  .logo {
+    margin-right: 0;
+    /* Reset margin */
+  }
+
   .hamburger-menu {
     display: flex;
-    margin-right: 8px;
+    margin-left: auto;
+    /* Push hamburger to extreme right */
+    margin-right: 0;
+    order: 1;
+    /* Hamburger last */
   }
 
   .nav-links {
@@ -405,15 +452,18 @@
     width: 100%;
     max-width: 280px;
     height: calc(100vh - 70px);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.99) 0%, rgba(245, 245, 245, 0.98) 100%);
+    background: linear-gradient(180deg, #FFFFFF 0%, #F5FAFF 100%);
+    /* Premium white to cloud blue gradient */
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     flex-direction: column;
     gap: 0;
     margin-left: 0;
-    padding: 16px 0 0 0;
-    border-right: 2px solid rgba(220, 38, 38, 0.15);
-    box-shadow: 6px 0 24px rgba(0, 0, 0, 0.12);
+    padding: 24px 0 0 0;
+    border-right: 2px solid rgba(125, 179, 232, 0.2);
+    /* Soft blue border */
+    box-shadow: 6px 0 24px rgba(125, 179, 232, 0.12);
+    /* Blue-tinted shadow */
     transform: translateX(-100%);
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
@@ -422,22 +472,25 @@
 
   .nav-links.mobile-open {
     transform: translateX(0);
-    box-shadow: 6px 0 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 6px 0 30px rgba(125, 179, 232, 0.15);
   }
 
   .nav-item {
     width: 100%;
-    padding: 16px 20px;
+    padding: 18px 24px;
     border-radius: 0;
-    font-size: 15px;
-    color: #1a202c;
-    border-bottom: 1px solid rgba(220, 38, 38, 0.08);
+    font-size: 16px;
+    color: #0F253E;
+    /* Deep navy text */
+    border-bottom: 1px solid rgba(125, 179, 232, 0.08);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
     gap: 12px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: 0.3px;
+    font-family: 'Poppins', sans-serif;
+    background: transparent !important;
   }
 
   .nav-item::before {
@@ -447,10 +500,12 @@
     top: 0;
     height: 100%;
     width: 4px;
-    background: linear-gradient(180deg, #dc2626 0%, #ff6b35 100%);
+    background: linear-gradient(180deg, #FF1E1E 0%, #FFB84D 100%);
+    /* Red to orange gradient */
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
   }
 
   .nav-item::after {
@@ -461,14 +516,17 @@
     transform: translateY(-50%);
     width: 0;
     height: 2px;
-    background: #dc2626;
+    background: #7DB3E8;
+    /* Primary blue */
     transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: none;
   }
 
   .nav-item:hover {
-    background: linear-gradient(90deg, rgba(220, 38, 38, 0.1) 0%, transparent 100%);
-    color: #dc2626;
-    padding-left: 24px;
+    background: linear-gradient(90deg, rgba(125, 179, 232, 0.08) 0%, transparent 100%) !important;
+    color: #FF1E1E;
+    /* Red on hover */
+    padding-left: 28px;
   }
 
   .nav-item:hover::before {
@@ -479,24 +537,29 @@
     width: 0;
   }
 
+  /* Override nav-register and nav-cta for mobile sidebar */
   .nav-register {
     margin: 24px 12px 10px 12px;
     width: calc(100% - 24px);
     padding: 14px 20px;
     border-radius: 10px;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
-    font-size: 13px;
+    border-bottom: none !important;
+    background: linear-gradient(135deg, #E84C3D 0%, #DC2626 100%) !important;
+    color: #ffffff !important;
   }
 
   .nav-register:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(220, 38, 38, 0.25);
+    background: #b91c1c !important;
+    color: #ffffff !important;
   }
 
   .nav-register:active {
@@ -509,18 +572,22 @@
     padding: 14px 20px;
     border-radius: 10px;
     justify-content: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.5px;
     box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
-    font-size: 13px;
+    border-bottom: none !important;
+    background: #0ea5e9 !important;
+    color: #ffffff !important;
   }
 
   .nav-cta:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(14, 165, 233, 0.25);
+    background: #0284c7 !important;
+    color: #ffffff !important;
   }
 
   .nav-cta:active {
@@ -541,10 +608,11 @@
 
   .navbar-container {
     padding: 0 var(--space-3);
+    justify-content: space-between;
   }
 
   .navbar-left-mobile {
-    gap: 10px;
+    gap: 0;
   }
 
   .logo-image {
@@ -556,6 +624,8 @@
     gap: 5px;
     width: 38px;
     height: 38px;
+    margin-left: auto;
+    /* Hamburger to extreme right */
   }
 
   .hamburger-line {

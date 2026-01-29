@@ -64,7 +64,7 @@ function Navbar() {
             <span className="text">Register</span>
           </a>
 
-          <a href="/#contact" className="nav-item" onClick={closeMenu}>
+          <a href="/#contact" className="nav-item nav-cta" onClick={closeMenu}>
             <span className="text">Contact</span>
           </a>
         </div>

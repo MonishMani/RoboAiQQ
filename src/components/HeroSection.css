@@ -4,9 +4,9 @@
 
 .hero {
   margin-top: 0;
-  padding-top: 6rem;
-  /* pt-24 equivalent for desktop */
-  padding-bottom: var(--space-20);
+  padding-top: 3rem;
+  /* Mobile-first: compact */
+  padding-bottom: 2rem;
 
   /* Consistent background - prevent gaps */
   /* background: var(--gradient-hero); */
@@ -18,10 +18,8 @@
   overflow-x: hidden;
   /* Prevent horizontal scroll */
 
-  /* Mobile-safe viewport height with fallback */
-  min-height: calc(100vh - var(--nav-height));
-  min-height: calc(100dvh - var(--nav-height));
-  /* Dynamic viewport */
+  /* Content-driven height, not viewport-height */
+  min-height: auto;
 
   display: flex;
   align-items: center;
@@ -50,9 +48,10 @@
   padding: 0;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  /* Mobile-first: single column */
   align-items: center;
-  gap: var(--space-12);
+  gap: 2rem;
 
   /* Prevent overflow on mobile */
   overflow-x: hidden;
@@ -72,6 +71,8 @@
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  margin-bottom: 2rem;
+  /* Space between button and robot on mobile */
 }
 
 /* Text Entrance Animation */
@@ -318,16 +319,21 @@
   position: relative;
   z-index: 5;
   height: 100%;
+  margin-top: 1rem;
+  /* Additional space from button */
 }
 
 .hero-visual {
   flex: 1;
   width: 100%;
-  height: 730px;
+  height: 300px;
+  /* Mobile-first: reduced height */
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  order: 2;
+  /* Image below text on mobile */
 }
 
 .hero-canvas {
@@ -460,6 +466,54 @@
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
+
+/* Tablet */
+@media (min-width: 768px) {
+  .hero {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+    min-height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .hero-left {
+    margin-bottom: 0;
+    /* Reset margin on tablet+ */
+  }
+
+  .hero-right {
+    margin-top: 0;
+    /* Reset margin on tablet+ */
+  }
+
+  .hero-visual {
+    height: 500px;
+    order: 2;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    min-height: calc(100vh - var(--nav-height));
+    min-height: calc(100dvh - var(--nav-height));
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
+  }
+
+  .hero-visual {
+    height: 730px;
+  }
+}
 
 /* Tablet */
 @media (max-width: 1024px) {

@@ -43,7 +43,8 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Phone</span>
-                <p>8971252285</p>
+                <p>+91 8971252285</p>
+                <p>+91 99624 99556</p>
               </div>
             </div>
 
@@ -70,9 +71,7 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Location</span>
-                <p>
-                  RoboAiQ Headquarters
-                </p>
+                <p>Bangalore<br />Hyderabad<br />Chennai</p>
               </div>
             </div>
 

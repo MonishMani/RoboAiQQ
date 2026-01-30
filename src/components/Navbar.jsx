@@ -4,6 +4,13 @@ import './Navbar.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activePath, setActivePath] = useState('/');
+
+  useEffect(() => {
+    // Set initial active path based on current location
+    const path = window.location.pathname;
+    setActivePath(path);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -11,6 +18,11 @@ function Navbar() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleNavClick = (path) => {
+    setActivePath(path);
+    closeMenu();
   };
 
   return (
@@ -44,19 +56,19 @@ function Navbar() {
 
         {/* Navigation - Desktop */}
         <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-          <a href="/#home" className="nav-item" onClick={closeMenu}>
+          <a href="/#home" className={`nav-item ${activePath === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}>
             <span className="text">Home</span>
           </a>
 
-          <Link to="/about" className="nav-item" onClick={closeMenu}>
+          <Link to="/about" className={`nav-item ${activePath === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}>
             <span className="text">About</span>
           </Link>
 
-          <Link to="/programs" className="nav-item" onClick={closeMenu}>
+          <Link to="/programs" className={`nav-item ${activePath === '/programs' ? 'active' : ''}`} onClick={() => handleNavClick('/programs')}>
             <span className="text">Programs</span>
           </Link>
 
-          <Link to="/mentors" className="nav-item" onClick={closeMenu}>
+          <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
             <span className="text">Our Mentors</span>
           </Link>
 

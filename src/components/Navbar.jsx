@@ -72,12 +72,16 @@ function Navbar() {
             <span className="text">Our Mentors</span>
           </Link>
 
-          <a href="/#contact" className="nav-item nav-register" onClick={closeMenu}>
-            <span className="text">Register</span>
-          </a>
-
+          <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
+            <span className="text">Insights</span>
+          </Link>
+          
           <a href="/#contact" className="nav-item nav-cta" onClick={closeMenu}>
             <span className="text">Contact</span>
+          </a>
+
+           <a href="/#contact" className="nav-item nav-register" onClick={closeMenu}>
+            <span className="text">Register</span>
           </a>
         </div>
 

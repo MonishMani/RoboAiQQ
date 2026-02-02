@@ -254,7 +254,7 @@ const BookingModal = ({ isOpen, onClose }) => {
                                             onChange={handleChange}
                                             onFocus={() => setFocusedField('email')}
                                             onBlur={() => setFocusedField(null)}
-                                            placeholder="e.g. arjun@example.com"
+                                            placeholder="e.g. arjun@example.in"
                                         />
                                         {errors.email && <span className="error-msg">{errors.email}</span>}
                                     </div>

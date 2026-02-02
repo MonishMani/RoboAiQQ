@@ -57,7 +57,7 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Email</span>
-                <p>sales@roboaiq.com</p>
+                <p>sales@roboaiq.in</p>
               </div>
             </div>
 

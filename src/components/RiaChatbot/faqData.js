@@ -47,6 +47,6 @@ export const FAQ_DATA = [
     {
         id: 10,
         question: "How can I book a demo or enroll?",
-        answer: "Free demo sessions can be scheduled by phone at 8971252285, by email at Sales@werrcm.com, or through the website enquiry form for direct admissions support."
+        answer: "Free demo sessions can be scheduled by phone at 8971252285, by email at Sales@werrcm.in, or through the website enquiry form for direct admissions support."
     }
 ];

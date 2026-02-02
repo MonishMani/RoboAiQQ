@@ -7,11 +7,13 @@ import ProgramCurriculumPage from './pages/ProgramCurriculumPage';
 import RobotTest from './pages/RobotTest';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RiaChatbot from './components/RiaChatbot/RiaChatbot';
+import IntroOverlay from './components/IntroOverlay'; // Import IntroOverlay
 import './App.css';
 
 function App() {
   return (
     <div className="app">
+      <IntroOverlay /> {/* Add Intro Overlay */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUsPage />} />

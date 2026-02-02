@@ -70,14 +70,67 @@
             }
         }
 
-        /* Canvas for Petals */
+        /* Inline Splash Screen (instant render) */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--color-ivory), var(--color-champagne));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            opacity: 1;
+            transition: opacity 0.5s ease-out;
+        }
+
+        #splash.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #splash-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #B8860B, #FFD700);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        #splash-text {
+            font-size: 0.9rem;
+            color: var(--color-gold);
+            opacity: 0.8;
+        }
+
+        /* 3D Model Container (behind glass card) */
+        #model-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            max-width: 80vw;
+            max-height: 80vh;
+            z-index: 5;
+            pointer-events: auto;
+        }
+
+        /* Canvas for Petals (in front of 3D) */
         #petalCanvas {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 1;
+            z-index: 15;
             pointer-events: none;
         }
 
@@ -118,6 +171,7 @@
             font-weight: 700;
             color: var(--color-text-dark);
             background: linear-gradient(45deg, #B8860B, #FFD700);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -126,9 +180,9 @@
 
         p.tagline {
             font-size: 1.1rem;
-            color: #555;
+            color: #000000;
             letter-spacing: 0.5px;
-            font-weight: 300;
+            font-weight: 700;
         }
 
         /* Interactive Zone */
@@ -236,6 +290,15 @@
 </head>
 
 <body>
+
+    <!-- INLINE SPLASH (instant render, no JS required) -->
+    <div id="splash">
+        <div id="splash-logo">RoboAiQ</div>
+        <div id="splash-text">Initializing...</div>
+    </div>
+
+    <!-- 3D MODEL CONTAINER (placeholder → 3D) -->
+    <div id="model-container"></div>
 
     <div class="shimmer-bg"></div>
     <canvas id="petalCanvas"></canvas>
@@ -366,6 +429,33 @@
             // Optional: local fade out if not handled by parent (fallback)
             document.body.style.transition = 'opacity 1s ease';
             document.body.style.opacity = '0';
+        }
+
+        // Hide splash after DOM load
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splash');
+                if (splash) splash.classList.add('hidden');
+            }, 500);
+        });
+    </script>
+
+    <!-- DEFERRED 3D LOADER (loads after UI is ready) -->
+    <script type="module">
+        // Deferred loading strategy
+        const load3D = () => {
+            import('./intro-3d-loader.js').then(module => {
+                module.init3DIntro();
+            }).catch(err => {
+                console.error('[Intro] Failed to load 3D module:', err);
+            });
+        };
+
+        // Use requestIdleCallback if available, fallback to timeout
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(load3D, { timeout: 1500 });
+        } else {
+            setTimeout(load3D, 1500);
         }
     </script>
 </body>

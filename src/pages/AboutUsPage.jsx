@@ -173,6 +173,8 @@ export default function AboutUsPage() {
                   alt="Global Robotics and AI curriculum in a modern robotics classroom"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">
@@ -191,6 +193,9 @@ export default function AboutUsPage() {
                 artificial intelligence, and real-world problem solving to prepare
                 students for global technology careers.
               </p>
+              <button className="card-cta" aria-label="Learn more about our Global Robotics and AI Curriculum">
+                Learn More <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -203,6 +208,8 @@ export default function AboutUsPage() {
                   alt="Advanced robotics lab with modern sensors and robotics hardware"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Advanced Robotics Labs</h4>
@@ -218,6 +225,9 @@ export default function AboutUsPage() {
                 Hands-on access to modern robotics hardware, sensors, and AI tools in
                 labs designed to simulate real engineering environments.
               </p>
+              <button className="card-cta" aria-label="Explore our Advanced Robotics Labs">
+                Explore Labs <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -230,6 +240,8 @@ export default function AboutUsPage() {
                   alt="Personalized mentorship with a mentor guiding a student in robotics learning"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Personalized Mentorship</h4>
@@ -246,6 +258,9 @@ export default function AboutUsPage() {
                 learning, build confidence, and shape individual technology leadership
                 journeys.
               </p>
+              <button className="card-cta" aria-label="Meet our Mentors">
+                Meet Mentors <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -258,6 +273,8 @@ export default function AboutUsPage() {
                   alt="Hybrid learning model combining online instruction and hands-on lab practice"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Hybrid Learning Model</h4>
@@ -274,6 +291,9 @@ export default function AboutUsPage() {
                 experiences that ensures flexibility without compromising technical
                 mastery.
               </p>
+              <button className="card-cta" aria-label="View our Hybrid Learning Model">
+                View Model <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -286,6 +306,8 @@ export default function AboutUsPage() {
                   alt="Global competition exposure with students participating on a robotics stage"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Global Competition Exposure</h4>
@@ -301,6 +323,9 @@ export default function AboutUsPage() {
                 Opportunities to participate in international robotics and AI challenges,
                 building confidence, collaboration, and global recognition.
               </p>
+              <button className="card-cta" aria-label="Learn about Global Events">
+                Global Events <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -313,6 +338,8 @@ export default function AboutUsPage() {
                   alt="Startup and innovation mindset with students pitching ideas and prototypes"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Startup &amp; Innovation Mindset</h4>
@@ -328,6 +355,9 @@ export default function AboutUsPage() {
                 Early exposure to entrepreneurship, design thinking, and innovation
                 frameworks that empower students to transform ideas into ventures.
               </p>
+              <button className="card-cta" aria-label="Discover Innovation Programs">
+                Innovation <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -340,6 +370,8 @@ export default function AboutUsPage() {
                   alt="Leadership development with a student presenting confidently"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Leadership Development</h4>
@@ -355,6 +387,9 @@ export default function AboutUsPage() {
                 Structured programs that strengthen communication, presentation, and
                 decision-making skills essential for future technology leaders.
               </p>
+              <button className="card-cta" aria-label="Learn about Leadership Development">
+                Leadership <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -367,6 +402,8 @@ export default function AboutUsPage() {
                   alt="Applied STEM learning with students building real-world engineering solutions"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Applied STEM Learning</h4>
@@ -382,6 +419,9 @@ export default function AboutUsPage() {
                 Project-based STEM programs where students design, build, and deploy
                 solutions to real-world challenges using engineering and technology.
               </p>
+              <button className="card-cta" aria-label="See Student Projects">
+                Projects <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>
@@ -394,6 +434,8 @@ export default function AboutUsPage() {
                   alt="Industry integration connecting students with technology mentors and partners"
                   loading="lazy"
                   decoding="async"
+                  width="400"
+                  height="300"
                 />
               </figure>
               <h4 className="competitive-card-title">Industry Integration</h4>
@@ -409,6 +451,9 @@ export default function AboutUsPage() {
                 Direct collaboration with technology ecosystems, mentors, and innovation
                 partners that connects learning with real industry practice.
               </p>
+              <button className="card-cta" aria-label="See our Industry Partners">
+                Partners <span aria-hidden="true">→</span>
+              </button>
               <div className="competitive-card-progress" aria-hidden="true">
                 <span className="competitive-card-progressFill" />
               </div>

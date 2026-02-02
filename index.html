@@ -3,17 +3,115 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RoboAIQ - Intelligent Robotics</title>
-  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js"></script>
 
+  <!-- Primary Meta Tags -->
+  <title>RoboAIQ - Future Technology & Robotics Education for Kids</title>
+  <meta name="description"
+    content="RoboAIQ empowers children with robotics, AI, and entrepreneurial thinking. World-class STEM education preparing future technology leaders." />
+  <meta name="keywords"
+    content="robotics education, AI learning, STEM for kids, coding for children, robot programming, technology leadership" />
+  <meta name="author" content="RoboAIQ" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://roboaiq.com/" />
+  <meta property="og:title" content="RoboAIQ - Future Technology & Robotics Education" />
+  <meta property="og:description"
+    content="Empowering children with robotics, AI, and entrepreneurial thinking. Shape the innovators of tomorrow." />
+  <meta property="og:image" content="/assets/images/og-image.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://roboaiq.com/" />
+  <meta property="twitter:title" content="RoboAIQ - Future Technology & Robotics Education" />
+  <meta property="twitter:description" content="Empowering children with robotics, AI, and entrepreneurial thinking." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/images/favicon.png" />
+
+  <!-- Preload Critical Assets (LCP optimization) -->
+  <link rel="preload" href="/assets/videos/video1.mp4" as="video" type="video/mp4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Preload Critical Fonts -->
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" />
+  </noscript>
+
+  <!-- Defer Non-Critical CSS (Boxicons) -->
+  <link rel="preload" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
+  </noscript>
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "RoboAIQ",
+    "description": "Future technology and robotics education platform for children",
+    "url": "https://roboaiq.com",
+    "logo": "https://roboaiq.com/assets/images/logo-robo-aiq.jpeg",
+    "sameAs": [
+      "https://www.facebook.com/roboaiq",
+      "https://www.instagram.com/roboaiq",
+      "https://www.linkedin.com/company/roboaiq"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN"
+    }
+  }
+  </script>
+
+  <!-- Critical CSS Inline (prevent FOUC) -->
+  <style>
+    /* Prevent layout shift */
+    #root {
+      min-height: 100vh;
+    }
+
+    /* Font loading optimization */
+    body {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
   <div id="root"></div>
+
+  <!-- Main App Bundle -->
   <script type="module" src="/src/main.jsx"></script>
+
+  <!-- Defer Spline Viewer (heavy 3D library) -->
+  <script>
+    // Lazy load Spline viewer only when needed
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(function () {
+        var script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js';
+        document.body.appendChild(script);
+      }, { timeout: 3000 });
+    } else {
+      setTimeout(function () {
+        var script = document.createElement('script');
+        script.type = 'module';
+        script.src = 'https://unpkg.com/@splinetool/viewer@1.12.32/build/spline-viewer.js';
+        document.body.appendChild(script);
+      }, 2000);
+    }
+  </script>
 </body>
 
 </html>

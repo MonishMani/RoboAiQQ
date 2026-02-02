@@ -8,10 +8,14 @@
   --border: rgba(17, 24, 39, 0.08);
   --shadow: 0 18px 60px rgba(17, 24, 39, 0.08);
 
-  --crimson: #C1121F;   /* Accent */
-  --midnight: #1F2933;  /* Headings */
-  --text: #4B5563;      /* Body */
-  --muted: #9CA3AF;     /* Secondary */
+  --crimson: #C1121F;
+  /* Accent */
+  --midnight: #1F2933;
+  /* Headings */
+  --text: #4B5563;
+  /* Body */
+  --muted: #9CA3AF;
+  /* Secondary */
 
   --nav-h: 88px;
 
@@ -28,8 +32,8 @@
   padding: calc(var(--nav-h) + 64px) 40px 96px;
   min-height: calc(100vh - var(--nav-h));
   background: radial-gradient(900px 420px at 18% 30%, rgba(193, 18, 31, 0.10) 0%, rgba(193, 18, 31, 0) 60%),
-              radial-gradient(900px 520px at 85% 65%, rgba(193, 18, 31, 0.05) 0%, rgba(193, 18, 31, 0) 62%),
-              linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 70%);
+    radial-gradient(900px 520px at 85% 65%, rgba(193, 18, 31, 0.05) 0%, rgba(193, 18, 31, 0) 62%),
+    linear-gradient(180deg, #FFFFFF 0%, #FAF9F6 70%);
   overflow: hidden;
 }
 
@@ -40,7 +44,7 @@
   inset: -20%;
   pointer-events: none;
   background: radial-gradient(circle at 25% 30%, rgba(193, 18, 31, 0.16) 0%, transparent 55%),
-              radial-gradient(circle at 82% 70%, rgba(193, 18, 31, 0.10) 0%, transparent 55%);
+    radial-gradient(circle at 82% 70%, rgba(193, 18, 31, 0.10) 0%, transparent 55%);
   filter: blur(24px);
   opacity: 0.9;
 }
@@ -124,8 +128,8 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(900px 420px at 15% 10%, rgba(193, 18, 31, 0.20) 0%, transparent 60%),
-              radial-gradient(900px 480px at 90% 85%, rgba(193, 18, 31, 0.10) 0%, transparent 60%),
-              linear-gradient(180deg, rgba(250, 249, 246, 0.0) 0%, rgba(31, 41, 51, 0.08) 100%);
+    radial-gradient(900px 480px at 90% 85%, rgba(193, 18, 31, 0.10) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(250, 249, 246, 0.0) 0%, rgba(31, 41, 51, 0.08) 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -144,16 +148,18 @@
   padding: 96px 40px;
 }
 
-.light { 
+.light {
   background: transparent;
 }
-.subtle { 
+
+.subtle {
   background: transparent;
 }
-.dark { 
+
+.dark {
   background: radial-gradient(900px 520px at 15% 10%, rgba(193, 18, 31, 0.06) 0%, transparent 60%),
-              radial-gradient(900px 520px at 88% 85%, rgba(193, 18, 31, 0.04) 0%, transparent 60%),
-              #FAF3EF;
+    radial-gradient(900px 520px at 88% 85%, rgba(193, 18, 31, 0.04) 0%, transparent 60%),
+    #FAF3EF;
   color: var(--text);
 }
 
@@ -200,7 +206,7 @@
   position: absolute;
   inset: 0;
   background: radial-gradient(900px 420px at 10% 10%, rgba(193, 18, 31, 0.18) 0%, transparent 60%),
-              radial-gradient(900px 480px at 90% 90%, rgba(74, 144, 226, 0.16) 0%, transparent 60%);
+    radial-gradient(900px 480px at 90% 90%, rgba(74, 144, 226, 0.16) 0%, transparent 60%);
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -237,7 +243,9 @@
   box-shadow: 0 0 18px rgba(193, 18, 31, 0.25);
 }
 
-.inverse { color: var(--midnight); }
+.inverse {
+  color: var(--midnight);
+}
 
 .lead-text {
   font-size: 1.25rem;
@@ -428,46 +436,38 @@
 .about-competitive-edge .competitive-grid {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
 }
 
+/* ANTI-GRAVITY CARD STYLES */
 .about-competitive-edge .competitive-card {
   background: #FFFFFF;
-  border-radius: 22px;
-  padding: 18px 18px 20px;
-  border: 1px solid rgba(193, 18, 31, 0.18);
-  box-shadow: 0 12px 32px rgba(31, 41, 51, 0.06);
+  border-radius: 20px;
+  padding: 16px;
+  border: 1px solid rgba(17, 24, 39, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
   position: relative;
   overflow: hidden;
   transform: translateZ(0);
-  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+  transition: all 400ms cubic-bezier(0.19, 1, 0.22, 1);
+  height: 400px;
+  /* Fixed height for consistent grid */
 }
 
-.about-competitive-edge .competitive-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(193, 18, 31, 0.28), rgba(193, 18, 31, 0.08));
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
+/* Image Container */
 .about-competitive-edge .competitive-card-image {
-  border-radius: 18px;
+  border-radius: 16px;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 10px 26px rgba(31, 41, 51, 0.08);
-  aspect-ratio: 1 / 1;
+  background: #F3F4F6;
+  aspect-ratio: 4/3;
+  width: 100%;
+  position: relative;
+  flex-shrink: 0;
+  transition: transform 400ms ease;
 }
 
 .about-competitive-edge .competitive-card-image img {
@@ -475,139 +475,221 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 18px;
-  filter: saturate(0.92) contrast(0.98) brightness(1.03);
-  transform: scale(1);
-  transition: transform 260ms ease;
+  transition: transform 600ms ease;
 }
 
+/* Content Container */
 .about-competitive-edge .competitive-card-title {
   font-family: Poppins, Inter, sans-serif;
-  font-size: 0.98rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--midnight);
-  letter-spacing: 0.02em;
+  margin-bottom: 4px;
 }
 
 .about-competitive-edge .competitive-card-meta {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: -2px;
 }
 
 .about-competitive-edge .competitive-card-badge {
-  width: 30px;
-  height: 30px;
-  border-radius: 999px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(193, 18, 31, 0.35);
-  background: rgba(193, 18, 31, 0.04);
-  box-shadow: 0 8px 18px rgba(193, 18, 31, 0.08);
-  flex: 0 0 auto;
+  background: rgba(193, 18, 31, 0.08);
+  color: var(--crimson);
 }
 
 .about-competitive-edge .competitive-card-badge svg {
-  width: 16px;
-  height: 16px;
-  fill: var(--crimson);
-  opacity: 0.92;
-}
-
-.about-competitive-edge .competitive-card-text {
-  font-size: 0.9rem;
-  font-weight: 400;
-  color: var(--text);
-  line-height: 1.7;
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
 }
 
 .about-competitive-edge .competitive-card-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-  margin-top: 2px;
-  padding: 3px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(193, 18, 31, 0.6);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--crimson);
-  background: rgba(193, 18, 31, 0.04);
-  transition: background-color 200ms ease, color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+  letter-spacing: 0.05em;
+  color: var(--muted);
 }
 
+/* Hidden Description & CTA - Reveal on Hover */
+.about-competitive-edge .competitive-card-text {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.6;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 300ms ease;
+  position: absolute;
+  top: 60%;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+  pointer-events: none;
+  /* Prevent interaction when hidden */
+}
+
+.about-competitive-edge .card-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 300ms ease 100ms;
+  /* Slight delay */
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--crimson);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+
+  position: absolute;
+  bottom: 24px;
+  left: 16px;
+  z-index: 10;
+}
+
+.about-competitive-edge .card-cta span {
+  transition: transform 0.2s;
+}
+
+.about-competitive-edge .card-cta:hover span {
+  transform: translateX(4px);
+}
+
+/* Progress Bar - Removed for cleaner look */
+.about-competitive-edge .competitive-card-progress {
+  display: none;
+}
+
+/* HOVER STATE - ANTI-GRAVITY REVEAL */
 .about-competitive-edge .competitive-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 22px 52px rgba(31, 41, 51, 0.12);
-  border-color: rgba(193, 18, 31, 0.55);
+  transform: translateY(-12px);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(193, 18, 31, 0.1);
+}
+
+/* Move image up and fade it */
+.about-competitive-edge .competitive-card:hover .competitive-card-image {
+  height: 140px;
+  /* Shrink image */
+  opacity: 0.4;
+  mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
 }
 
 .about-competitive-edge .competitive-card:hover .competitive-card-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
-.about-competitive-edge .competitive-card:hover .competitive-card-label {
-  background: rgba(193, 18, 31, 0.12);
-  border-color: rgba(193, 18, 31, 0.9);
-  box-shadow: 0 0 18px rgba(193, 18, 31, 0.45);
-  color: var(--crimson);
+/* Reveal Text */
+.about-competitive-edge .competitive-card:hover .competitive-card-text {
+  opacity: 1;
+  transform: translateY(0);
+  top: 180px;
+  /* Adjust based on new image height */
+  pointer-events: auto;
 }
 
-.about-competitive-edge .competitive-card-progress {
-  margin-top: auto;
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(31, 41, 51, 0.06);
-  overflow: hidden;
-  border: 1px solid rgba(193, 18, 31, 0.10);
+/* Reveal CTA */
+.about-competitive-edge .competitive-card:hover .card-cta {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.about-competitive-edge .competitive-card-progressFill {
-  display: block;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(90deg, rgba(193, 18, 31, 0.18) 0%, rgba(193, 18, 31, 0.75) 65%, rgba(193, 18, 31, 0.35) 100%);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 520ms ease;
-}
-
-.about-competitive-edge .competitive-card:hover .competitive-card-progressFill {
-  transform: scaleX(1);
-}
-
-.about-competitive-edge .competitive-card:hover .competitive-card-badge {
-  box-shadow: 0 0 18px rgba(193, 18, 31, 0.35);
-  border-color: rgba(193, 18, 31, 0.75);
-}
-
-/* Staggered reveal for cards */
-.about-competitive-edge .competitive-card {
+/* Reveal Micro-interactions */
+.reveal {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 800ms ease, transform 800ms ease;
+  will-change: transform, opacity;
 }
 
-.about-competitive-edge .reveal.is-in .competitive-card {
+.reveal.is-in {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: opacity 600ms ease, transform 600ms ease;
 }
 
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(1) { transition-delay: 40ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(2) { transition-delay: 80ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(3) { transition-delay: 120ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(4) { transition-delay: 160ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(5) { transition-delay: 200ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(6) { transition-delay: 240ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(7) { transition-delay: 280ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(8) { transition-delay: 320ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(9) { transition-delay: 360ms; }
-.about-competitive-edge .reveal.is-in .competitive-card:nth-child(10) { transition-delay: 400ms; }
+/* Stagger delays */
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(1) {
+  transition-delay: 100ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(2) {
+  transition-delay: 200ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(3) {
+  transition-delay: 300ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(4) {
+  transition-delay: 100ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(5) {
+  transition-delay: 200ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(6) {
+  transition-delay: 300ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(7) {
+  transition-delay: 100ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(8) {
+  transition-delay: 200ms;
+}
+
+.about-competitive-edge .reveal.is-in .competitive-card:nth-child(9) {
+  transition-delay: 300ms;
+}
+
+/* Responsive Adjustments */
+@media (hover: none) {
+
+  /* For touch devices, show slightly visible content or add tap-to-reveal hint */
+  .about-competitive-edge .competitive-card-text {
+    opacity: 0.8;
+    transform: translateY(0);
+    position: static;
+    margin-top: 16px;
+  }
+
+  .about-competitive-edge .card-cta {
+    opacity: 1;
+    transform: translateY(0);
+    position: static;
+    margin-top: 16px;
+  }
+
+  .about-competitive-edge .competitive-card {
+    height: auto;
+  }
+
+  .about-competitive-edge .competitive-card-image {
+    height: 200px;
+    mask-image: none;
+    -webkit-mask-image: none;
+    opacity: 1;
+  }
+}
 
 /* SPLIT */
 .split {
@@ -629,8 +711,8 @@
   padding: 120px 40px;
   text-align: center;
   background: radial-gradient(900px 520px at 15% 10%, rgba(193, 18, 31, 0.12) 0%, transparent 60%),
-              radial-gradient(900px 520px at 88% 85%, rgba(193, 18, 31, 0.04) 0%, transparent 60%),
-              #FAF3EF;
+    radial-gradient(900px 520px at 88% 85%, rgba(193, 18, 31, 0.04) 0%, transparent 60%),
+    #FAF3EF;
   color: var(--midnight);
   position: relative;
   overflow: hidden;
@@ -644,7 +726,7 @@
   right: 0;
   bottom: 0;
   background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
   pointer-events: none;
 }
 
@@ -750,4 +832,3 @@
     grid-template-columns: 1fr;
   }
 }
-

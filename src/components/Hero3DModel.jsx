@@ -1,37 +1,11 @@
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, Environment, Float } from "@react-three/drei";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import * as THREE from "three";
 
-// Base rotation for roboaiq-model
-const BASE_ROTATION = [0, 0, 0];
-
-function Robot({ scene }) {
-  const group = useRef();
-
-  // Enhanced "completely turnable" cursor-follow logic
-  useFrame((state) => {
-    if (!group.current) return;
-
-    // Mapping mouse position [-1, 1] to rotation [-Math.PI, Math.PI] for full 360 turn
-    const targetY = state.mouse.x * Math.PI;
-    const targetX = (state.mouse.y * Math.PI) / 8; // Slight vertical tilt
-
-    // Smooth interpolation (lerping) for a premium feel
-    group.current.rotation.y += (targetY - group.current.rotation.y) * 0.1;
-    group.current.rotation.x += (targetX - group.current.rotation.x) * 0.1;
-  });
-
-  return (
-    <group ref={group} rotation={BASE_ROTATION}>
-      <primitive object={scene} scale={2.5} />
-    </group>
-  );
-}
-
-// Mobile Video Component with Premium Audio Unlock
-function MobileVideo() {
+/**
+ * Hero Video Component with Premium Audio Unlock
+ * Displays video on ALL devices (mobile, tablet, desktop)
+ */
+function HeroVideo() {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
   const [audioUnlocked, setAudioUnlocked] = useState(false);
@@ -102,7 +76,6 @@ function MobileVideo() {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1.2, ease: "easeOut" }}
-      // User activates audio by tapping anywhere on the video area
       onClick={unlockAudio}
       style={{
         width: '100%',
@@ -114,20 +87,66 @@ function MobileVideo() {
         cursor: 'pointer'
       }}
     >
-      <video
-        ref={videoRef}
-        autoPlay
-        loop
-        muted={isMuted}
-        playsInline
+      {/* Video Wrapper - Constrained Container */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          y: [0, -8, 0] // Floating animation
+        }}
+        transition={{
+          opacity: { duration: 0.8 },
+          scale: { duration: 0.8 },
+          y: {
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }
+        }}
+        whileHover={{ scale: 1.03 }}
         style={{
+          position: 'relative',
+          maxWidth: '600px',
           width: '100%',
-          height: '100%',
-          objectFit: 'contain'
+          aspectRatio: '16/9', // Lock aspect ratio
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          borderRadius: '16px',
+          overflow: 'hidden',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(218, 165, 32, 0.1)',
         }}
       >
-        <source src="/assets/videos/video1.mp4" type="video/mp4" />
-      </video>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          poster="/assets/images/robot-poster.png"
+          width="600"
+          height="337"
+          fetchPriority="high"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain', // Prevent stretching
+            display: 'block'
+          }}
+        >
+          <source src="/assets/videos/video1.mp4" type="video/mp4" />
+        </video>
+
+        {/* Soft Glow Effect */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'radial-gradient(circle at center, rgba(218, 165, 32, 0.15) 0%, transparent 70%)',
+          pointerEvents: 'none',
+          mixBlendMode: 'overlay'
+        }} />
+      </motion.div>
 
       {/* Audio Prompt Overlay */}
       <AnimatePresence>
@@ -227,57 +246,7 @@ function MobileVideo() {
   );
 }
 
-// Desktop 3D Component
-function Desktop3D() {
-  const { scene } = useGLTF("/assets/models/roboaiq-model.glb");
-
-  return (
-    <motion.div
-      className="hero-canvas"
-      initial={{ opacity: 0, x: 100 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1.2, ease: "easeOut" }}
-    >
-      <Canvas camera={{ position: [0, 1, 4], fov: 45 }} shadows>
-        <ambientLight intensity={1.4} />
-        <directionalLight
-          position={[8, 6, 5]}
-          intensity={2.5}
-          castShadow
-        />
-        <pointLight position={[-5, 3, 2]} intensity={1.2} />
-        <Environment preset="city" intensity={0.8} />
-
-        <Float speed={1.2} rotationIntensity={0} floatIntensity={0.4}>
-          <Robot scene={scene} />
-        </Float>
-      </Canvas>
-    </motion.div>
-  );
-}
-
 export default function Hero3DModel() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Check if device is mobile
-    const checkMobile = () => {
-      const width = window.innerWidth;
-      setIsMobile(width < 768);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  // Render video for mobile, 3D for desktop
-  return isMobile ? <MobileVideo /> : <Desktop3D />;
+  // Always render video for all devices
+  return <HeroVideo />;
 }
-
-// Preload GLB only for desktop
-if (typeof window !== 'undefined' && window.innerWidth >= 768) {
-  useGLTF.preload("/assets/models/roboaiq-model.glb");
-}
-

@@ -372,6 +372,24 @@
   width: 100%;
   height: 100%;
   position: relative;
+  max-width: 600px;
+  /* Desktop constraint */
+  margin: 0 auto;
+}
+
+/* Responsive Video Sizing */
+@media (max-width: 1024px) {
+  .hero-canvas {
+    max-width: 450px;
+    /* Tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-canvas {
+    max-width: 90%;
+    /* Mobile */
+  }
 }
 
 .robot-container {

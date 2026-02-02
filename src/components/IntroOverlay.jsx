@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-const IntroOverlay = () => {
-    const [isVisible, setIsVisible] = useState(false);
+const IntroOverlay = ({ onComplete }) => {
     const [isFading, setIsFading] = useState(false);
 
     useEffect(() => {
-        // Check session storage
-        const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
-        if (!hasSeenIntro) {
-            setIsVisible(true);
-        }
-
         const handleMessage = (event) => {
             // In production, you might want to check event.origin
             if (event.data && event.data.type === 'introComplete') {
@@ -28,11 +21,9 @@ const IntroOverlay = () => {
 
         // Remove from DOM after fade animation
         setTimeout(() => {
-            setIsVisible(false);
+            if (onComplete) onComplete();
         }, 1000); // Match transition duration
     };
-
-    if (!isVisible) return null;
 
     return (
         <div

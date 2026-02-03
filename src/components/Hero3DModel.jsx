@@ -84,6 +84,7 @@ function HeroVideo() {
           borderRadius: '16px',
           overflow: 'hidden',
           boxShadow: '0 20px 60px rgba(0, 0, 0, 0.15), 0 0 40px rgba(218, 165, 32, 0.1)',
+          willChange: 'transform',
         }}
       >
         <video

@@ -13,12 +13,12 @@
   background-attachment: fixed;
 
   position: relative;
-  overflow: hidden;
-  overflow-x: hidden;
-  /* Prevent horizontal scroll */
+  /* overflow: visible to allow popups/dropdowns/natural flow */
+  overflow: visible;
 
-  /* Content-driven height, not viewport-height */
-  min-height: auto;
+  /* Content-driven height, stable viewport */
+  min-height: 100svh;
+  height: auto;
 
   display: flex;
   align-items: center;
@@ -84,7 +84,7 @@
   gap: 2rem;
 
   /* Prevent overflow on mobile */
-  overflow-x: hidden;
+  /* overflow-x: hidden removed */
   box-sizing: border-box;
 }
 
@@ -100,7 +100,7 @@
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden removed */
   margin-bottom: 2rem;
   /* Space between button and robot on mobile */
 }
@@ -108,6 +108,8 @@
 /* Text Entrance Animation */
 .hero-animate-text {
   animation: fadeSlideUp 0.8s ease-out;
+  contain: layout paint style;
+  will-change: transform, opacity;
 }
 
 @keyframes fadeSlideUp {
@@ -165,6 +167,8 @@
   background: radial-gradient(ellipse, rgba(255, 184, 77, 0.4) 0%, transparent 70%);
   animation: pulseGlow 3s ease-in-out infinite;
   pointer-events: none;
+  contain: layout paint style;
+  will-change: transform, opacity;
 }
 
 @keyframes pulseGlow {
@@ -269,6 +273,10 @@
     transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.25s ease,
     background 0.3s ease;
+
+  /* Performance Optimization */
+  contain: layout paint style;
+  will-change: transform, box-shadow;
 }
 
 /* Gradient overlay for hover effect */
@@ -401,6 +409,12 @@
   align-items: center;
   justify-content: center;
   overflow: visible;
+
+  /* Performance & Stability */
+  contain: layout paint style;
+  will-change: transform;
+  aspect-ratio: 16 / 9;
+  width: 100%;
 }
 
 /* Watermark Mask Overlay */
@@ -556,7 +570,7 @@
     padding-top: 6rem;
     padding-bottom: 5rem;
     min-height: calc(100vh - var(--nav-height));
-    min-height: calc(100dvh - var(--nav-height));
+    min-height: calc(100svh - var(--nav-height));
   }
 
   .hero-badge {
@@ -577,8 +591,7 @@
 @media (max-width: 1024px) {
   .hero {
     /* Ensure full viewport height on tablets */
-    min-height: 100vh;
-    min-height: 100dvh;
+    min-height: 100svh;
     padding-bottom: var(--space-12);
   }
 
@@ -640,8 +653,6 @@
     padding-top: var(--space-12);
     padding-bottom: var(--space-12);
     /* Ensure full mobile viewport */
-    min-height: 100vh;
-    min-height: 100dvh;
     min-height: 100svh;
     /* Small viewport for browsers with UI */
   }

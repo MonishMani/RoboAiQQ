@@ -189,9 +189,9 @@
   border-radius: 1.5rem;
   overflow: hidden;
   box-shadow:
-    0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  background: #f8fafc;
+    0 20px 25px -5px rgba(125, 179, 232, 0.1),
+    0 10px 10px -5px rgba(125, 179, 232, 0.05);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFF 100%);
 }
 
 @media (min-width: 768px) {

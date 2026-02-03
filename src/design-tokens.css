@@ -239,8 +239,10 @@
   --gradient-secondary: linear-gradient(135deg, #B5DAF7 0%, #9AC8F0 100%);
   --gradient-blue-subtle: linear-gradient(180deg, #F5FAFF 0%, #E6F4FE 100%);
   --gradient-hero: radial-gradient(circle at top right, rgba(125, 179, 232, 0.15), transparent 70%),
-    linear-gradient(180deg, #F5FAFF 0%, #FFFFFF 100%);
-  --gradient-global-theme: #FAF9F6;
+    linear-gradient(180deg, #F0F7FF 0%, #FFFFFF 100%);
+  --gradient-global-theme: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 50%, #E8F2FF 100%);
+  --gradient-section-light: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%);
+  --gradient-section-subtle: linear-gradient(180deg, #F5FAFF 0%, #FFFFFF 100%);
 
   /* ===== BREAKPOINTS (for reference) ===== */
   /* Use in media queries */

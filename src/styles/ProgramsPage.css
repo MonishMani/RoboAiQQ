@@ -6,8 +6,8 @@
   --text-secondary: #4A5568;
   --text-tertiary: #2D3748;
   --surface-primary: #FFFFFF;
-  --surface-secondary: #F8FAFC;
-  --surface-tertiary: #FAFBFC;
+  --surface-secondary: #F8FBFF;
+  --surface-tertiary: #F0F7FF;
   --border-light: rgba(15, 37, 62, 0.08);
   --border-medium: rgba(15, 37, 62, 0.12);
   --shadow-light: rgba(15, 37, 62, 0.04);
@@ -18,7 +18,8 @@
 .programs-page {
   width: 100%;
   overflow-x: hidden;
-  background: var(--surface-tertiary);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 50%, #F0F7FF 100%);
+  background-attachment: fixed;
 }
 
 /* ============================================
@@ -28,7 +29,7 @@
 .programs-hero {
   position: relative;
   padding: 7rem 2rem;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 50%, #F0F7FF 100%);
   min-height: 520px;
   display: flex;
   align-items: center;
@@ -149,7 +150,7 @@
 
 .programs-showcase {
   padding: 8rem 2rem;
-  background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 100%);
   position: relative;
 }
 
@@ -204,8 +205,8 @@
 }
 
 .program-card {
-  background: linear-gradient(145deg, #FFFFFF 0%, #FAFBFC 100%);
-  border: 1px solid rgba(15, 37, 62, 0.08);
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FBFF 100%);
+  border: 1px solid rgba(125, 179, 232, 0.15);
   border-radius: 20px;
   padding: 2rem 1.75rem;
   cursor: pointer;
@@ -251,7 +252,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.8) 0%, rgba(250, 251, 252, 0.9) 100%);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 251, 255, 0.95) 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -260,8 +261,8 @@
 
 .program-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 20px 60px rgba(15, 37, 62, 0.15);
-  border-color: rgba(15, 37, 62, 0.12);
+  box-shadow: 0 20px 60px rgba(125, 179, 232, 0.2);
+  border-color: rgba(125, 179, 232, 0.25);
 }
 
 .program-card:hover::before {
@@ -274,9 +275,9 @@
 
 .program-card.active {
   transform: translateY(-8px);
-  box-shadow: 0 16px 50px rgba(15, 37, 62, 0.12);
+  box-shadow: 0 16px 50px rgba(125, 179, 232, 0.18);
   border-color: var(--accent-color, #7DB3E8);
-  background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FBFF 100%);
 }
 
 .program-card.active::before {
@@ -353,11 +354,11 @@
 /* PROGRAM DETAILS - ENTERPRISE STYLING */
 
 .program-details {
-  background: linear-gradient(145deg, #F8FAFC 0%, #EDF2F7 100%);
+  background: linear-gradient(145deg, #FFFFFF 0%, #F8FBFF 100%);
   border-radius: 24px;
   padding: 4rem 3.5rem;
-  border: 1px solid rgba(15, 37, 62, 0.08);
-  box-shadow: 0 8px 32px rgba(15, 37, 62, 0.06);
+  border: 1px solid rgba(125, 179, 232, 0.15);
+  box-shadow: 0 8px 32px rgba(125, 179, 232, 0.08);
   position: relative;
   overflow: hidden;
 }

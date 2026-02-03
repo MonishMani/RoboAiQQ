@@ -13,7 +13,8 @@
 /* Legacy styles for backward compatibility */
 .wrrcm-testimonials {
   padding: var(--space-24) var(--space-8);
-  background: #FAF9F6;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 50%, #F0F7FF 100%);
+  background-attachment: fixed;
   text-align: center;
   font-family: var(--font-primary);
   position: relative;
@@ -40,12 +41,12 @@
 }
 
 .wrrcm-test {
-  background: #FAF9F6;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFF 100%);
   padding: var(--space-8);
   border-radius: var(--radius-2xl);
-  box-shadow: 0 4px 12px rgba(15, 37, 62, 0.06);
+  box-shadow: 0 4px 12px rgba(125, 179, 232, 0.08);
   backdrop-filter: blur(var(--glass-blur-md));
-  border: 1px solid rgba(15, 37, 62, 0.1);
+  border: 1px solid rgba(125, 179, 232, 0.15);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
   font-size: var(--font-size-base);

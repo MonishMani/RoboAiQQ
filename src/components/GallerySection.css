@@ -1,7 +1,8 @@
 /* Gallery Section - Clean Minimal */
 .gallery-section {
   padding: var(--space-24) var(--space-8);
-  background: #FAF9F6;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FBFF 50%, #F0F7FF 100%);
+  background-attachment: fixed;
   text-align: center;
   font-family: var(--font-primary);
   width: 100%;
@@ -50,12 +51,12 @@
   height: 280px;
   /* Mobile-first: minimal height */
   position: relative;
-  background: #FAF9F6;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFF 100%);
   backdrop-filter: blur(var(--glass-blur-md));
   border-radius: var(--radius-2xl);
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(15, 37, 62, 0.06);
-  border: 1px solid rgba(15, 37, 62, 0.08);
+  box-shadow: 0 4px 12px rgba(125, 179, 232, 0.08);
+  border: 1px solid rgba(125, 179, 232, 0.15);
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;

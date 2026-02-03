@@ -25,8 +25,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  /* Prevent background gaps */
-  background: var(--gradient-global-theme);
+  /* Premium Enterprise Background */
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 50%, #E8F2FF 100%);
+  background-attachment: fixed;
   overflow-x: hidden;
 }
 
@@ -46,7 +47,7 @@ body {
   line-height: var(--line-height-normal);
 
   /* Light Cloud-Blue Gradient - consistent across all pages */
-  background: var(--gradient-global-theme);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F0F7FF 50%, #E8F2FF 100%);
   background-attachment: fixed;
   /* Prevent background gaps on mobile scroll */
   color: var(--color-text-primary);

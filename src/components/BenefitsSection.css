@@ -44,12 +44,12 @@
 
 /* Individual Card */
 .benefit-card {
-    background: white;
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFF 100%);
     border-radius: 1.5rem;
     overflow: hidden;
     box-shadow:
-        0 4px 16px rgba(0, 0, 0, 0.06),
-        0 1px 4px rgba(0, 0, 0, 0.04);
+        0 4px 16px rgba(125, 179, 232, 0.08),
+        0 1px 4px rgba(125, 179, 232, 0.04);
     transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     animation: fadeInUp 0.6s ease-out;
     animation-fill-mode: both;
@@ -84,8 +84,8 @@
 .benefit-card:hover {
     transform: translateY(-6px);
     box-shadow:
-        0 12px 32px rgba(0, 0, 0, 0.12),
-        0 4px 8px rgba(0, 0, 0, 0.06);
+        0 12px 32px rgba(125, 179, 232, 0.12),
+        0 4px 8px rgba(125, 179, 232, 0.06);
 }
 
 /* Card Image */
@@ -95,8 +95,8 @@
     /* Mobile-first: reduced height */
     overflow: hidden;
     position: relative;
-    background: #f8fbff;
-    /* Fallback background */
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FBFF 100%);
+    /* Professional gradient background */
 }
 
 .benefit-image img {

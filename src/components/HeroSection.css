@@ -274,14 +274,14 @@
   position: relative;
   overflow: hidden;
 
-  /* Professional gradient background */
-  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  /* Vibrant red gradient background */
+  background: linear-gradient(135deg, #FF2D2D 0%, #E61515 50%, #CC1010 100%);
 
-  /* Premium shadow with blue tint */
+  /* Premium shadow with red tint */
   box-shadow:
-    0 4px 15px rgba(59, 130, 246, 0.3),
-    0 8px 25px rgba(59, 130, 246, 0.2),
-    0 2px 6px rgba(0, 0, 0, 0.08);
+    0 6px 20px rgba(255, 30, 30, 0.4),
+    0 10px 35px rgba(255, 30, 30, 0.3),
+    0 0 30px rgba(255, 30, 30, 0.2);
 
   /* Smooth transitions */
   transition:
@@ -311,11 +311,14 @@
 
 /* Hover State */
 .hero-cta-btn:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+  transform: translateY(-5px) scale(1.02);
+  background: linear-gradient(135deg, #FF4040 0%, #FF1E1E 50%, #E61515 100%);
   box-shadow:
-    0 8px 20px rgba(59, 130, 246, 0.4),
-    0 12px 30px rgba(59, 130, 246, 0.25);
+    0 12px 30px rgba(255, 30, 30, 0.5),
+    0 16px 45px rgba(255, 30, 30, 0.4),
+    0 0 40px rgba(255, 30, 30, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.4px;
 }
 
 .hero-cta-btn:hover::before {

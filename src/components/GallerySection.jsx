@@ -1,6 +1,6 @@
 import React from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import CircularGallery from './CircularGallery';
+import SmoothGallery from './SmoothGallery';
 import './GallerySection.css';
 
 function GallerySection() {
@@ -60,17 +60,7 @@ function GallerySection() {
       </div>
 
       <div className={`gallery-container scroll-scale ${sectionVisible ? 'visible' : ''}`}>
-        <CircularGallery
-          items={galleryItems}
-          bend={2}
-          textColor="#1F40AF"
-          borderRadius={0.08}
-          font="bold 24px 'Poppins', sans-serif"
-          scrollSpeed={1.3}
-          scrollEase={0.12}
-          autoScroll={true}
-          autoScrollSpeed={0.05}
-        />
+        <SmoothGallery items={galleryItems} />
       </div>
     </section>
   );

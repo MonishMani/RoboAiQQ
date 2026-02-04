@@ -1,0 +1,161 @@
+/* ============================================
+   SMOOTH GALLERY - INFINITE SCROLL
+   ============================================ */
+
+.gallery-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 60px 0;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
+}
+
+.gallery-track {
+  display: flex;
+  gap: 40px;
+  animation: scroll 50s linear infinite;
+  width: max-content;
+  padding: 0 40px;
+}
+
+.gallery-wrapper:hover .gallery-track {
+  animation-play-state: paused;
+}
+
+/* ============================================
+   GALLERY CARD - 3D PERSPECTIVE
+   ============================================ */
+
+.gallery-card {
+  min-width: 280px;
+  height: 380px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transform: perspective(1000px) rotateY(25deg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.gallery-card:hover {
+  transform: perspective(1000px) rotateY(0deg) scale(1.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card span {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   SMOOTH INFINITE SCROLL ANIMATION
+   ============================================ */
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .gallery-wrapper {
+    padding: 50px 0;
+  }
+
+  .gallery-track {
+    gap: 30px;
+    padding: 0 30px;
+  }
+
+  .gallery-card {
+    min-width: 240px;
+    height: 320px;
+  }
+
+  .gallery-card span {
+    font-size: 16px;
+    bottom: 12px;
+    left: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-wrapper {
+    padding: 40px 0;
+  }
+
+  .gallery-track {
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .gallery-card {
+    min-width: 200px;
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .gallery-card span {
+    font-size: 14px;
+    bottom: 10px;
+    left: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gallery-wrapper {
+    padding: 30px 0;
+  }
+
+  .gallery-track {
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .gallery-card {
+    min-width: 160px;
+    height: 220px;
+    border-radius: 12px;
+  }
+
+  .gallery-card span {
+    font-size: 12px;
+    bottom: 8px;
+    left: 10px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-track {
+    animation: none;
+  }
+
+  .gallery-card {
+    transition: none;
+  }
+}

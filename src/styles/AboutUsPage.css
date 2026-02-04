@@ -49,10 +49,10 @@
   right: -100px;
   width: 600px;
   height: 600px;
-  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  background: linear-gradient(135deg, rgba(125, 179, 232, 0.2) 0%, rgba(59, 130, 246, 0.1) 100%);
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.3;
+  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -63,10 +63,10 @@
   left: -50px;
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, #FFB84D 0%, #FF1E1E 100%);
+  background: linear-gradient(135deg, rgba(125, 179, 232, 0.15) 0%, rgba(59, 130, 246, 0.05) 100%);
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.3;
+  opacity: 0.4;
   pointer-events: none;
 }
 
@@ -155,15 +155,15 @@
    SECTIONS
    ============================================ */
 .about-section {
-  padding: 3rem 1rem;
+  padding: 8rem 2rem;
 }
 
 .light {
-  background: #FFFFFF;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
 }
 
 .subtle {
-  background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   position: relative;
 }
 
@@ -186,28 +186,27 @@
 .content-wide {
   max-width: 1400px;
   margin: auto;
-  padding: 0 1rem;
 }
 
 .content-medium {
   max-width: 1100px;
   margin: auto;
-  padding: 0 1rem;
 }
 
 .about-split {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  align-items: flex-start;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
 /* Typography */
 .section-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.75rem;
+  font-size: 2.8rem;
+  /* Matched scale */
   font-weight: 800;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: var(--text-primary);
   letter-spacing: -0.02em;
   line-height: 1.15;
@@ -218,10 +217,10 @@
 }
 
 .lead-text {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+  margin-bottom: 24px;
   font-weight: 500;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-primary);
 }
 
@@ -230,11 +229,10 @@
 }
 
 .body-text {
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 1.1rem;
+  line-height: 1.75;
   color: var(--text-secondary);
   font-weight: 400;
-  margin-bottom: 0.75rem;
 }
 
 .body-text.inverse {
@@ -243,61 +241,61 @@
 
 /* Images & Media */
 .media-card {
-  border-radius: 16px;
+  border-radius: 20px;
   overflow: hidden;
   border: 1px solid var(--border-medium);
-  box-shadow: 0 8px 24px rgba(15, 37, 62, 0.08);
+  box-shadow: 0 12px 40px rgba(15, 37, 62, 0.08);
+  /* Cool shadow */
   background: #FFFFFF;
-  margin-top: 1.5rem;
 }
 
 .media-card img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 480px;
   object-fit: cover;
 }
 
 /* Signals / stats */
 .signal-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin: 1rem 0;
+  gap: 24px;
+  margin: 48px 0;
 }
 
 .signal-card {
-  padding: 1rem;
-  border-radius: 12px;
+  padding: 24px;
+  border-radius: 16px;
   background: var(--surface-secondary);
   border: 1px solid var(--border-light);
+  min-width: 200px;
 }
 
 .signal-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #556B8F;
   font-weight: 700;
-  margin-bottom: 0.25rem;
+  margin-bottom: 8px;
   display: block;
 }
 
 .signal-value {
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
 .editorial-quote {
   border-left: 4px solid var(--accent-color);
-  padding-left: 1rem;
-  font-size: 1rem;
+  padding-left: 24px;
+  font-size: 1.25rem;
   font-weight: 500;
   font-style: italic;
-  line-height: 1.5;
+  line-height: 1.6;
   color: var(--text-primary);
-  margin: 1rem 0;
+  margin: 40px 0;
 }
 
 /* ============================================
@@ -305,13 +303,15 @@
    ============================================ */
 .manifesto {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2.4rem;
   font-weight: 700;
-  margin: 1rem 0 1.5rem;
+  margin: 32px 0 56px;
   line-height: 1.3;
   color: var(--text-primary);
   text-align: center;
-  max-width: 100%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .manifesto span {
@@ -321,47 +321,46 @@
 
 .pillar-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .glass-card {
   background: #FFFFFF;
   border: 1px solid var(--border-medium);
-  border-radius: 16px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 12px var(--shadow-light);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 4px 20px var(--shadow-light);
   transition: all 0.3s ease;
 }
 
 .glass-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--shadow-medium);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px var(--shadow-medium);
   border-color: var(--accent-color);
 }
 
 .pillar-index {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 900;
   color: rgba(125, 179, 232, 0.25);
   line-height: 1;
-  margin-bottom: 0.5rem;
+  margin-bottom: 16px;
   display: block;
 }
 
 .glass-card h4 {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 0.5rem;
+  margin-bottom: 12px;
   font-family: 'Poppins', sans-serif;
 }
 
 .glass-card p {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 0;
+  line-height: 1.6;
 }
 
 /* ============================================
@@ -372,43 +371,45 @@
 }
 
 .about-competitive-edge .content-medium {
-  max-width: 100%;
+  max-width: 1400px;
+  /* Wider for 3 col grid */
 }
 
 .about-competitive-edge .competitive-grid {
-  margin-top: 1.5rem;
+  margin-top: 64px;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
 }
 
 .about-competitive-edge .competitive-card {
   background: #FFFFFF;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid var(--border-medium);
-  box-shadow: 0 2px 12px var(--shadow-light);
+  box-shadow: 0 4px 20px var(--shadow-light);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  height: auto;
+  height: 420px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;
 }
 
 .about-competitive-edge .competitive-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--shadow-medium);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px var(--shadow-heavy);
   border-color: rgba(125, 179, 232, 0.4);
 }
 
 /* Image */
 .about-competitive-edge .competitive-card-image {
+  flex: 1;
   width: 100%;
-  height: 200px;
   overflow: hidden;
   position: relative;
   background: var(--surface-secondary);
   border-bottom: 1px solid var(--border-light);
+  transition: flex 0.3s ease;
 }
 
 .about-competitive-edge .competitive-card-image img {
@@ -427,10 +428,11 @@
 /* Content */
 .about-competitive-edge .competitive-card-title {
   font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
+  /* Program card size */
   font-weight: 700;
   color: var(--text-primary);
-  margin: 1rem 1rem 0.5rem;
+  margin: 24px 24px 8px;
   line-height: 1.25;
   position: relative;
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -439,16 +441,17 @@
 .about-competitive-edge .competitive-card-meta {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin: 0.5rem 1rem;
+  gap: 12px;
+  margin: 0 24px 24px;
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), margin-bottom 0.3s ease;
 }
 
 .about-competitive-edge .competitive-card-badge {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(125, 179, 232, 0.15);
+  /* Tech blue tint */
   color: #3B82F6;
   display: flex;
   align-items: center;
@@ -457,13 +460,13 @@
 }
 
 .about-competitive-edge .competitive-card-badge svg {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   fill: currentColor;
 }
 
 .about-competitive-edge .competitive-card-label {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -472,23 +475,28 @@
 
 /* Description - Hover Reveal */
 .about-competitive-edge .competitive-card-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 400;
   color: var(--text-secondary);
-  line-height: 1.5;
-  margin: 0 1rem 1rem;
-  height: auto;
-  opacity: 1;
-  overflow: visible;
-  transform: none;
-  transition: none;
+  line-height: 1.6;
+  margin: 0 24px;
+
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(10px);
+  transition:
+    height 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.3s ease 0.1s,
+    transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+    margin-bottom 0.3s ease;
 }
 
 .about-competitive-edge .competitive-card:hover .competitive-card-text {
-  height: auto;
+  height: 120px;
   opacity: 1;
-  transform: none;
-  margin-bottom: 1rem;
+  transform: translateY(0);
+  margin-bottom: 24px;
 }
 
 /* Hide CTA explicitly */
@@ -502,7 +510,7 @@
    CLOSING & UTILS
    ============================================ */
 .about-closing {
-  padding: 3rem 1rem;
+  padding: 120px 2rem;
   text-align: center;
   background: linear-gradient(135deg, #0F253E 0%, #05101E 100%);
   color: white;
@@ -511,15 +519,15 @@
 }
 
 .closing-inner h2 {
-  font-size: 1.1rem;
+  font-size: 1.75rem;
   font-weight: 500;
   opacity: 0.8;
-  margin-bottom: 0.75rem;
+  margin-bottom: 16px;
   font-family: 'Poppins', sans-serif;
 }
 
 .closing-inner h1 {
-  font-size: 1.75rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
   background: linear-gradient(90deg, #FFFFFF 0%, #90CDF4 100%);
   -webkit-background-clip: text;
@@ -545,73 +553,37 @@
   .hero-grid,
   .about-split {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 48px;
   }
 
   .about-competitive-edge .competitive-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
   }
 
   .pillar-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .about-page {
-    --nav-h: 56px;
-  }
-
-  .about-hero {
-    padding: calc(var(--nav-h) + 2rem) 1rem 2rem;
-    min-height: auto;
-  }
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    --nav-h: 64px;
   }
 
   .hero-title {
-    font-size: 1.75rem;
-  }
-
-  .hero-description {
-    font-size: 0.95rem;
-  }
-
-  .hero-visual-frame img {
-    height: 200px;
+    font-size: 2.5rem;
   }
 
   .section-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
+    font-size: 2rem;
   }
 
   .about-competitive-edge .competitive-grid,
   .pillar-grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
-  .manifesto {
-    font-size: 1.35rem;
-    margin: 0.75rem 0 1rem;
-  }
-
-  .about-closing {
-    padding: 2rem 1rem;
-  }
-
-  .closing-inner h2 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .closing-inner h1 {
-    font-size: 1.5rem;
+  .hero-visual-frame img {
+    height: 300px;
   }
 }

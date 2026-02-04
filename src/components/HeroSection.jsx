@@ -31,8 +31,7 @@ function HeroSection() {
 
               {/* Main Headline */}
               <h1>
-                Shaping Future CEOs.<br />
-                <span className="highlight">Inspiring Young Entrepreneurs.</span>
+                Shaping Future CEOs. <span className="highlight">Inspiring Young Entrepreneurs.</span>
               </h1>
 
               {/* Subtitle */}

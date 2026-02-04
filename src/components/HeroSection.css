@@ -49,9 +49,9 @@
 
 /* Hero Wrapper - Max-width centered container */
 .hero-wrapper {
-  width: 90%;
+  width: 100%;
   max-width: none;
-  padding: 0 2rem;
+  padding: 0 1rem;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -124,8 +124,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 16px;
-  font-size: 0.65rem;
+  padding: 5px 12px;
+  font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -210,14 +210,14 @@
    Hero Headings
    ============================================ */
 .hero h1 {
-  font-size: 1.2rem;
-  line-height: 1.2;
+  font-size: 1.65rem;
+  line-height: 1.25;
   font-weight: 800;
   font-family: 'Poppins', sans-serif;
   color: #0F253E;
   margin: 0;
   letter-spacing: -0.01em;
-  max-width: 90%;
+  max-width: 100%;
   text-align: center;
   white-space: normal;
   word-wrap: break-word;
@@ -253,6 +253,7 @@
   background: linear-gradient(90deg, #FF1E1E, #FFB84D);
   border-radius: 2px;
   animation: expandWidth 0.8s ease-out 0.6s both;
+  display: none;
 }
 
 @keyframes expandWidth {
@@ -265,8 +266,8 @@
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  line-height: 1.4;
+  font-size: 1rem;
+  line-height: 1.5;
   font-weight: 400;
   font-family: 'Poppins', sans-serif;
   color: #333333;
@@ -440,6 +441,7 @@
   margin: 0;
   padding: 0;
   z-index: 10;
+  border-radius: 16px;
 }
 
 /* Watermark Mask Overlay */

@@ -56,33 +56,39 @@ function Navbar() {
 
         {/* Navigation - Desktop */}
         <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
-          <a href="/#home" className={`nav-item ${activePath === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}>
-            <span className="text">Home</span>
-          </a>
+          {/* Left/Center Navigation Items */}
+          <div className="nav-items-group">
+            <a href="/#home" className={`nav-item ${activePath === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}>
+              Home
+            </a>
 
-          <Link to="/about" className={`nav-item ${activePath === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}>
-            <span className="text">About</span>
-          </Link>
+            <Link to="/about" className={`nav-item ${activePath === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}>
+              About
+            </Link>
 
-          <Link to="/programs" className={`nav-item ${activePath === '/programs' ? 'active' : ''}`} onClick={() => handleNavClick('/programs')}>
-            <span className="text">Programs</span>
-          </Link>
+            <Link to="/programs" className={`nav-item ${activePath === '/programs' ? 'active' : ''}`} onClick={() => handleNavClick('/programs')}>
+              Programs
+            </Link>
 
-          <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
-            <span className="text">Our Mentors</span>
-          </Link>
+            <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
+              Our Mentors
+            </Link>
 
-          <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
-            <span className="text">Insights</span>
-          </Link>
-          
-          <a href="/#contact" className="nav-item nav-cta" onClick={closeMenu}>
-            <span className="text">Contact</span>
-          </a>
+            <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
+              Insights
+            </Link>
+          </div>
 
-           <a href="/#contact" className="nav-item nav-register" onClick={closeMenu}>
-            <span className="text">Register</span>
-          </a>
+          {/* Right Side - Buttons */}
+          <div className="nav-buttons-group">
+            <a href="/#contact" className="nav-btn nav-btn-secondary" onClick={closeMenu}>
+              Contact
+            </a>
+
+            <a href="/#contact" className="nav-btn nav-btn-primary" onClick={closeMenu}>
+              Register
+            </a>
+          </div>
         </div>
 
         {/* Mobile Overlay */}

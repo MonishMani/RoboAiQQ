@@ -67,7 +67,7 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.7);
     pointer-events: auto;
-    z-index: 10000;
+    z-index: 9997;
     animation: floatIn 0.5s cubic-bezier(0.16, 1, 0.3, 1),
         floatDrift 4s ease-in-out 0.5s infinite;
     transform-origin: bottom right;
@@ -755,14 +755,20 @@
 
 @media (max-width: 767px) {
     .ria-container {
-        right: 8px;
-        bottom: 60px;
+        right: 50%;
+        bottom: 80px;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        transform: translateX(50%);
     }
 
     .ria-avatar-container {
-        width: 192px;
-        height: 272px;
-        display: none;
+        width: 120px;
+        height: 170px;
+        display: block;
+        margin: 0 auto 0 0;
+        order: 1;
     }
 
     .ria-icon-button {
@@ -774,8 +780,10 @@
     }
 
     .ria-chat-panel {
-        width: calc(100vw - 16px);
+        width: calc(100vw - 20px);
         max-width: 360px;
+        margin: 0 auto;
+        order: 2;
     }
 
     .feedback-card {
@@ -788,6 +796,7 @@
         transform: translateX(-50%);
         right: auto;
         padding: 10px !important;
+        z-index: 9997 !important;
     }
 
     .feedback-card p {

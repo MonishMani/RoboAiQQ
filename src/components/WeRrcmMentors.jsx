@@ -133,17 +133,9 @@ function WeRrcmMentors() {
         <span className="mentors-badge">EXPERT MENTORS</span>
 
         {/* Heading */}
-        <SplitText
-          text="Learn from Industry-Leading Robotics Mentors"
-          tag="h2"
-          delay={35}
-          duration={1.2}
-          ease="power3.out"
-          splitType="words"
-          from={{ opacity: 0, y: 25 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.2}
-        />
+        <h2>
+          Learn from <span className="keyword-highlight">Industry-Leading Robotics Mentors</span>
+        </h2>
 
         {/* Subtitle */}
         <TextType
@@ -178,7 +170,7 @@ function WeRrcmMentors() {
           </div>
         </div>
 
-        <h3>Meet Our Expert Mentors</h3>
+        <h3>Meet Our <span className="keyword-highlight">Expert Mentors</span></h3>
         <p className="mentors-subtitle">Learn from industry professionals with real-world experience</p>
 
         {/* Unique Mentor Grid */}
@@ -189,7 +181,7 @@ function WeRrcmMentors() {
               <MentorCard key={index} mentor={mentor} />
             ))}
           </div>
-          <h4>Meet Our Expert Instructors</h4>
+          <h4>Meet Our <span className="keyword-highlight">Expert Instructors</span></h4>
           <div className="mentors-grid-bottom">
             {bottomMentors.map((mentor, index) => (
               <MentorCard key={index} mentor={mentor} />

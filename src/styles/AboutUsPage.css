@@ -159,11 +159,11 @@
 }
 
 .light {
-  background: #FFFFFF;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
 }
 
 .subtle {
-  background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   position: relative;
 }
 

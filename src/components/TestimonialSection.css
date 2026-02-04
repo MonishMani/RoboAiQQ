@@ -1,7 +1,7 @@
 .testimonial-section {
   padding: 100px 80px;
   border-top: 1px solid rgba(15, 37, 62, 0.08);
-  background: #FAF9F6;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   position: relative;
   z-index: 5;
 }
@@ -19,7 +19,7 @@
 }
 
 .testimonial {
-  background: #FAF9F6;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   backdrop-filter: blur(var(--glass-blur-md));
   padding: 40px;
   border-radius: 24px;

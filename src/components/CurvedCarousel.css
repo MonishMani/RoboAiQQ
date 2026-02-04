@@ -1,0 +1,238 @@
+/* ============================================
+   CURVED CAROUSEL - 3D PERSPECTIVE
+   ============================================ */
+
+.carousel-wrapper {
+  width: 100%;
+  padding: 80px 0;
+  overflow: hidden;
+  perspective: 1800px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
+}
+
+/* ============================================
+   CAROUSEL TRACK - 3D CONTAINER
+   ============================================ */
+
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  transform-style: preserve-3d;
+  padding: 0 40px;
+}
+
+/* ============================================
+   CAROUSEL CARDS - 3D TRANSFORMS
+   ============================================ */
+
+.carousel-card {
+  width: 320px;
+  height: 420px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+  filter: brightness(0.7);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
+}
+
+/* ============================================
+   CARD POSITIONING - LEFT SIDE
+   ============================================ */
+
+.carousel-card:nth-child(1) {
+  transform: rotateY(35deg) scale(0.9);
+}
+
+.carousel-card:nth-child(2) {
+  transform: rotateY(20deg) scale(0.95);
+}
+
+/* ============================================
+   CARD POSITIONING - CENTER (ACTIVE)
+   ============================================ */
+
+.carousel-card:nth-child(3) {
+  transform: rotateY(0deg) scale(1.05);
+  filter: brightness(1);
+  z-index: 3;
+}
+
+/* ============================================
+   CARD POSITIONING - RIGHT SIDE
+   ============================================ */
+
+.carousel-card:nth-child(4) {
+  transform: rotateY(-20deg) scale(0.95);
+}
+
+.carousel-card:nth-child(5) {
+  transform: rotateY(-35deg) scale(0.9);
+}
+
+/* ============================================
+   HOVER EFFECT - PREMIUM INTERACTION
+   ============================================ */
+
+.carousel-card:hover {
+  transform: rotateY(0deg) scale(1.12) translateY(-10px);
+  filter: brightness(1);
+  z-index: 10;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   IMAGE STYLING
+   ============================================ */
+
+.carousel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   TEXT OVERLAY
+   ============================================ */
+
+.carousel-card span {
+  position: absolute;
+  bottom: 18px;
+  left: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .carousel-wrapper {
+    padding: 60px 0;
+  }
+
+  .carousel-track {
+    gap: 30px;
+    padding: 0 30px;
+  }
+
+  .carousel-card {
+    width: 280px;
+    height: 360px;
+  }
+
+  .carousel-card span {
+    font-size: 18px;
+    bottom: 14px;
+    left: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    padding: 50px 0;
+  }
+
+  .carousel-track {
+    gap: 20px;
+    padding: 0 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .carousel-card {
+    width: 240px;
+    height: 300px;
+  }
+
+  .carousel-card:nth-child(1) {
+    transform: rotateY(25deg) scale(0.85);
+  }
+
+  .carousel-card:nth-child(2) {
+    transform: rotateY(12deg) scale(0.92);
+  }
+
+  .carousel-card:nth-child(3) {
+    transform: rotateY(0deg) scale(1);
+  }
+
+  .carousel-card:nth-child(4) {
+    transform: rotateY(-12deg) scale(0.92);
+  }
+
+  .carousel-card:nth-child(5) {
+    transform: rotateY(-25deg) scale(0.85);
+  }
+
+  .carousel-card span {
+    font-size: 16px;
+    bottom: 12px;
+    left: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .carousel-wrapper {
+    padding: 40px 0;
+  }
+
+  .carousel-track {
+    gap: 16px;
+    padding: 0 16px;
+  }
+
+  .carousel-card {
+    width: 200px;
+    height: 260px;
+    border-radius: 16px;
+  }
+
+  .carousel-card:nth-child(1) {
+    transform: rotateY(20deg) scale(0.8);
+  }
+
+  .carousel-card:nth-child(2) {
+    transform: rotateY(10deg) scale(0.9);
+  }
+
+  .carousel-card:nth-child(3) {
+    transform: rotateY(0deg) scale(0.95);
+  }
+
+  .carousel-card:nth-child(4) {
+    transform: rotateY(-10deg) scale(0.9);
+  }
+
+  .carousel-card:nth-child(5) {
+    transform: rotateY(-20deg) scale(0.8);
+  }
+
+  .carousel-card span {
+    font-size: 14px;
+    bottom: 10px;
+    left: 12px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-card {
+    transition: none;
+  }
+
+  .carousel-card:hover {
+    transform: scale(1.05);
+  }
+}

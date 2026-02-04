@@ -37,7 +37,7 @@ function HeroSection() {
 
               {/* Subtitle */}
               <p className="subtitle">
-                RoboAIQ isn’t just an education program — it’s a launchpad for future CEOs, innovators, and technology leaders.
+                RoboAIQ isn't just an education program. It's a launchpad for future CEOs, innovators, and technology leaders.
               </p>
 
               {/* Premium CTA Button - Directly under text content */}

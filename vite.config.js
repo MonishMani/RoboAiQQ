@@ -6,17 +6,33 @@ import { compression } from 'vite-plugin-compression2'
 export default defineConfig({
   plugins: [
     react(),
-    // Standard Gzip compression
+    // Brotli compression (better than gzip)
+    compression({
+      algorithm: 'brotliCompress',
+      exclude: [/\.(br)$/, /\.(gz)$/],
+      threshold: 1024, // Only compress files > 1KB
+      compressionOptions: {
+        level: 11, // Maximum compression
+      },
+    }),
+    // Gzip compression as fallback
     compression({
       algorithm: 'gzip',
       exclude: [/\.(br)$/, /\.(gz)$/],
+      threshold: 1024,
     }),
   ],
   build: {
-    // Rolldown handles minification internally, removing terser to avoid conflicts
-    // Removing complex rollupOptions.output as Rolldown (experimental) might not support them fully yet
     target: 'es2020',
     chunkSizeWarningLimit: 800,
+    // Enable CSS code splitting
+    cssCodeSplit: true,
+    // Minify CSS
+    cssMinify: true,
+    // Disable source maps for smaller bundles
+    sourcemap: false,
+    // Report compressed size
+    reportCompressedSize: true,
   },
   // Include additional asset types
   assetsInclude: ['**/*.glb', '**/*.webp', '**/*.avif'],

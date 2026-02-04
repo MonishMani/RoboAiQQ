@@ -104,7 +104,7 @@
 
 .hero-title .highlight {
   color: #FF1E1E;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hero-subtitle {
@@ -219,10 +219,21 @@
   transform: translateY(30px);
 }
 
-.program-card:nth-child(1) { animation-delay: 0.1s; }
-.program-card:nth-child(2) { animation-delay: 0.2s; }
-.program-card:nth-child(3) { animation-delay: 0.3s; }
-.program-card:nth-child(4) { animation-delay: 0.4s; }
+.program-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.program-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.program-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.program-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 @keyframes fadeInUp {
   to {
@@ -799,6 +810,22 @@
     padding: 12px 24px;
     font-size: 14px;
   }
+
+  /* Program Architecture Section - Mobile Stack */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .feature-card {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  .feature-card p {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
 @media (max-width: 640px) {
@@ -825,6 +852,14 @@
 
   .showcase-header h2 {
     font-size: 1.35rem;
+  }
+
+  .showcase-header {
+    padding: 0 0.5rem;
+  }
+
+  .features-header {
+    padding: 0 0.5rem;
   }
 
   .programs-grid {
@@ -871,6 +906,16 @@
 
   .feature-card {
     padding: 1rem;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .feature-card {
+    padding: 1.25rem 1rem;
   }
 
   .feature-number {

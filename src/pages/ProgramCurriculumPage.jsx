@@ -68,7 +68,7 @@ function ProgramCurriculumPage() {
           <div className="hero-content">
             <div className="hero-badge">RoboAIQ is not a hobby class.</div>
             <h1 className="hero-title">
-              RoboAIQ — An <span className="highlight">Elite Future-Tech Leadership Program</span>
+              RoboAIQ: An <span className="highlight">Elite Future-Tech Leadership Program</span>
             </h1>
             <p className="hero-subtitle">
               It is a high-impact future leadership program for exceptional young minds.
@@ -140,8 +140,8 @@ function ProgramCurriculumPage() {
           </div>
         </section>
 
-       
-        
+
+
       </div>
       <Footer />
     </>

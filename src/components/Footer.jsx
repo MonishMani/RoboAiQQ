@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { ProtectedEmail, ROBOAIQ_EMAILS } from '../utils/emailProtection';
 import './Footer.css';
 
 function Footer() {
@@ -58,10 +59,36 @@ function Footer() {
                     <div className="footer-contact-card">
                         <p className="footer-contact-company">ROBOAIQ</p>
                         <div className="footer-contact-items">
-                            <p><span className="label">For Sales Enquires:</span> <a href="mailto:sales@roboaiq.in">sales@roboaiq.in</a></p>
-                            <p><span className="label">For Partnerships:</span> <a href="mailto:partnership@roboaiq.in">partnership@roboaiq.in</a></p>
-                            <p><span className="label">For Job Enquiries:</span> <a href="mailto:jobs@roboaiq.in">jobs@roboaiq.in</a></p>
-                            <p className="footer-phone">+91 8971252285 / +91 99624 99556</p>
+                            <p>
+                                <span className="label">For Sales Enquires:</span>{' '}
+                                <ProtectedEmail
+                                    user={ROBOAIQ_EMAILS.sales.user}
+                                    domain={ROBOAIQ_EMAILS.sales.domain}
+                                >
+                                    sales@roboaiq.in
+                                </ProtectedEmail>
+                            </p>
+                            <p>
+                                <span className="label">For Partnerships:</span>{' '}
+                                <ProtectedEmail
+                                    user={ROBOAIQ_EMAILS.partnership.user}
+                                    domain={ROBOAIQ_EMAILS.partnership.domain}
+                                >
+                                    partnership@roboaiq.in
+                                </ProtectedEmail>
+                            </p>
+                            <p>
+                                <span className="label">For Job Enquiries:</span>{' '}
+                                <ProtectedEmail
+                                    user={ROBOAIQ_EMAILS.jobs.user}
+                                    domain={ROBOAIQ_EMAILS.jobs.domain}
+                                >
+                                    jobs@roboaiq.in
+                                </ProtectedEmail>
+                            </p>
+                            <p className="footer-phone">
+                                <a href="tel:+918971252285" className="phone-link">+91 8971252285</a> / <a href="tel:+919962499556" className="phone-link">+91 99624 99556</a>
+                            </p>
                         </div>
                     </div>
                 </div>

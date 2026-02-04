@@ -3,31 +3,41 @@ import { useRef, useEffect, useState } from "react";
 
 /**
  * Hero Video Component
- * Auto-plays with sound when in viewport, mutes when out.
- * No visible controls.
+ * Cross-browser safe playback with mobile compatibility, unmute button, and error handling
  */
 function HeroVideo() {
   const videoRef = useRef(null);
   const [isMuted, setIsMuted] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const [retryCount, setRetryCount] = useState(0);
+  const [showUnmuteBtn, setShowUnmuteBtn] = useState(false);
 
-  // Scroll Visibility Logic
+  // Scroll Visibility + Retry Logic
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         const video = videoRef.current;
-        if (!video) return;
+        if (!video || hasError) return;
 
         if (entry.isIntersecting) {
-          // Hero is visible: Unmute
-          setIsMuted(false);
-          // Attempt to play if paused (e.g. by browser policy on previous unmute attempt)
-          video.play().catch(() => {
-            // Autoplay with sound usually blocked without user interaction.
-            // We catch the error to prevent console noise.
-          });
+          // Show unmute button when video is visible
+          setShowUnmuteBtn(true);
+
+          // Attempt to play
+          const playPromise = video.play();
+
+          if (playPromise !== undefined) {
+            playPromise.catch((error) => {
+              console.warn('Video autoplay prevented:', error);
+              // iOS/Safari often block autoplay with sound
+              // Video will remain muted, user can unmute manually
+            });
+          }
         } else {
-          // Hero scrolled away: Mute
-          setIsMuted(true);
+          // Mute when out of view
+          if (!isMuted) {
+            setIsMuted(true);
+          }
         }
       },
       { threshold: 0.5 } // Trigger when 50% visible
@@ -38,7 +48,32 @@ function HeroVideo() {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [hasError, isMuted]);
+
+  // Error handling with retry
+  const handleVideoError = () => {
+    console.error('Video failed to load');
+    if (retryCount < 2) {
+      // Retry loading
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.load();
+          setRetryCount(prev => prev + 1);
+        }
+      }, 1000 * (retryCount + 1)); // Exponential backoff
+    } else {
+      // Show fallback after 2 retries
+      setHasError(true);
+    }
+  };
+
+  // Manual unmute handler
+  const handleUnmute = () => {
+    setIsMuted(false);
+    if (videoRef.current) {
+      videoRef.current.play().catch(console.warn);
+    }
+  };
 
   return (
     <motion.div
@@ -55,7 +90,7 @@ function HeroVideo() {
         position: 'relative',
       }}
     >
-      {/* Video Wrapper - Constrained Container */}
+      {/* Video/Fallback Wrapper - Fixed aspect ratio to prevent CLS */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{
@@ -77,7 +112,8 @@ function HeroVideo() {
           position: 'relative',
           maxWidth: '600px',
           width: '100%',
-          aspectRatio: '16/9', // Lock aspect ratio
+          aspectRatio: '16/9', // Lock aspect ratio for CLS prevention
+          minHeight: '337px', // Reserve space
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -87,25 +123,77 @@ function HeroVideo() {
           willChange: 'transform',
         }}
       >
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted={isMuted} // Controlled by intersection observer
-          playsInline
-          poster="/assets/images/robot-poster.png"
-          width="600"
-          height="337"
-          fetchPriority="high"
-          style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain', // Prevent stretching
-            display: 'block'
-          }}
-        >
-          <source src="/assets/videos/video1.mp4" type="video/mp4" />
-        </video>
+        {hasError ? (
+          /* Fallback Image */
+          <img
+            src="/assets/images/robot-poster.png"
+            alt="RoboAIQ Robot"
+            width="600"
+            height="337"
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'contain',
+              display: 'block'
+            }}
+          />
+        ) : (
+          <>
+            <video
+              ref={videoRef}
+              autoPlay
+              loop
+              muted={isMuted}
+              playsInline
+              preload="metadata"
+              poster="/assets/images/robot-poster.png"
+              width="600"
+              height="337"
+              fetchPriority="high"
+              onError={handleVideoError}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                display: 'block'
+              }}
+            >
+              <source src="/assets/videos/video1.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+
+            {/* Unmute Button */}
+            {showUnmuteBtn && isMuted && (
+              <button
+                onClick={handleUnmute}
+                aria-label="Unmute video"
+                style={{
+                  position: 'absolute',
+                  bottom: '16px',
+                  right: '16px',
+                  background: 'rgba(0, 0, 0, 0.6)',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '50%',
+                  width: '44px',
+                  height: '44px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                  fontSize: '20px',
+                  transition: 'all 0.2s ease',
+                  touchAction: 'manipulation',
+                  zIndex: 10,
+                }}
+                onMouseEnter={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.8)'}
+                onMouseLeave={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.6)'}
+              >
+                🔊
+              </button>
+            )}
+          </>
+        )}
 
         {/* Soft Glow Effect */}
         <div style={{

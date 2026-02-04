@@ -235,7 +235,8 @@ const RiaChatbot = () => {
             setIsThinking(false);
             const botMsg = { id: Date.now() + 1, type: 'bot', text: botResponse };
             setMessages(prev => [...prev, botMsg]);
-            speakText(botResponse);
+            // REMOVED: Auto TTS - users must click to listen
+            // speakText(botResponse);
 
             // Enable FAQ after first free chat message
             if (chatMode === 'feedback_yes') {
@@ -247,6 +248,11 @@ const RiaChatbot = () => {
 
     const handleFAQClick = (question) => {
         handleUserMessage(question);
+    };
+
+    // Manual TTS trigger for specific message
+    const handleListenToMessage = (text) => {
+        speakText(text);
     };
 
     // --- 7. Contact Info Submission ---
@@ -374,7 +380,7 @@ const RiaChatbot = () => {
                     {/* Header */}
                     <div className="ria-header">
                         <div className="ria-title">
-                            <h3>Ria — Your <span>Robotics</span> Guide</h3>
+                            <h3>Ria: Your <span>Robotics</span> Guide</h3>
                             <div className="ria-context">
                                 Viewing: <strong>{currentSection.name}</strong>
                             </div>
@@ -390,7 +396,17 @@ const RiaChatbot = () => {
 
                         {messages.map((msg) => (
                             <div key={msg.id} className={`message ${msg.type}`}>
-                                {msg.text}
+                                <span className="message-text">{msg.text}</span>
+                                {msg.type === 'bot' && (
+                                    <button
+                                        className="listen-btn"
+                                        onClick={() => handleListenToMessage(msg.text)}
+                                        aria-label="Listen to this message"
+                                        title="Click to hear this message"
+                                    >
+                                        🔊
+                                    </button>
+                                )}
                             </div>
                         ))}
 

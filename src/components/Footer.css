@@ -168,6 +168,28 @@
   margin-top: 0.5rem;
 }
 
+/* Phone Link Styles */
+.footer-phone .phone-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 8px;
+  min-height: 44px;
+  touch-action: manipulation;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.footer-phone .phone-link:hover {
+  color: #ffb84d;
+  background: rgba(255, 184, 77, 0.1);
+}
+
+.footer-phone .phone-link:active {
+  transform: scale(0.98);
+}
+
+
 /* Responsive - Tablet */
 @media (max-width: 1024px) {
   .footer-wrapper {

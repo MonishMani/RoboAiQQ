@@ -94,15 +94,14 @@
 .hero-left {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: var(--space-6);
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
   z-index: 10;
   width: 100%;
   box-sizing: border-box;
-  /* overflow-x: hidden removed */
-  margin-bottom: 2rem;
-  /* Space between button and robot on mobile */
+  margin-bottom: 1rem;
+  /* Reduced spacing */
 }
 
 /* Text Entrance Animation */
@@ -203,15 +202,18 @@
    Hero Headings
    ============================================ */
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  /* Larger, more impactful */
   line-height: 1.2;
-  font-weight: 800;
+  font-weight: 700;
+  /* Slightly lighter for elegance */
   font-family: 'Poppins', sans-serif;
   color: #000000;
-  margin-bottom: var(--space-4);
-  letter-spacing: -0.01em;
-  max-width: 600px;
-  text-align: left;
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.02em;
+  /* Tighter tracking */
+  max-width: 700px;
+  text-align: center;
   white-space: normal;
 }
 
@@ -222,14 +224,17 @@
 }
 
 .subtitle {
-  font-size: 1.4rem;
-  line-height: 1.6;
-  font-weight: 400;
+  font-size: 1.15rem;
+  /* Balanced with headline */
+  line-height: 1.7;
+  font-weight: 500;
+  /* Semi-bold for emphasis */
   font-family: 'Poppins', sans-serif;
-  color: #333333;
+  color: #555555;
+  /* Softer gray */
   margin-bottom: 0;
-  max-width: 550px;
-  text-align: left;
+  max-width: 600px;
+  text-align: center;
 }
 
 /* ============================================
@@ -359,8 +364,8 @@
   position: relative;
   z-index: 5;
   height: 100%;
-  margin-top: 1rem;
-  /* Additional space from button */
+  margin-top: 0;
+  /* Removed extra spacing */
 }
 
 .hero-visual {
@@ -578,8 +583,11 @@
   }
 
   .hero-container {
+    /* Balanced ratio */
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
+    /* Minimal gap for tighter layout */
+    gap: 1.5rem;
+    align-items: center;
   }
 
   .hero-visual {
@@ -617,6 +625,8 @@
   .hero h1 {
     max-width: 100%;
     text-align: center;
+    line-height: 1.2;
+    /* Slightly looser for mobile readability */
   }
 
   .subtitle {

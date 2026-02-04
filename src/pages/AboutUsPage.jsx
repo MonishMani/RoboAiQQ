@@ -87,8 +87,8 @@ export default function AboutUsPage() {
             </div>
 
             <blockquote className="editorial-quote">
-              “We don’t teach textbook business — we ignite entrepreneurial thinking
-              and leadership from day one.”
+              "We don't teach textbook business. We ignite entrepreneurial thinking
+              and leadership from day one."
             </blockquote>
           </div>
 

@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useMagneticButton } from '../hooks/useMagneticButton';
+import { ProtectedEmail, ROBOAIQ_EMAILS } from '../utils/emailProtection';
 import './WeRrcmContactForm.css';
 
 function WeRrcmContactForm() {
@@ -43,8 +44,8 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Phone</span>
-                <p>+91 8971252285</p>
-                <p>+91 99624 99556</p>
+                <p><a href="tel:+918971252285" className="phone-link">+91 8971252285</a></p>
+                <p><a href="tel:+919962499556" className="phone-link">+91 99624 99556</a></p>
               </div>
             </div>
 
@@ -57,7 +58,14 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Email</span>
-                <p>sales@roboaiq.in</p>
+                <p>
+                  <ProtectedEmail
+                    user={ROBOAIQ_EMAILS.sales.user}
+                    domain={ROBOAIQ_EMAILS.sales.domain}
+                  >
+                    sales@roboaiq.in
+                  </ProtectedEmail>
+                </p>
               </div>
             </div>
 

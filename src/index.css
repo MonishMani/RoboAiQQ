@@ -35,6 +35,12 @@ body {
   margin: 0;
   padding: 0;
 
+  /* Safe area insets for notched devices (iOS, Android) */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
   /* Mobile-safe viewport height (Stable) */
   min-height: 100svh;
   /* fallback */
@@ -313,6 +319,48 @@ button:focus-visible {
 
   h2 {
     font-size: var(--font-size-2xl);
+  }
+}
+
+/* ===== LAYOUT SHIFT PREVENTION ===== */
+
+/* Prevent CLS (Cumulative Layout Shift) for media elements */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reserve aspect ratio space for videos */
+video {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+/* Optimize animations to use transform */
+.animated-element {
+  will-change: transform;
+}
+
+/* Prevent text overflow on mobile */
+@media (max-width: 640px) {
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Improve line-height for readability on small screens */
+  h1,
+  h2,
+  h3 {
+    line-height: 1.3;
   }
 }
 

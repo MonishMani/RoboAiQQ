@@ -1,7 +1,40 @@
 /* Container */
 .kit-section {
   padding: 7rem 2rem;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient Orbs - Decorative Background */
+.kit-section::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  top: -100px;
+  right: -100px;
+  z-index: 0;
+}
+
+.kit-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #FFB84D 0%, #FF1E1E 100%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+  bottom: -50px;
+  left: -50px;
+  z-index: 0;
 }
 
 /* Header */
@@ -9,6 +42,8 @@
   text-align: center;
   max-width: 800px;
   margin: 0 auto 4.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .kit-eyebrow {
@@ -55,6 +90,8 @@
   grid-template-columns: 1fr 1.1fr;
   gap: 4rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 /* Image */

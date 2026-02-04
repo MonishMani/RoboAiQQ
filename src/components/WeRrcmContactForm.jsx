@@ -1,5 +1,6 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useMagneticButton } from '../hooks/useMagneticButton';
+import { ProtectedEmail, ROBOAIQ_EMAILS } from '../utils/emailProtection';
 import './WeRrcmContactForm.css';
 
 function WeRrcmContactForm() {
@@ -57,7 +58,14 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Email</span>
-                <p>sales@roboaiq.in</p>
+                <p>
+                  <ProtectedEmail
+                    user={ROBOAIQ_EMAILS.sales.user}
+                    domain={ROBOAIQ_EMAILS.sales.domain}
+                  >
+                    sales@roboaiq.in
+                  </ProtectedEmail>
+                </p>
               </div>
             </div>
 

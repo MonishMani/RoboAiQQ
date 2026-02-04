@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { ProtectedEmail, ROBOAIQ_EMAILS } from '../utils/emailProtection';
 import './PrivacyPolicy.css';
 
 const PrivacyPolicy = () => {
@@ -121,7 +122,14 @@ const PrivacyPolicy = () => {
                         <p>For any questions or concerns regarding this Privacy Policy or your data, please contact us at:</p>
                         <div className="contact-details">
                             <div className="contact-item">
-                                <span>📧</span> <a href="mailto:inquiry@roboaiq.in" style={{ color: 'inherit', textDecoration: 'underline' }}>inquiry@roboaiq.in</a>
+                                <span>📧</span>{' '}
+                                <ProtectedEmail
+                                    user={ROBOAIQ_EMAILS.inquiry.user}
+                                    domain={ROBOAIQ_EMAILS.inquiry.domain}
+                                    style={{ color: 'inherit', textDecoration: 'underline' }}
+                                >
+                                    inquiry@roboaiq.in
+                                </ProtectedEmail>
                             </div>
                             <div className="contact-item">
                                 <span>📞</span> <span>+91 99624 99556</span>

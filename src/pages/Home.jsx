@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
+import StatsBanner from '../components/StatsBanner';
 import BenefitsSection from '../components/BenefitsSection';
 import WeRrcmUnique from '../components/WeRrcmUnique';
 import WeRrcmJourney from '../components/WeRrcmJourney';
@@ -17,6 +18,7 @@ function Home() {
             <div className="main-website-content">
                 <Navbar />
                 <HeroSection />
+                <StatsBanner />
                 <BenefitsSection />
                 <WeRrcmUnique />
                 <WeRrcmJourney />

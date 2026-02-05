@@ -71,7 +71,10 @@ function WeRrcmContactForm() {
               </div>
               <div>
                 <span style={{ color: '#FF1E1E' }}>Location</span>
-                <p>Bangalore<br />Hyderabad<br />Chennai<br />Pune</p>
+                <p>Bangalore</p>
+                <p>Hyderabad</p>
+                <p>Chennai</p>
+                <p>Pune</p>
               </div>
             </div>
 

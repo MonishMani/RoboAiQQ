@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activePath, setActivePath] = useState('/');
-
-  useEffect(() => {
-    // Set initial active path based on current location
-    const path = window.location.pathname;
-    setActivePath(path);
-  }, []);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -20,9 +14,10 @@ function Navbar() {
     setIsMenuOpen(false);
   };
 
-  const handleNavClick = (path) => {
-    setActivePath(path);
-    closeMenu();
+  const isActive = (path) => {
+    if (path === '/' && location.pathname === '/') return true;
+    if (path !== '/' && location.pathname.startsWith(path)) return true;
+    return false;
   };
 
   return (
@@ -58,19 +53,25 @@ function Navbar() {
         <div className={`nav-links ${isMenuOpen ? 'mobile-open' : ''}`}>
           {/* Left/Center Navigation Items */}
           <div className="nav-items-group">
-            <a href="/#home" className={`nav-item ${activePath === '/' ? 'active' : ''}`} onClick={() => handleNavClick('/')}>
+            <a href="/#home" className={`nav-item ${isActive('/') ? 'active' : ''}`} onClick={closeMenu}>
               Home
             </a>
 
-            <Link to="/about" className={`nav-item ${activePath === '/about' ? 'active' : ''}`} onClick={() => handleNavClick('/about')}>
+            <Link to="/about" className={`nav-item ${isActive('/about') ? 'active' : ''}`} onClick={closeMenu}>
               About
             </Link>
 
-            <Link to="/programs" className={`nav-item ${activePath === '/programs' ? 'active' : ''}`} onClick={() => handleNavClick('/programs')}>
+            <Link to="/programs" className={`nav-item ${isActive('/programs') ? 'active' : ''}`} onClick={closeMenu}>
               Programs
             </Link>
 
-            <Link to="/insights" className={`nav-item ${activePath === '/insights' ? 'active' : ''}`} onClick={() => handleNavClick('/insights')}>
+            {/* Our Mentors - Temporarily Removed */}
+            {/* <Link to="/mentors" className={`nav-item ${isActive('/mentors') ? 'active' : ''}`} onClick={closeMenu}>
+              Our Mentors
+            </Link> */}
+
+            {/* Insights - Temporarily Removed */}
+            <Link to="/insights" className={`nav-item ${isActive('/insights') ? 'active' : ''}`} onClick={closeMenu}>
               Insights
             </Link>
           </div>

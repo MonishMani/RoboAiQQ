@@ -62,7 +62,7 @@
 
 .logo-image {
   height: 100%;
-  max-height: 40px;
+  max-height: 55px;
   width: auto;
   object-fit: contain;
 }
@@ -107,7 +107,8 @@
   letter-spacing: 0.3px;
   outline: none;
   -webkit-tap-highlight-color: transparent;
-  border: none;
+  border: none !important;
+  background: none !important;
 }
 
 .nav-item::before {
@@ -121,20 +122,34 @@
   background: linear-gradient(90deg, #FF1E1E, #FFB84D);
   border-radius: 2px;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: none;
 }
 
 .nav-item:hover {
   color: #FF1E1E;
+  background: none !important;
+  border: none !important;
 }
 
 .nav-item:hover::before {
-  transform: translateX(-50%) scaleX(1);
+  display: none;
 }
 
+.nav-item:focus {
+  outline: none !important;
+  border: none !important;
+  background: none !important;
+}
 
+.nav-item:focus-visible {
+  outline: none !important;
+  border: none !important;
+  background: none !important;
+}
 
-.nav-item.active::before {
-  transform: translateX(-50%) scaleX(1);
+.nav-item.active {
+  color: #FF1E1E;
+  font-weight: 600;
 }
 
 /* ============================================
@@ -455,6 +470,13 @@
 
   .nav-item::before {
     display: none;
+  }
+
+  .nav-item.active {
+    background: rgba(255, 30, 30, 0.08);
+    color: #FF1E1E;
+    border-left: 3px solid #FF1E1E;
+    padding-left: 17px;
   }
 
   .nav-item:hover {

@@ -18,7 +18,6 @@ function Home() {
             <div className="main-website-content">
                 <Navbar />
                 <HeroSection />
-                <StatsBanner />
                 <BenefitsSection />
                 <WeRrcmUnique />
                 <WeRrcmJourney />

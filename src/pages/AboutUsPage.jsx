@@ -458,33 +458,6 @@ export default function AboutUsPage() {
                 <span className="competitive-card-progressFill" />
               </div>
             </article>
-
-            <article className="competitive-card">
-              <figure className="competitive-card-image">
-                <img
-                  src="/assets/about/10.jpeg"
-                  alt="Future-ready culture in a modern innovation learning environment"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </figure>
-              <h4 className="competitive-card-title">Future-Ready Culture</h4>
-              <div className="competitive-card-meta">
-                <span className="competitive-card-badge" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                    <path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1 3-6z" />
-                  </svg>
-                </span>
-                <span className="competitive-card-label">Future Focus</span>
-              </div>
-              <p className="competitive-card-text">
-                A learning environment that nurtures creativity, adaptability, and ethical
-                innovation to prepare students for tomorrow&apos;s technology landscape.
-              </p>
-              <div className="competitive-card-progress" aria-hidden="true">
-                <span className="competitive-card-progressFill" />
-              </div>
-            </article>
           </div>
         </div>
       </section>

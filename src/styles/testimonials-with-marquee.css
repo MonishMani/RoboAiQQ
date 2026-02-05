@@ -13,12 +13,14 @@
   right: -100px;
   width: 400px;
   height: 400px;
+  aspect-ratio: 1 / 1;
   background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.3;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 .testimonials-section::after {
@@ -28,12 +30,14 @@
   left: -50px;
   width: 300px;
   height: 300px;
+  aspect-ratio: 1 / 1;
   background: linear-gradient(135deg, #FFB84D 0%, #FF1E1E 100%);
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.3;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
 }
 
 .testimonials-container {
@@ -135,6 +139,7 @@
   left: 32px;
   width: 56px;
   height: 56px;
+  aspect-ratio: 1 / 1;
   background: #0F253E;
   border-radius: 50%;
   display: flex;
@@ -142,6 +147,7 @@
   justify-content: center;
   color: white;
   box-shadow: 0 4px 12px rgba(15, 37, 62, 0.2);
+  overflow: hidden;
 }
 
 .quote-icon {
@@ -203,12 +209,14 @@
   transform: translateY(-50%);
   width: 100px;
   height: 100px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   border: 6px solid #FFFFFF;
   /* Think white border */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 2;
+  overflow: hidden;
 }
 
 /* ===============================
@@ -250,6 +258,7 @@
   .quote-icon-wrapper {
     width: 40px;
     height: 40px;
+    aspect-ratio: 1 / 1;
     top: -16px;
     left: 20px;
   }

@@ -1,8 +1,8 @@
 .testimonials-section {
   background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
-  padding: 6rem 2rem;
+  padding: 2rem 2rem 1rem 2rem;
   position: relative;
-  min-height: 600px;
+  min-height: auto;
   overflow: visible;
 }
 

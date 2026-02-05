@@ -1,12 +1,13 @@
-/* Contact Form - Futuristic White & Blue Theme */
+5/* Contact Form - Futuristic White & Blue Theme */
 
 .robo-form-section,
 .robo-contact-section {
   min-height: 100vh;
-  background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
+  background: transparent;
   color: var(--color-text-primary);
   position: relative;
   overflow: hidden;
+  padding: 6rem 2rem;
 }
 
 /* Gradient Orbs - Decorative Background */

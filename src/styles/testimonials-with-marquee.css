@@ -88,7 +88,7 @@
 .marquee-content {
   display: flex;
   gap: 2.5rem;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 20s linear infinite;
   padding: 1rem 0;
 }
 
@@ -230,6 +230,10 @@
 
   .testimonials-header p {
     font-size: 1rem;
+  }
+
+  .marquee-content {
+    animation: scroll-left 10s linear infinite;
   }
 
   .testimonial-card {

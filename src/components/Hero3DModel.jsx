@@ -158,7 +158,7 @@ function HeroVideo() {
                 display: 'block'
               }}
             >
-              <source src="/assets/videos/video1.mp4" type="video/mp4" />
+              <source src="/assets/videos/video2.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
 

@@ -648,20 +648,80 @@
     --nav-h: 64px;
   }
 
+  .about-hero {
+    padding: calc(var(--nav-h) + 32px) 20px 48px;
+    min-height: auto;
+  }
+
+  .hero-grid {
+    gap: 32px;
+  }
+
   .hero-title {
     font-size: 2.5rem;
   }
 
   .section-title {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-split {
+    gap: 32px;
+    padding: 0 20px;
+  }
+
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .content-wide,
+  .content-medium {
+    padding: 0 20px;
   }
 
   .about-competitive-edge .competitive-grid,
   .pillar-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
   }
 
   .hero-visual-frame img {
     height: 300px;
+  }
+
+  .lead-text {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+  }
+
+  .body-text {
+    font-size: 1rem;
+  }
+
+  .signal-row {
+    flex-direction: column;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .signal-card {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .manifesto {
+    font-size: 1.8rem;
+    margin: 24px 0 40px;
+  }
+
+  .glass-card {
+    padding: 24px;
+  }
+
+  .about-competitive-edge .competitive-card {
+    height: auto;
+    min-height: 300px;
   }
 }

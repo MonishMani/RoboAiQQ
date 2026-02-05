@@ -391,10 +391,16 @@
 
   .navbar-left-mobile {
     display: flex;
-    order: -1;
+    order: 1;
     align-items: center;
     gap: 0.5rem;
     height: 100%;
+    margin-left: auto;
+  }
+
+  .logo {
+    order: 2;
+    margin-left: auto;
   }
 
   .logo-desktop {
@@ -403,6 +409,7 @@
 
   .hamburger-menu {
     display: flex;
+    order: -1;
   }
 
   .nav-links {

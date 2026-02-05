@@ -131,6 +131,7 @@ function ProgramCurriculumPage() {
             <div className="features-grid" id='programe'>
               {features.map((feature, index) => (
                 <div key={index} className="feature-card">
+                  <span className="feature-label">METRIC_STABLE</span>
                   <div className="feature-number">{String(index + 1).padStart(2, '0')}</div>
                   <h4>{feature.title}</h4>
                   <p>{feature.description}</p>

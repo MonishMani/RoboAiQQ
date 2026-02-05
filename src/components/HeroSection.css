@@ -33,7 +33,7 @@
 .hero::before {
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
   top: -100px;
   right: -100px;
   z-index: 0;
@@ -108,10 +108,12 @@
 }
 
 @keyframes textGlow {
+
   0%,
   100% {
     text-shadow: 0 0 0 rgba(255, 30, 30, 0);
   }
+
   50% {
     text-shadow: 0 0 20px rgba(255, 30, 30, 0.2);
   }
@@ -163,6 +165,7 @@
 }
 
 @keyframes pulseGlow {
+
   0%,
   100% {
     opacity: 0.5;
@@ -176,6 +179,7 @@
 }
 
 @keyframes badgePulse {
+
   0%,
   100% {
     box-shadow:
@@ -184,6 +188,7 @@
       0 4px 15px rgba(255, 107, 53, 0.25),
       inset 0 1px 0 rgba(255, 255, 255, 0.8);
   }
+
   50% {
     box-shadow:
       0 0 30px rgba(255, 184, 77, 0.6),
@@ -253,6 +258,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -455,6 +461,7 @@
 
 /* Subtle floating animation */
 @keyframes floatBreath {
+
   0%,
   100% {
     transform: translateY(0) scale(1);
@@ -746,7 +753,7 @@
 .hero-style::before {
   width: 400px;
   height: 400px;
-  background: linear-gradient(135deg, #7DB3E8 0%, #3B82F6 100%);
+  background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
   top: -100px;
   right: -100px;
   z-index: 0;

@@ -7,10 +7,8 @@ import { useRef, useEffect, useState } from "react";
  */
 function HeroVideo() {
   const videoRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(true);
   const [hasError, setHasError] = useState(false);
   const [retryCount, setRetryCount] = useState(0);
-  const [showUnmuteBtn, setShowUnmuteBtn] = useState(false);
 
   // Scroll Visibility + Retry Logic
   useEffect(() => {
@@ -20,23 +18,13 @@ function HeroVideo() {
         if (!video || hasError) return;
 
         if (entry.isIntersecting) {
-          // Show unmute button when video is visible
-          setShowUnmuteBtn(true);
-
           // Attempt to play
           const playPromise = video.play();
 
           if (playPromise !== undefined) {
             playPromise.catch((error) => {
               console.warn('Video autoplay prevented:', error);
-              // iOS/Safari often block autoplay with sound
-              // Video will remain muted, user can unmute manually
             });
-          }
-        } else {
-          // Mute when out of view
-          if (!isMuted) {
-            setIsMuted(true);
           }
         }
       },
@@ -48,7 +36,7 @@ function HeroVideo() {
     }
 
     return () => observer.disconnect();
-  }, [hasError, isMuted]);
+  }, [hasError]);
 
   // Error handling with retry
   const handleVideoError = () => {
@@ -64,14 +52,6 @@ function HeroVideo() {
     } else {
       // Show fallback after 2 retries
       setHasError(true);
-    }
-  };
-
-  // Manual unmute handler
-  const handleUnmute = () => {
-    setIsMuted(false);
-    if (videoRef.current) {
-      videoRef.current.play().catch(console.warn);
     }
   };
 
@@ -143,7 +123,7 @@ function HeroVideo() {
               ref={videoRef}
               autoPlay
               loop
-              muted={isMuted}
+              muted
               playsInline
               preload="metadata"
               poster="/assets/images/robot-poster.png"
@@ -158,41 +138,11 @@ function HeroVideo() {
                 display: 'block'
               }}
             >
-              <source src="/assets/videos/video2.mp4" type="video/mp4" />
+              <source src="/assets/videos/video3.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-
-            {/* Unmute Button */}
-            {showUnmuteBtn && isMuted && (
-              <button
-                onClick={handleUnmute}
-                aria-label="Unmute video"
-                style={{
-                  position: 'absolute',
-                  bottom: '16px',
-                  right: '16px',
-                  background: 'rgba(0, 0, 0, 0.6)',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '50%',
-                  width: '44px',
-                  height: '44px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                  fontSize: '20px',
-                  transition: 'all 0.2s ease',
-                  touchAction: 'manipulation',
-                  zIndex: 10,
-                }}
-                onMouseEnter={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.8)'}
-                onMouseLeave={(e) => e.target.style.background = 'rgba(0, 0, 0, 0.6)'}
-              >
-                🔊
-              </button>
-            )}
           </>
+
         )}
 
         {/* Soft Glow Effect */}

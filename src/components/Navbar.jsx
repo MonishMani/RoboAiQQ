@@ -70,15 +70,9 @@ function Navbar() {
               Programs
             </Link>
 
-            {/* Our Mentors - Temporarily Removed */}
-            {/* <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
-              Our Mentors
-            </Link> */}
-
-            {/* Insights - Temporarily Removed */}
-            {/* <Link to="/mentors" className={`nav-item ${activePath === '/mentors' ? 'active' : ''}`} onClick={() => handleNavClick('/mentors')}>
+            <Link to="/insights" className={`nav-item ${activePath === '/insights' ? 'active' : ''}`} onClick={() => handleNavClick('/insights')}>
               Insights
-            </Link> */}
+            </Link>
           </div>
 
           {/* Right Side - Buttons */}

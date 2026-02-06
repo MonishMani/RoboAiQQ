@@ -89,7 +89,7 @@
   background: linear-gradient(135deg, rgba(125, 179, 232, 0.1) 0%, rgba(59, 130, 246, 0.05) 100%);
   border: 1px solid rgba(125, 179, 232, 0.3);
   border-radius: 50px;
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: #3B82F6;
@@ -350,7 +350,7 @@
 }
 
 .signal-label {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   color: #556B8F;
@@ -428,7 +428,7 @@
 }
 
 .glass-card h4 {
-  font-size: 1.25rem;
+  font-size: 1.85rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 12px;
@@ -544,7 +544,7 @@
 }
 
 .about-competitive-edge .competitive-card-label {
-  font-size: 0.75rem;
+  font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;

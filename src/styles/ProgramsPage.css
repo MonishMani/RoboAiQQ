@@ -354,7 +354,7 @@
 }
 
 .card-top h3 {
-  font-size: 1.25rem;
+  font-size: 2.2rem;
   font-weight: 600;
   color: #0F253E;
   margin: 0;
@@ -364,7 +364,7 @@
 }
 
 .card-description {
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   color: #4A5568;
   line-height: 1.6;
   margin-bottom: 1.25rem;
@@ -386,7 +386,7 @@
   display: flex;
   align-items: flex-start;
   gap: 0.6rem;
-  font-size: 0.85rem;
+  font-size: 1.25rem;
   color: #2D3748;
   line-height: 1.4;
   font-weight: 400;
@@ -611,7 +611,7 @@
 }
 
 .feature-card h4 {
-  font-size: 1.15rem;
+  font-size: 1.85rem;
   font-weight: 700;
   color: #0F253E;
   margin-bottom: 0.75rem;
@@ -635,7 +635,7 @@
 
 /* Feature Card Label */
 .feature-label {
-  font-size: 0.65rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -793,11 +793,11 @@
   }
 
   .card-top h3 {
-    font-size: 1.1rem;
+    font-size: 1.65rem;
   }
 
   .card-description {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     margin-bottom: 1rem;
   }
 
@@ -806,7 +806,7 @@
   }
 
   .highlight-item {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
   }
 
   .program-details {
@@ -814,7 +814,7 @@
   }
 
   .details-content h3 {
-    font-size: 1.35rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
 
@@ -867,7 +867,7 @@
   }
 
   .feature-card h4 {
-    font-size: 0.95rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
 
@@ -967,11 +967,11 @@
   }
 
   .card-top h3 {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 
   .card-description {
-    font-size: 0.85rem;
+    font-size: 1.1rem;
   }
 
   .program-details {
@@ -979,8 +979,8 @@
   }
 
   .details-content h3 {
-    font-size: 1.2rem;
-  }
+    font-size: 1.8rem;
+  }}
 
   .details-content p {
     font-size: 0.9rem;
@@ -1013,7 +1013,7 @@
   }
 
   .feature-card h4 {
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
 
   .feature-card p {
@@ -1031,7 +1031,6 @@
   .cta-content p {
     font-size: 0.9rem;
   }
-}
 
 .highlight {
   display: inline-block;

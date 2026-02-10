@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useMagneticButton } from '../hooks/useMagneticButton';
 import { ProtectedEmail, ROBOAIQ_EMAILS } from '../utils/emailProtection';
@@ -9,7 +9,7 @@ function WeRrcmContactForm() {
   const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
   const submitBtnRef = useMagneticButton({ strength: 10, radius: 60 });
-  const formRef = React.useRef(null);
+  const formRef = useRef(null);
 
   const [formData, setFormData] = useState({
     studentName: '',

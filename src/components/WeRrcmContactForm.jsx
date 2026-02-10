@@ -9,6 +9,7 @@ function WeRrcmContactForm() {
   const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
   const submitBtnRef = useMagneticButton({ strength: 10, radius: 60 });
+  const formRef = React.useRef(null);
 
   const [formData, setFormData] = useState({
     studentName: '',
@@ -27,6 +28,8 @@ function WeRrcmContactForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.stopPropagation();
+    
     setIsSubmitting(true);
     setSubmitMessage({ type: '', text: '' });
 
@@ -48,10 +51,23 @@ function WeRrcmContactForm() {
           phone: '',
           interest: ''
         });
+        
+        // Scroll the form into view to show success message
+        if (formRef.current) {
+          setTimeout(() => {
+            formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
+        }
+        
+        // Auto-clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitMessage({ type: '', text: '' });
+        }, 5000);
       } else {
         setSubmitMessage({ type: 'error', text: result.error || 'Something went wrong. Please try again.' });
       }
     } catch (error) {
+      console.error('[v0] Form submission error:', error);
       setSubmitMessage({ type: 'error', text: 'Failed to submit. Please try again.' });
     } finally {
       setIsSubmitting(false);
@@ -132,7 +148,7 @@ function WeRrcmContactForm() {
           </div>
 
           {/* CENTER FORM */}
-          <div className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
+          <div ref={formRef} className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
             <h2><span>Register Your Interest</span></h2>
             <p className="subtitle">
               Start building intelligent systems with real-world impact

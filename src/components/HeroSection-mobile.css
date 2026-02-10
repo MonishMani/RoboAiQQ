@@ -1,0 +1,210 @@
+/* ============================================
+   HERO SECTION - MOBILE RESPONSIVE ENHANCEMENTS
+   To be imported after HeroSection.css
+   ============================================ */
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 4.5rem !important;
+    padding-bottom: 1.5rem !important;
+    min-height: auto !important;
+  }
+
+  .hero-wrapper {
+    padding: 0 !important;
+  }
+
+  .hero-container {
+    flex-direction: column !important;
+    padding: 0 1rem !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+  }
+
+  .hero-badge {
+    font-size: 0.5rem !important;
+    padding: 5px 10px !important;
+    letter-spacing: 0.1em !important;
+    align-self: center !important;
+  }
+
+  .hero-left {
+    max-width: 100% !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    order: 1;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+    text-align: center !important;
+  }
+
+  .subtitle {
+    font-size: 0.9375rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+  }
+
+  .hero-cta-wrapper {
+    margin-top: 0.75rem !important;
+    justify-content: center !important;
+  }
+
+  .hero-cta-btn {
+    padding: 10px 24px !important;
+    max-width: 240px !important;
+  }
+
+  .cta-primary {
+    font-size: 0.85rem !important;
+  }
+
+  .cta-secondary {
+    font-size: 0.6rem !important;
+  }
+
+  .hero-right {
+    width: 100% !important;
+    order: 2;
+    margin-top: 0rem !important;
+  }
+
+  .hero-visual {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .robot-container {
+    aspect-ratio: 4 / 3 !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+  }
+
+  .hero::before {
+    width: 300px !important;
+    height: 300px !important;
+  }
+
+  .hero::after {
+    width: 250px !important;
+    height: 250px !important;
+  }
+}
+
+/* Mobile (481px - 640px) */
+@media (min-width: 481px) and (max-width: 640px) {
+  .hero {
+    padding-top: 5rem !important;
+    padding-bottom: 1.75rem !important;
+    min-height: auto !important;
+  }
+
+  .hero-wrapper {
+    padding: 0 !important;
+  }
+
+  .hero-container {
+    flex-direction: column !important;
+    padding: 0 1.25rem !important;
+    gap: 1.75rem !important;
+    align-items: center !important;
+  }
+
+  .hero-badge {
+    font-size: 0.55rem !important;
+    padding: 6px 12px !important;
+    align-self: center !important;
+  }
+
+  .hero-left {
+    max-width: 100% !important;
+    gap: 0.625rem !important;
+    width: 100% !important;
+    order: 1;
+  }
+
+  .hero h1 {
+    font-size: 1.625rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+  }
+
+  .subtitle {
+    font-size: 1rem !important;
+    text-align: center !important;
+  }
+
+  .hero-cta-wrapper {
+    justify-content: center !important;
+  }
+
+  .hero-cta-btn {
+    padding: 11px 26px !important;
+    max-width: 250px !important;
+  }
+
+  .cta-primary {
+    font-size: 0.875rem !important;
+  }
+
+  .hero-right {
+    width: 100% !important;
+    order: 2;
+    margin-top: 0 !important;
+  }
+
+  .hero-visual {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .robot-container {
+    aspect-ratio: 16 / 11 !important;
+    border-radius: 14px !important;
+    width: 100% !important;
+  }
+}
+
+/* Tablet (641px - 767px) */
+@media (min-width: 641px) and (max-width: 767px) {
+  .hero-container {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    align-items: center !important;
+  }
+
+  .hero-left {
+    width: 100% !important;
+    order: 1;
+  }
+
+  .hero h1 {
+    font-size: 1.875rem !important;
+    text-align: center !important;
+  }
+
+  .subtitle {
+    font-size: 1.0625rem !important;
+    text-align: center !important;
+  }
+
+  .hero-cta-wrapper {
+    justify-content: center !important;
+  }
+
+  .hero-badge {
+    align-self: center !important;
+  }
+
+  .hero-right {
+    width: 100% !important;
+    order: 2;
+  }
+
+  .robot-container {
+    aspect-ratio: 16 / 10 !important;
+  }
+}

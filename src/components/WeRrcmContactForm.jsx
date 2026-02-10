@@ -1,12 +1,78 @@
+import { useState, useRef } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useMagneticButton } from '../hooks/useMagneticButton';
 import { ProtectedEmail, ROBOAIQ_EMAILS } from '../utils/emailProtection';
+import { submitInterestForm } from '../lib/form-submissions';
 import './WeRrcmContactForm.css';
 
 function WeRrcmContactForm() {
   const [sectionRef, sectionVisible] = useScrollAnimation({ threshold: 0.1 });
   const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.3 });
   const submitBtnRef = useMagneticButton({ strength: 10, radius: 60 });
+  const formRef = useRef(null);
+
+  const [formData, setFormData] = useState({
+    studentName: '',
+    age: '',
+    email: '',
+    phone: '',
+    interest: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState({ type: '', text: '' });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    setIsSubmitting(true);
+    setSubmitMessage({ type: '', text: '' });
+
+    try {
+      const result = await submitInterestForm({
+        student_name: formData.studentName,
+        age: parseInt(formData.age),
+        email: formData.email,
+        phone: formData.phone,
+        interest: formData.interest
+      });
+
+      if (result.success) {
+        setSubmitMessage({ type: 'success', text: 'Thank you! Your interest has been registered successfully.' });
+        setFormData({
+          studentName: '',
+          age: '',
+          email: '',
+          phone: '',
+          interest: ''
+        });
+        
+        // Scroll the form into view to show success message
+        if (formRef.current) {
+          setTimeout(() => {
+            formRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 100);
+        }
+        
+        // Auto-clear success message after 5 seconds
+        setTimeout(() => {
+          setSubmitMessage({ type: '', text: '' });
+        }, 5000);
+      } else {
+        setSubmitMessage({ type: 'error', text: result.error || 'Something went wrong. Please try again.' });
+      }
+    } catch (error) {
+      console.error('[v0] Form submission error:', error);
+      setSubmitMessage({ type: 'error', text: 'Failed to submit. Please try again.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section ref={sectionRef} className="robo-contact-section section-parallax" id="contact">
@@ -82,24 +148,64 @@ function WeRrcmContactForm() {
           </div>
 
           {/* CENTER FORM */}
-          <div className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
+          <div ref={formRef} className={`robo-form-card glass-premium glass-glow scroll-slide-right ${sectionVisible ? 'visible' : ''}`}>
             <h2><span>Register Your Interest</span></h2>
             <p className="subtitle">
               Start building intelligent systems with real-world impact
             </p>
 
-            <form>
-              <input type="text" placeholder="Student Name" required />
-              <input type="number" placeholder="Age (10–18)" required />
-              <input type="email" placeholder="Email Address" required />
-              <input type="tel" placeholder="Phone Number" required />
-              <textarea rows="4" placeholder="Tell us about your interest" />
+            <form onSubmit={handleSubmit}>
+              <input 
+                type="text" 
+                name="studentName"
+                value={formData.studentName}
+                onChange={handleChange}
+                placeholder="Student Name" 
+                required 
+              />
+              <input 
+                type="number" 
+                name="age"
+                value={formData.age}
+                onChange={handleChange}
+                placeholder="Age (10–18)" 
+                required 
+              />
+              <input 
+                type="email" 
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email Address" 
+                required 
+              />
+              <input 
+                type="tel" 
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number" 
+                required 
+              />
+              <textarea 
+                rows="4" 
+                name="interest"
+                value={formData.interest}
+                onChange={handleChange}
+                placeholder="Tell us about your interest" 
+              />
+              {submitMessage.text && (
+                <div className={`submit-message ${submitMessage.type}`}>
+                  {submitMessage.text}
+                </div>
+              )}
               <button
                 ref={submitBtnRef}
                 type="submit"
                 className="btn-premium btn-magnetic"
+                disabled={isSubmitting}
               >
-                Submit Enquiry
+                {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
               </button>
             </form>
           </div>

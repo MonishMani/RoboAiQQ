@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './HeroSection.css';
+import './HeroSection-mobile.css';
 import BookingModal from './BookingModal';
 import Hero3DModel from './Hero3DModel';
 

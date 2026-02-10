@@ -10,6 +10,7 @@ import RobotTest from './pages/RobotTest';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import RiaChatbot from './components/RiaChatbot/RiaChatbot';
 import './App.css';
+import './styles/mobile-enhancements.css';
 
 function App() {
   return (

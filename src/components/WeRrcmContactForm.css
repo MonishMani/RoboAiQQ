@@ -327,6 +327,40 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(125, 179, 232, 0.15), 0 0 15px rgba(125, 179, 232, 0.2), inset 0 1px 2px rgba(125, 179, 232, 0.1);
 }
 
+/* Submit Message */
+.submit-message {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  text-align: center;
+  animation: slideIn 0.3s ease-out;
+  margin-top: var(--space-2);
+}
+
+.submit-message.success {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.05) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #15803d;
+}
+
+.submit-message.error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(239, 68, 68, 0.05) 100%);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #991b1b;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Submit Button */
 button[type="submit"],
 .robo-form-card button {
@@ -346,6 +380,12 @@ button[type="submit"],
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wide);
   animation: glow-pulse-red 3s infinite;
+}
+
+button[type="submit"]:disabled,
+.robo-form-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 button[type="submit"]::before,
@@ -412,16 +452,175 @@ button[type="submit"]:active,
 }
 
 @media (max-width: 640px) {
+  .robo-form-section,
+  .robo-contact-section {
+    padding: 3rem 1rem 2rem 1rem;
+  }
+
+  .robo-contact-grid {
+    gap: 2rem;
+  }
+
   .robo-form-card {
-    padding: var(--space-6);
+    padding: 1.5rem;
+    max-width: 100%;
+    border-radius: 1.25rem;
   }
 
   .robo-contact-header h1,
   .robo-form-info h1 {
-    font-size: var(--font-size-3xl);
+    font-size: 1.875rem;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .robo-contact-header p,
+  .robo-form-info p {
+    font-size: 1rem;
+    margin-top: 1rem;
   }
 
   .robo-form-card h2 {
-    font-size: var(--font-size-2xl);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .robo-form-card .subtitle {
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-card {
+    padding: 1rem;
+    gap: 0.875rem;
+  }
+
+  .icon-box {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    min-width: 44px;
+  }
+
+  .contact-card span {
+    font-size: 0.75rem;
+  }
+
+  .contact-card p {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+
+  form {
+    gap: 1rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.875rem 1rem;
+    font-size: 16px;
+    height: 50px;
+    border-radius: 0.75rem;
+  }
+
+  textarea {
+    height: 110px;
+    min-height: 110px;
+  }
+
+  button[type="submit"],
+  .robo-form-card button {
+    margin-top: 0.5rem;
+    height: 50px;
+    font-size: 0.9375rem;
+    border-radius: 2rem;
+    letter-spacing: 0.025em;
+  }
+
+  .phone-link {
+    padding: 6px 10px;
+    min-height: 44px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .robo-form-section,
+  .robo-contact-section {
+    padding: 2rem 0.875rem 1.5rem 0.875rem;
+  }
+
+  .robo-form-card {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .robo-contact-header h1,
+  .robo-form-info h1 {
+    font-size: 1.625rem;
+  }
+
+  .robo-form-card h2 {
+    font-size: 1.375rem;
+  }
+
+  .contact-card {
+    padding: 0.875rem;
+  }
+
+  .icon-box {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    min-width: 40px;
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem 0.875rem;
+    font-size: 16px;
+    height: 48px;
+  }
+
+  textarea {
+    height: 100px;
+    min-height: 100px;
+  }
+
+  button[type="submit"],
+  .robo-form-card button {
+    height: 48px;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .robo-form-section,
+  .robo-contact-section {
+    padding: 1.5rem 0.75rem 1rem 0.75rem;
+  }
+
+  .robo-form-card {
+    padding: 1rem;
+  }
+
+  .robo-contact-header h1,
+  .robo-form-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .robo-form-card h2 {
+    font-size: 1.25rem;
+  }
+
+  input,
+  textarea {
+    padding: 0.625rem 0.75rem;
+    height: 46px;
+  }
+
+  button[type="submit"],
+  .robo-form-card button {
+    height: 46px;
   }
 }

@@ -240,16 +240,133 @@
         padding: 3rem 1rem;
     }
 
+    .benefits-header {
+        margin-bottom: 1.5rem;
+    }
+
     .benefits-header h2 {
         font-size: 1.75rem;
+        margin-bottom: 0.75rem;
     }
 
     .benefits-header p {
         font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .benefits-grid {
+        gap: 1.5rem;
     }
 
     .benefit-image {
         height: 200px;
+    }
+
+    .benefit-content {
+        padding: 1.25rem;
+    }
+
+    .benefit-content h3 {
+        font-size: 1.125rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .benefits-section {
+        padding: 2.5rem 0.875rem;
+    }
+
+    .benefits-section::before {
+        width: 300px;
+        height: 300px;
+        filter: blur(60px);
+    }
+
+    .benefits-section::after {
+        width: 250px;
+        height: 250px;
+        filter: blur(50px);
+    }
+
+    .benefits-header {
+        margin-bottom: 1.25rem;
+    }
+
+    .benefits-header h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .benefits-header p {
+        font-size: 0.9375rem;
+    }
+
+    .benefits-grid {
+        gap: 1.25rem;
+    }
+
+    .benefit-card {
+        border-radius: 1.25rem;
+    }
+
+    .benefit-image {
+        height: 180px;
+    }
+
+    .benefit-content {
+        padding: 1rem;
+    }
+
+    .benefit-content h3 {
+        font-size: 1.0625rem;
+        margin-bottom: 0.625rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.8125rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 375px) {
+    .benefits-section {
+        padding: 2rem 0.75rem;
+    }
+
+    .benefits-header h2 {
+        font-size: 1.375rem;
+    }
+
+    .benefits-header p {
+        font-size: 0.875rem;
+    }
+
+    .benefits-grid {
+        gap: 1rem;
+    }
+
+    .benefit-card {
+        border-radius: 1rem;
+    }
+
+    .benefit-image {
+        height: 160px;
+    }
+
+    .benefit-content {
+        padding: 0.875rem;
+    }
+
+    .benefit-content h3 {
+        font-size: 1rem;
+    }
+
+    .benefit-content p {
+        font-size: 0.8125rem;
     }
 }
 

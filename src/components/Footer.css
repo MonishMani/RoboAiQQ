@@ -303,6 +303,7 @@
 
   .footer-socials {
     gap: 0.6rem;
+    margin-top: 0.75rem;
   }
 
   .footer-socials a {
@@ -330,6 +331,7 @@
 
   .footer-contact-card {
     padding: 1rem;
+    border-radius: 8px;
   }
 
   .footer-contact-company {
@@ -349,5 +351,153 @@
   .footer-contact-items .label {
     display: block;
     margin-bottom: 0.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 1.25rem 0.625rem;
+  }
+
+  .footer-wrapper {
+    gap: 1rem;
+  }
+
+  .footer-col {
+    gap: 0.75rem;
+  }
+
+  .footer-brand-title {
+    font-size: 1rem;
+  }
+
+  .footer-brand-desc {
+    font-size: 0.75rem;
+  }
+
+  .footer-socials {
+    gap: 0.5rem;
+    margin-top: 0.625rem;
+  }
+
+  .footer-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+  }
+
+  .footer-socials svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-col-title {
+    font-size: 0.625rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .footer-nav {
+    gap: 0.45rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.8125rem;
+  }
+
+  .footer-contact-card {
+    padding: 0.875rem;
+  }
+
+  .footer-contact-company {
+    font-size: 0.8125rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-contact-items {
+    gap: 0.45rem;
+  }
+
+  .footer-contact-items p {
+    font-size: 0.6875rem;
+  }
+
+  .footer-phone .phone-link {
+    padding: 3px 6px;
+    min-height: 40px;
+  }
+}
+
+@media (max-width: 375px) {
+  .footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .footer-wrapper {
+    gap: 0.875rem;
+  }
+
+  .footer-col {
+    gap: 0.625rem;
+  }
+
+  .footer-brand-title {
+    font-size: 0.9375rem;
+  }
+
+  .footer-brand-desc {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+  }
+
+  .footer-socials {
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .footer-socials a {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-socials svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .footer-col-title {
+    font-size: 0.5625rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-nav {
+    gap: 0.4rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.75rem;
+  }
+
+  .footer-contact-card {
+    padding: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .footer-contact-company {
+    font-size: 0.75rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .footer-contact-items {
+    gap: 0.4rem;
+  }
+
+  .footer-contact-items p {
+    font-size: 0.625rem;
+  }
+
+  .footer-phone .phone-link {
+    padding: 2px 5px;
+    min-height: 38px;
+    font-size: 0.625rem;
   }
 }

@@ -413,7 +413,7 @@
 .hero-visual {
   flex: 1;
   width: 100%;
-  height: 300px;
+  height: 280px;
   position: relative;
   display: flex;
   align-items: center;
@@ -434,15 +434,16 @@
 .robot-container {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
+  max-height: 280px;
   background: linear-gradient(135deg, #FFFFFF 0%, #F5FAFF 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
   contain: layout paint style;
   will-change: transform;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1 / 1;
   margin: 0;
   padding: 0;
   z-index: 10;
@@ -564,6 +565,53 @@
 }
 
 /* ============================================
+   Stats Section - Glorification
+   ============================================ */
+.hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+  animation: slideInUp 0.8s ease-out 0.5s both;
+  padding: 0 0.5rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.stat-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #556B8F;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.stat-value {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #0F253E;
+  text-align: center;
+  background: linear-gradient(135deg, #FF1E1E 0%, #FFB84D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
 
@@ -642,6 +690,21 @@
     height: 500px;
     order: 2;
   }
+
+  /* Stats Section - Tablet */
+  .hero-stats {
+    gap: 3rem;
+    margin-top: 2.5rem;
+    justify-content: flex-start;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+
+  .stat-value {
+    font-size: 1.75rem;
+  }
 }
 
 /* Desktop */
@@ -714,6 +777,20 @@
 
   .hero-visual {
     height: 520px;
+  }
+
+  /* Stats Section - Desktop */
+  .hero-stats {
+    gap: 3.5rem;
+    margin-top: 3rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+  }
+
+  .stat-value {
+    font-size: 2rem;
   }
 }
 

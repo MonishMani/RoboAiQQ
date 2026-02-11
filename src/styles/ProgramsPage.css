@@ -553,9 +553,11 @@
 .features-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
   position: relative;
   z-index: 2;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .feature-card {
@@ -719,6 +721,15 @@
    RESPONSIVE - ENTERPRISE GRADE
    ============================================ */
 
+/* Desktop - Ensure 5 columns on large screens */
+@media (min-width: 1025px) {
+  .features-grid {
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 2rem;
+  }
+}
+
+/* Tablet */
 @media (max-width: 1024px) {
   .programs-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -727,7 +738,7 @@
 
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.75rem;
   }
 }
 

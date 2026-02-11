@@ -63,6 +63,14 @@
   font-weight: var(--font-weight-extrabold);
 }
 
+.testimonials-description {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #555555 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 2rem !important;
+}
+
 .wrrcm-test-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

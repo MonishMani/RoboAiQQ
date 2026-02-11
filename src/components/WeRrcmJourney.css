@@ -77,6 +77,13 @@
   color: var(--color-text-tertiary);
 }
 
+.journey-description {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  color: #555555 !important;
+  line-height: 1.6 !important;
+}
+
 /* ===============================
    FULL WIDTH ROAD
    =============================== */

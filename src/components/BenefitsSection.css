@@ -61,9 +61,10 @@
 }
 
 .benefits-header p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     color: #555555;
     line-height: 1.6;
+    font-weight: 600;
 }
 
 /* Cards Grid */
